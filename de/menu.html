@@ -4,24 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Savi | Speisekarte</title>
-  <meta name="description" content="La Savi Speisekarte mit vollständiger Auswahl.">
+  <meta name="description" content="La Savi Speisekarte mit Zoom-Modal, Steak-Illustrationen und vollständiger Auswahl.">
   <link rel="icon" href="../logo-la-savi.webp" type="image/webp">
   <style>
-    :root{--bg:#000;--gold:#d4af37;--txt:#d0d0d0;--muted:#8a8a8a;--panel:#111;--border:#2b2b2b;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--h:72px}
+    :root{--bg:#000;--gold:#d4af37;--txt:#fff;--muted:#ccc;--panel:#1a1a1a;--border:#333;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--h:72px}
     *{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--sans);background:var(--bg);color:var(--txt)} a{text-decoration:none;color:inherit}
-    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
-    header{position:sticky;top:0;z-index:50;height:var(--h);background:rgba(0,0,0,.95);border-bottom:1px solid rgba(212,175,55,.35)}
-    .head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;color:#fff}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;height:var(--h);background:rgba(0,0,0,.94);border-bottom:1px solid rgba(212,175,55,.35)}
+    .head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase}
     nav{display:flex;gap:10px} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
     .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
-    main{padding:46px 0 78px}.title{text-align:center;font-family:var(--serif);color:#fff;text-transform:uppercase;letter-spacing:.08em;font-size:clamp(2rem,5vw,3.4rem)}.sub{text-align:center;color:var(--muted);margin-top:10px}
-    .print{text-align:center;margin:24px 0 20px}.print button{width:36px;height:36px;border:1px solid rgba(212,175,55,.45);border-radius:999px;background:rgba(212,175,55,.06);color:#f3d989;font-size:16px;display:inline-flex;align-items:center;justify-content:center}
-    .cat{margin-top:30px}.cat h2{font-family:var(--serif);color:#f3d989;letter-spacing:.12em;text-transform:uppercase;font-size:18px;margin-bottom:12px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}.item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px}.row{display:flex;justify-content:space-between;gap:12px}.name{color:#fff;font-size:14px}.price{color:var(--gold);font-weight:700;white-space:nowrap}
-    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:32px 0 22px}.f{display:grid;grid-template-columns:repeat(3,1fr);gap:22px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:var(--muted);font-size:14px;line-height:1.7}
-    .copy{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
-    @media(max-width:900px){nav{display:none}.grid,.f{grid-template-columns:1fr}}
-    @media print{@page{size:A4;margin:10mm} header,footer,.print{display:none!important} body{background:#fff!important;color:#111!important} .item{page-break-inside:avoid;border-color:#ddd}.name{color:#000!important}.price{color:#8a6a17!important}}
+    main{padding:44px 0 78px}
+    .title{text-align:center;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:clamp(2rem,5vw,3.4rem)}
+    .sub{text-align:center;color:var(--muted);margin-top:10px}
+    .print{text-align:center;margin:22px 0}
+    .print button{padding:10px 14px;border:1px solid rgba(212,175,55,.6);border-radius:8px;background:rgba(212,175,55,.08);color:#f3d989;font-weight:700;cursor:pointer}
+    .cat{margin-top:30px}
+    .cat h2{font-family:var(--serif);color:#f3d989;text-transform:uppercase;letter-spacing:.12em;font-size:18px;margin-bottom:10px}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+    .menu-card{display:flex;gap:18px;padding:18px;background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);cursor:pointer;transition:all .28s ease;border-radius:4px}
+    .menu-card:hover{background:#242424;border-left-color:#fff;transform:translateX(4px)}
+    .menu-card-image{width:120px;height:120px;flex-shrink:0;background:#0a0a0a;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .menu-card-image img{width:100%;height:100%;object-fit:cover}
+    .menu-card-info{display:flex;flex-direction:column;justify-content:space-between;flex:1}
+    .item-name{font-size:14px;font-weight:700;color:#fff}
+    .item-description{font-size:12px;color:#999;margin-top:5px;line-height:1.5}
+    .item-price{font-size:14px;font-weight:700;color:var(--gold);margin-top:8px}
+    .modal{display:none;position:fixed;inset:0;z-index:1000;animation:fadeIn .3s ease}
+    .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.72)}
+    .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(92vw,760px);max-height:90vh;overflow:auto;background:#000;border-top:3px solid var(--gold);border-radius:6px;padding:26px;animation:slideIn .3s ease}
+    .modal-close{position:absolute;top:10px;right:12px;background:transparent;border:0;color:var(--gold);font-size:30px;cursor:pointer}
+    .modal-close:hover{color:#fff}
+    .modal-image-container{margin-bottom:16px;text-align:center}
+    .modal-image-container img,.modal-image-container svg{width:100%;max-width:600px;height:auto;max-height:500px;border-radius:4px;background:#111}
+    .modal-title{font-size:22px;color:#fff;margin-bottom:8px}
+    .modal-description{font-size:14px;color:#ccc;line-height:1.6;margin-bottom:10px}
+    .modal-details{font-size:13px;color:var(--gold);margin-bottom:16px}
+    .modal-actions{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .modal-price{font-size:18px;font-weight:700;color:var(--gold)}
+    .close-btn{padding:10px 20px;background:var(--gold);color:#000;border:0;cursor:pointer;font-weight:700}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}} @keyframes slideIn{from{transform:translate(-50%,-58%);opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
+    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:32px 0 22px;margin-top:40px}
+    .f{display:grid;grid-template-columns:repeat(3,1fr);gap:22px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:#8a8a8a;font-size:14px;line-height:1.7}
+    .copy{text-align:center;color:#8a8a8a;font-size:13px;margin-top:12px}
+    @media(max-width:900px){nav{display:none}.cards,.f{grid-template-columns:1fr}}
+    @media(max-width:600px){.menu-card{flex-direction:column}.menu-card-image{width:100%;height:200px}}
+    @media print{@page{size:A4;margin:10mm} #dish-modal,header,footer,.print{display:none!important}.menu-card-image{display:none!important}.menu-card{border:1px solid #000;page-break-inside:avoid} body{background:#fff!important}}
   </style>
 </head>
 <body>
@@ -30,81 +58,83 @@
     <nav><a href="./index.html">Home</a><a href="./menu.html">Speisekarte</a><a href="./index.html#reservierung">Reservierung</a><a href="./index.html#ueber">Über uns</a><a href="./index.html#kontakt">Kontakt</a></nav>
     <div class="switch"><a class="active" href="/de/">🇩🇪 DE</a><a href="/en/">🇬🇧 EN</a></div>
   </div></header>
-  <main><div class="container">
-    <h1 class="title">UNSERE SPEISEKARTE</h1><p class="sub">Genießen Sie unsere vollständige Auswahl</p>
-    <div class="print"><button id="share-btn" aria-label="Speisekarte teilen" title="Teilen">↗</button></div>
 
-    <section class="cat"><h2>Salate</h2><div class="grid">
-      <div class="item"><div class="row"><span class="name">01. Hirtensalat</span><span class="price">€4,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">02. Hirtensalat mit Feta Käse</span><span class="price">€7,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">03. Kräuter Blätter Salat</span><span class="price">€7,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">04. Kräuter Blätter Salat mit Feta Käse</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">05. Kräuter Blätter Salat mit Büffelmozzarella</span><span class="price">€11,90</span></div></div>
-    </div></section>
-    <section class="cat"><h2>TÄGLICHE TEIGGERICHTE (Hausgemacht)</h2><div class="grid">
-      <div class="item"><div class="row"><span class="name">06. Türkische Tortellini</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">07. Pide mit Dönerfleisch</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">08. Pide mit Lammwürfeln und Gouda</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">09. Lahmacun pur</span><span class="price">€3,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">10. Lahmacun mit Salat</span><span class="price">€5,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">11. Lahmacun mit Döner</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">12. Gemüse Pide</span><span class="price">€9,90</span></div></div>
-    </div></section>
-    <section class="cat"><h2>TAGESGERICHTE (Tontopf)</h2><div class="grid">
-      <div class="item"><div class="row"><span class="name">Menü 1: Lammfleisch Tontopf mit Reis</span><span class="price">€14,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Menü 2: Hähnchen Tontopf mit Reis</span><span class="price">€12,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Menü 3: Lammfrikadellen Tontopf mit Reis</span><span class="price">€13,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Menü 4: Garnelen Tontopf mit Reis</span><span class="price">€19,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Menü 5: Gemüse Tontopf mit Reis</span><span class="price">€10,90</span></div></div>
-    </div></section>
-    <section class="cat"><h2>WECHSELNDE TAGESSUPPEN</h2><div class="grid">
-      <div class="item"><div class="row"><span class="name">Linsensuppe</span><span class="price">€4,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Hähnchensuppe</span><span class="price">€5,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Lammfleischsuppe</span><span class="price">€6,90</span></div></div>
-    </div></section>
-    <section class="cat"><h2>WET AGED DÖNER & POMMES</h2><div class="grid">
-      <div class="item"><div class="row"><span class="name">13. Döner im Brot</span><span class="price">€8,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">14. Döner Teller mit Pommes und Salat</span><span class="price">€14,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">15. Iskender Döner</span><span class="price">€15,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">16. Döner Dürüm</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Pommes klein</span><span class="price">€2,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Pommes groß</span><span class="price">€3,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">Pommes Kebab</span><span class="price">€7,90</span></div></div>
-    </div></section>
-    <section class="cat"><h2>GRILLGERICHTE</h2><div class="grid">
-      <div class="item"><div class="row"><span class="name">20. Adana Hackspieß Teller scharf</span><span class="price">€17,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">21. Urfa Hackspieß Teller</span><span class="price">€17,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">22. Gemischter Grill Teller</span><span class="price">€23,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">23. Lammkotelett</span><span class="price">€21,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">24. Lammspieß Teller</span><span class="price">€19,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">25. Frikadellen vom Grill (Lamm)</span><span class="price">€17,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">26. Sultan Kebap Grillteller für 2 Personen</span><span class="price">€49,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">27. Sultan Kebap Grillteller für 4 Personen</span><span class="price">€94,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">28. Hähnchenkotelett</span><span class="price">€17,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">29. Hähnchenspieß</span><span class="price">€17,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">30. Adana Dürüm</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">31. Hähnchenspieß Dürüm</span><span class="price">€9,90</span></div></div>
-      <div class="item"><div class="row"><span class="name">32. Lammspieß Dürüm</span><span class="price">€9,90</span></div></div>
-    </div></section>
+  <main><div class="container">
+    <h1 class="title">UNSERE SPEISEKARTE</h1>
+    <p class="sub">Genießen Sie unsere vollständige Auswahl</p>
+    <div class="print"><button onclick="window.print()">🖨️ Menü als PDF drucken</button></div>
+    <div id="menu-root"></div>
   </div></main>
+
+  <div id="dish-modal" class="modal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-image-container" id="modal-image-wrap"></div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-description" id="modal-description"></p>
+      <p class="modal-details" id="modal-details"></p>
+      <div class="modal-actions"><span class="modal-price" id="modal-price"></span><button class="close-btn" onclick="closeModal()">Schließen</button></div>
+    </div>
+  </div>
+
   <footer><div class="container"><div class="f"><div><h4>Kontakt</h4><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div><div><h4>Öffnungszeiten</h4><p>Mo–Sa: 12:00–22:00 Uhr<br>Sonntag: Geschlossen</p></div><div><h4>Social</h4><p><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></p></div></div><p class="copy">© 2026 La Savi | Premium Steakhouse Duisburg</p></div></footer>
+
   <script>
-    (function () {
-      var btn = document.getElementById('share-btn');
-      if (!btn) return;
-      btn.addEventListener('click', async function () {
-        var url = window.location.href;
-        try {
-          if (navigator.share) {
-            await navigator.share({ title: 'La Savi Speisekarte', url: url });
-          } else if (navigator.clipboard && navigator.clipboard.writeText) {
-            await navigator.clipboard.writeText(url);
-            btn.textContent = '✓';
-            window.setTimeout(function () { btn.textContent = '↗'; }, 1200);
-          }
-        } catch (_) {}
-      });
-    })();
+    var menuData = [
+      {cat:"SALATE",items:[["01. Shepherd's Salad","€4,90","Frischer Gemüsesalat mit Kräutern",""],["02. Shepherd's Salad with Feta cheese","€7,90","Gemüsesalat mit Feta-Käse",""],["03. Herb leaves salad","€7,90","Frische Blattsalate mit Kräutern",""],["04. Herb leaves salad with Feta cheese","€9,90","Blattsalat mit Feta",""],["05. Herb leaves salad with buffalo mozzarella","€11,90","Blattsalat mit Büffelmozzarella",""]]},
+      {cat:"TÄGLICHE TEIGGERICHTE (HAUSGEMACHT)",items:[["06. Turkish Tortellini","€9,90","Gefüllt mit Hackfleisch, Butter und Joghurtsauce",""],["07. Dough ship with kebab meat (or minced meat)","€9,90","Pide mit Dönerfleisch oder Hackfleisch",""],["08. Dough ship with Lamb cubes and Gouda cheese","€9,90","Pide mit Lammwürfeln und Gouda",""],["09. Turkish pizza without everything","€3,90","Lahmacun pur",""],["10. Turkish pizza with salad","€5,90","Lahmacun mit Salat",""],["11. Turkish pizza with kebab meat","€9,90","Lahmacun mit Dönerfleisch",""],["12. Dough ship with Vegetables","€9,90","Gemüse-Pide",""]]},
+      {cat:"TAGESGERICHTE (TONTOPF AUS DEM OFEN)",items:[["MENU 1: Lamb meat clay pot with rice","€14,90","Lammfleisch Tontopf mit Reis",""],["MENU 2: Chicken clay pot with rice","€12,90","Hähnchen Tontopf mit Reis",""],["MENU 3: Lamb meatballs clay pot with rice","€13,90","Lammfrikadellen Tontopf mit Reis",""],["MENU 4: Shrimp clay pot with rice","€19,90","Garnelen Tontopf mit Reis",""],["MENU 5: Vegetable clay pot with rice","€10,90","Gemüse Tontopf mit Reis",""]]},
+      {cat:"WECHSELNDE TAGESSUPPEN",items:[["Lentil soup","€4,90","Linsensuppe",""],["Chicken soup","€5,90","Hähnchensuppe",""],["Lamb soup","€6,90","Lammsuppe",""]]},
+      {cat:"WET AGED SPECIAL DÖNER & POMMES",items:[["13. Kebab in bread","€8,90","Döner im Brot",""],["14. Kebab plate with fries and salad","€14,90","Dönerteller mit Pommes und Salat",""],["15. Iskender Döner (Kebab plate with sauce and yogurt)","€15,90","Mit Sauce und Joghurt",""],["16. Kebab wrap","€9,90","Dürüm Döner",""],["Small fries","€2,90","Pommes klein",""],["Big fries","€3,90","Pommes groß",""],["Fries kebab (Fries with Wet Aged Döner)","€7,90","Pommes mit Wet Aged Döner",""]]},
+      {cat:"GRILLGERICHTE",items:[["20. Adana minced skewer plate hot","€17,90","Scharfer Adana Hackspieß Teller",""],["21. Urfa minced skewer plate","€17,90","Urfa Hackspieß Teller",""],["22. Mixed grill plate","€23,90","Gemischter Grill Teller",""],["23. Lamb chop","€21,90","Lammkotelett",""],["24. Lamb skewer plate","€19,90","Lammspieß Teller",""],["25. Meatballs on the grill (with lamb meat)","€17,90","Frikadellen vom Grill (Lamm)",""],["26. Sultan Kebap Grill plate for 2 persons","€49,90","Grillteller für 2 Personen",""],["27. Sultan Kebap Grill plate for 4 persons","€94,90","Grillteller für 4 Personen",""],["28. Chicken chop","€17,90","Hähnchenkotelett",""],["29. Chicken skewer","€17,90","Hähnchenspieß",""],["30. Adana minced skewer wrap","€9,90","Adana Dürüm",""],["31. Chicken skewer wrap","€9,90","Hähnchenspieß Dürüm",""],["32. Lamb skewer wrap","€9,90","Lammspieß Dürüm",""]]},
+      {cat:"STEAK SPECIALTIES - Dry Aged (3-4 Wochen)",items:[["33. Rump Steak (approx. 350 gr)","€34,90","Zartes Premium-Fleisch, Dry Aged 3-4 Wochen","dry-rump"],["34. Filet Steak (approx. 300 gr)","€39,90","Das zarteste Stück, perfekt gereift","dry-filet"],["35. Cowboy Steak (approx. 1000 gr)","€49,90","Kräftig und marmoriert","dry-cowboy"],["36. T-Bone Steak (approx. 1000 gr)","€49,90","Das Beste beider Seiten","dry-tbone"]]},
+      {cat:"STEAK SPECIALTIES - Buffalo",items:[["37. Buffalo Filet Steak (approx. 250gr)","€44,90","Buffalo - magerer, intensiver","buf-filet"],["38. Buffalo Ribeye Steak (approx. 300gr)","€44,90","Buffalo Ribeye - voller Aroma","buf-ribeye"]]},
+      {cat:"STEAK SPECIALTIES - Wagyu",items:[["39. Wagyu Filet (approx. 200gr)","€129,00","Wagyu Filet - schmelzend zart","wag-filet"],["40. Wagyu Roastbeef (approx. 300gr)","€149,00","Wagyu Roastbeef - zartes Aroma","wag-roast"],["41. Wagyu Ribeye (approx. 300gr)","€149,00","Wagyu Ribeye - Premium Marmorierung","wag-ribeye"]]},
+      {cat:"BEILAGEN & SAUCEN (für Steaks)",items:[["Cream spinach","€4,90","Rahmspinat",""],["Fried potatoes with rosemary","€4,90","Bratkartoffeln mit Rosmarin",""],["Sweet potato fries","€4,90","Süßkartoffel Pommes",""],["Hollandaise sauce","€4,90","Sauce Hollandaise",""],["Béarnaise sauce","€4,90","Sauce Béarnaise",""],["Pepper sauce","€4,90","Pfeffersauce",""]]},
+      {cat:"KALTE GETRÄNKE",items:[["Coca Cola, Fanta, Sprite, Mezzo Mix (0.33l)","€2,90","Softdrinks",""],["Uludağ (Turkish soda) (0.33l)","€2,90","Türkische Limonade",""],["Mineral water with or without carbonation (0.25l)","€2,50","Mineralwasser",""],["Mineral water with or without carbonation (0.75l)","€4,90","Mineralwasser groß",""],["Orange-Cherry-Banana-Multi juice (0.2l)","€2,50","Saft",""],["Ayran (homemade Turkish buttermilk) (0.33l)","€1,90","Hausgemachter Ayran",""],["Ice tea (Peach, Lemon) (0.33l)","€2,90","Eistee",""],["Ginger Ale (0.2l)","€2,90","Ginger Ale",""],["Bitter Lemon (0.2l)","€2,90","Bitter Lemon",""],["Red Bull (0.25l)","€2,50","Red Bull",""],["Malt beer (0.33l)","€2,90","Malzbier",""],["Krombacher (non-alcoholic beer) (0.33l)","€2,90","Krombacher alkoholfrei",""]]},
+      {cat:"WEIN & SEKT (Natureo alkoholfrei)",items:[["Red wine Natureo (0.2l)","€7,90","Rotwein Natureo",""],["White wine Natureo (0.2l)","€7,90","Weißwein Natureo",""],["Sparkling wine Natureo Seco (0.2l)","€7,90","Sekt Natureo Seco",""]]},
+      {cat:"HEIßE GETRÄNKE",items:[["Cafe Crema","€2,50","Cafe Crema",""],["Espresso","€2,50","Espresso",""],["Cappuccino","€2,90","Cappuccino",""],["Latte","€2,90","Latte",""],["Milk coffee","€2,90","Milchkaffee",""],["Turkish Coffee","€2,50","Türkischer Kaffee",""],["Hot Cocoa","€2,90","Kakao",""]]},
+      {cat:"DESSERTS",items:[["42. Katmer (crisp flaky pastry with Cream and pistachios)","€7,90","Knuspriger Blätterteig mit Creme und Pistazien",""],["43. Künefe (String dough with cheese)","€7,90","Fadenteig mit Käse",""],["44. Rice pudding vanilla","€4,90","Milchreis Vanille",""],["45. Mascarpone","€1,00","Mascarpone",""],["46. Maras Ice Cream","€2,90","Maraş Eis",""]]}
+    ];
+
+    function cowSvg(label, x, y, w, h, note) {
+      return '<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="400" fill="#1a1a1a"/><g stroke="#ccc" stroke-width="2" fill="none"><ellipse cx="240" cy="190" rx="170" ry="90"/><circle cx="80" cy="180" r="38"/><path d="M48 165l-18 -8M50 196l-18 8"/><path d="M150 270v55M220 280v45M285 280v45M355 270v55"/><path d="M410 170l36 -20"/></g><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="#d4af37" opacity=".28" stroke="#d4af37" stroke-width="2.5"/><text x="'+(x+4)+'" y="'+(y-8)+'" fill="#d4af37" font-size="16" font-weight="700">'+label+'</text><text x="26" y="360" fill="#d4af37" font-size="16">'+note+'</text></svg>';
+    }
+    var steakSvg = {
+      "dry-rump": cowSvg("RUMP",260,150,80,56,"RUMP - Der zarte Klassiker"),
+      "dry-filet": cowSvg("FILET",205,170,70,40,"FILET - Das zarteste Stück"),
+      "dry-cowboy": cowSvg("RIB",160,130,80,56,"COWBOY - Würzig & marmoriert"),
+      "dry-tbone": cowSvg("T-BONE",210,140,70,70,"T-BONE - Das Beste beider Seiten"),
+      "buf-filet": cowSvg("FILET",205,170,70,40,"BUFFALO - Magerer, intensiver"),
+      "buf-ribeye": cowSvg("RIBEYE",165,130,84,56,"BUFFALO RIBEYE - Voller Aroma"),
+      "wag-filet": cowSvg("FILET",205,170,70,40,"WAGYU FILET - Schmelzend zart"),
+      "wag-roast": cowSvg("ROASTBEEF",250,140,84,56,"WAGYU ROASTBEEF - Zartes Aroma"),
+      "wag-ribeye": cowSvg("RIBEYE",165,130,84,56,"WAGYU RIBEYE - Premium Marmorierung")
+    };
+
+    function placeholderImg() { return '<img src="../logo-la-savi.webp" alt="La Savi Platzhalter">'; }
+    function makeCard(item) {
+      var n=item[0],p=item[1],d=item[2],k=item[3]||"";
+      return '<article class="menu-card" onclick="openModal(this)"><div class="menu-card-image">'+placeholderImg()+'</div><div class="menu-card-info"><div><div class="item-name">'+n+'</div><div class="item-description">'+d+'</div></div><div class="item-price">'+p+'</div></div><div class="modal-data" style="display:none" data-key="'+k+'" data-name="'+n+'" data-desc="'+d+'" data-price="'+p+'"></div></article>';
+    }
+    document.getElementById("menu-root").innerHTML = menuData.map(function(c){return '<section class="cat"><h2>'+c.cat+'</h2><div class="cards">'+c.items.map(makeCard).join("")+'</div></section>';}).join("");
+
+    function openModal(card){
+      var data=card.querySelector(".modal-data");
+      var key=data.dataset.key, title=data.dataset.name, desc=data.dataset.desc, price=data.dataset.price;
+      var wrap=document.getElementById("modal-image-wrap");
+      if(key && steakSvg[key]) wrap.innerHTML = steakSvg[key]; else wrap.innerHTML = '<img src="../logo-la-savi.webp" alt="'+title+'">';
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-description").textContent = desc;
+      document.getElementById("modal-details").textContent = key ? "Steak-Cut Illustration" : "La Savi Platzhalterbild";
+      document.getElementById("modal-price").textContent = price;
+      document.getElementById("dish-modal").style.display="block";
+      document.body.style.overflow="hidden";
+    }
+    function closeModal(){ document.getElementById("dish-modal").style.display="none"; document.body.style.overflow="auto"; }
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeModal(); });
+    window.openModal=openModal; window.closeModal=closeModal;
   </script>
 </body>
 </html>
