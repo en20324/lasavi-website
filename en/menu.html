@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Savi | Menu</title>
+  <meta name="description" content="La Savi full menu with steaks, grill dishes, drinks and desserts.">
+  <link rel="icon" href="../logo-la-savi.webp" type="image/webp">
+  <style>
+    :root{--bg:#000;--gold:#d4af37;--txt:#d0d0d0;--muted:#8a8a8a;--panel:#111;--border:#2b2b2b;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--h:72px}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--sans);background:var(--bg);color:var(--txt)} a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;height:var(--h);background:rgba(0,0,0,.95);border-bottom:1px solid rgba(212,175,55,.35)}
+    .head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;color:#fff}
+    nav{display:flex;gap:10px} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
+    .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
+    main{padding:46px 0 78px}.title{text-align:center;font-family:var(--serif);color:#fff;text-transform:uppercase;letter-spacing:.08em;font-size:clamp(2rem,5vw,3.4rem)}.sub{text-align:center;color:var(--muted);margin-top:10px}
+    .print{text-align:center;margin:24px 0 20px}.print button{padding:12px 18px;border:1px solid rgba(212,175,55,.6);border-radius:8px;background:rgba(212,175,55,.08);color:#f3d989;font-weight:700}
+    .cat{margin-top:30px}.cat h2{font-family:var(--serif);color:#f3d989;letter-spacing:.12em;text-transform:uppercase;font-size:18px;margin-bottom:12px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}.item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px}.row{display:flex;justify-content:space-between;gap:12px}.name{color:#fff;font-size:14px}.price{color:var(--gold);font-weight:700;white-space:nowrap}
+    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:32px 0 22px}.f{display:grid;grid-template-columns:repeat(3,1fr);gap:22px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:var(--muted);font-size:14px;line-height:1.7}
+    .copy{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
+    @media(max-width:900px){nav{display:none}.grid,.f{grid-template-columns:1fr}}
+    @media print{@page{size:A4;margin:10mm} header,footer,.print{display:none!important} body{background:#fff!important;color:#111!important} .item{page-break-inside:avoid;border-color:#ddd}.name{color:#000!important}.price{color:#8a6a17!important}}
+  </style>
+</head>
+<body>
+  <header><div class="container head">
+    <a class="brand" href="./index.html"><img src="../logo-la-savi.webp" alt="La Savi"><span>La Savi</span></a>
+    <nav><a href="./index.html">Home</a><a href="./menu.html">Menu</a><a href="./index.html#reservation">Reservation</a><a href="./index.html#about">About Us</a><a href="./index.html#contact">Contact</a></nav>
+    <div class="switch"><a href="/de/">🇩🇪 DE</a><a class="active" href="/en/">🇬🇧 EN</a></div>
+  </div></header>
+  <main><div class="container">
+    <h1 class="title">OUR MENU</h1><p class="sub">Enjoy our complete selection</p>
+    <div class="print"><button onclick="window.print()">🖨️ Print Menu as PDF</button></div>
+
+    <section class="cat"><h2>SALADS</h2><div class="grid">
+      <div class="item"><div class="row"><span class="name">01. Shepherd's Salad</span><span class="price">€4,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">02. Shepherd's Salad with Feta cheese</span><span class="price">€7,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">03. Herb leaves salad</span><span class="price">€7,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">04. Herb leaves salad with Feta cheese</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">05. Herb leaves salad with buffalo mozzarella</span><span class="price">€11,90</span></div></div>
+    </div></section>
+    <section class="cat"><h2>DAILY DOUGH DISHES (Homemade)</h2><div class="grid">
+      <div class="item"><div class="row"><span class="name">06. Turkish Tortellini (Filled with minced meat with butter and yogurtsauce)</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">07. Dough ship with kebab meat (or minced meat)</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">08. Dough ship with Lamb cubes and Gouda cheese</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">09. Turkish pizza without everything</span><span class="price">€3,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">10. Turkish pizza with salad</span><span class="price">€5,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">11. Turkish pizza with kebab meat</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">12. Dough ship with Vegetables</span><span class="price">€9,90</span></div></div>
+    </div></section>
+    <section class="cat"><h2>DAILY DISHES (Clay pot dishes from the oven)</h2><div class="grid">
+      <div class="item"><div class="row"><span class="name">MENU 1: Lamb meat clay pot with rice</span><span class="price">€14,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">MENU 2: Chicken clay pot with rice</span><span class="price">€12,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">MENU 3: Lamb meatballs clay pot with rice</span><span class="price">€13,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">MENU 4: Shrimp clay pot with rice</span><span class="price">€19,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">MENU 5: Vegetable clay pot with rice</span><span class="price">€10,90</span></div></div>
+    </div></section>
+    <section class="cat"><h2>CHANGING DAILY SOUPS</h2><div class="grid">
+      <div class="item"><div class="row"><span class="name">Lentil soup</span><span class="price">€4,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">Chicken soup</span><span class="price">€5,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">Lamb soup</span><span class="price">€6,90</span></div></div>
+    </div></section>
+    <section class="cat"><h2>WET AGED SPECIAL DÖNER & FRIES</h2><div class="grid">
+      <div class="item"><div class="row"><span class="name">13. Kebab in bread</span><span class="price">€8,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">14. Kebab plate with fries and salad</span><span class="price">€14,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">15. Iskender Döner (Kebab plate with sauce and yogurt)</span><span class="price">€15,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">16. Kebab wrap</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">Small fries</span><span class="price">€2,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">Big fries</span><span class="price">€3,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">Fries kebab (Fries with Wet Aged Döner)</span><span class="price">€7,90</span></div></div>
+    </div></section>
+    <section class="cat"><h2>GRILL DISHES</h2><div class="grid">
+      <div class="item"><div class="row"><span class="name">20. Adana minced skewer plate hot</span><span class="price">€17,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">21. Urfa minced skewer plate</span><span class="price">€17,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">22. Mixed grill plate</span><span class="price">€23,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">23. Lamb chop</span><span class="price">€21,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">24. Lamb skewer plate</span><span class="price">€19,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">25. Meatballs on the grill (with lamb meat)</span><span class="price">€17,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">26. Sultan Kebap Grill plate for 2 persons</span><span class="price">€49,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">27. Sultan Kebap Grill plate for 4 persons</span><span class="price">€94,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">28. Chicken chop</span><span class="price">€17,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">29. Chicken skewer</span><span class="price">€17,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">30. Adana minced skewer wrap</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">31. Chicken skewer wrap</span><span class="price">€9,90</span></div></div>
+      <div class="item"><div class="row"><span class="name">32. Lamb skewer wrap</span><span class="price">€9,90</span></div></div>
+    </div></section>
+  </div></main>
+  <footer><div class="container"><div class="f"><div><h4>Contact</h4><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div><div><h4>Opening Hours</h4><p>Mon–Sat: 12:00–22:00<br>Sunday: Closed</p></div><div><h4>Social</h4><p><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></p></div></div><p class="copy">© 2026 La Savi | Premium Steakhouse Duisburg</p></div></footer>
+</body>
+</html>
