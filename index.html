@@ -25,6 +25,11 @@
       --text-soft: #cccccc;
       --text-muted: #888888;
       --wine: #8b0000;
+      --sw-green: #1e4d3b;
+      --sw-gold-nav: #a67c52;
+      --sw-border: #d9d9d9;
+      --sw-text: #1a1a1a;
+      --sw-text-soft: #6b6b6b;
       --font-serif: Georgia, "Times New Roman", Times, serif;
       --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       --space-20: 20px;
@@ -303,79 +308,212 @@
       line-height: 1.65;
     }
 
-    /* —— Menu —— */
-    #menu { background: var(--gray-950); }
-    .menu-toolbar {
+    /* —— Speisekarte (Smith & Wollensky „Menus“-Layout) —— */
+    .menu-section {
+      padding-block: 0 !important;
+      background: var(--white);
+    }
+    .sw-menu-hero {
+      position: relative;
+      width: 100%;
+      min-height: min(52vh, 520px);
+      max-height: 640px;
+      overflow: hidden;
+    }
+    .sw-menu-hero img {
+      width: 100%;
+      height: 100%;
+      min-height: min(52vh, 520px);
+      object-fit: cover;
+      object-position: center;
+    }
+    .sw-menu-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%);
+      pointer-events: none;
+    }
+    .sw-menu-hero__text {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-40);
+    }
+    .sw-menu-hero__eyebrow {
+      font-family: var(--font-serif);
+      font-size: clamp(11px, 1.8vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .sw-menu-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.25rem, 7vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.45);
+    }
+    .sw-menu-light {
+      background: #fff;
+      color: var(--sw-text);
+      padding: var(--space-60) 0 var(--space-80);
+    }
+    .sw-menu-light .container {
+      max-width: 920px;
+    }
+    .sw-menu-download-wrap {
+      text-align: center;
+      margin-bottom: var(--space-40);
+    }
+    .sw-menu-download {
+      display: inline-block;
+      padding: 14px 36px;
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sw-text);
+      background: #fff;
+      border: 1px solid var(--sw-border);
+      transition: border-color var(--ease), color var(--ease);
+    }
+    .sw-menu-download:hover {
+      border-color: var(--sw-gold-nav);
+      color: var(--sw-gold-nav);
+    }
+    .sw-menu-tabs {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-between;
-      gap: var(--space-20);
+      justify-content: center;
+      gap: 12px 20px;
+      margin-bottom: var(--space-20);
+    }
+    .sw-menu-tabs__btn {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sw-gold-nav);
+      background: none;
+      padding: 8px 4px 10px;
+      border-bottom: 2px solid transparent;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .sw-menu-tabs__btn:hover,
+    .sw-menu-tabs__btn:focus-visible {
+      color: #8a6644;
+    }
+    .sw-menu-tabs__btn.is-active {
+      border-bottom-color: var(--sw-gold-nav);
+    }
+    .sw-menu-tabs__sep {
+      font-family: var(--font-serif);
+      color: #c4c4c4;
+      font-size: 14px;
+      user-select: none;
+    }
+    .sw-menu-rule {
+      border: none;
+      height: 1px;
+      background: var(--sw-border);
+      margin: 0 0 var(--space-60);
+    }
+    .sw-menu-panel {
+      display: none;
+    }
+    .sw-menu-panel.is-active {
+      display: block;
+    }
+    .sw-menu-cat {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--sw-green);
       margin-bottom: var(--space-40);
     }
-    .menu-toolbar .section-title {
-      margin-bottom: 0;
-      text-align: left;
+    .sw-menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 56px;
+    }
+    @media (max-width: 700px) {
+      .sw-menu-grid { grid-template-columns: 1fr; gap: 8px 0; }
+    }
+    .sw-menu-item {
+      font-family: var(--font-serif);
+      padding: 20px 0 28px;
+      border-bottom: 1px solid #eee;
+      transition: background var(--ease);
+    }
+    .sw-menu-item:hover {
+      background: rgba(0,0,0,0.02);
+    }
+    .sw-menu-item__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .sw-menu-item__name {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sw-text);
+      line-height: 1.35;
+    }
+    .sw-menu-item__price {
+      flex-shrink: 0;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--sw-gold-nav);
+      letter-spacing: 0.04em;
+    }
+    .sw-menu-item__desc {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--sw-text-soft);
+      line-height: 1.55;
+      text-transform: none;
+      letter-spacing: 0.02em;
     }
     .btn-print {
       padding: 12px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gold);
-      border: 1px solid var(--gold);
-      border-radius: 2px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sw-text);
+      border: 1px solid var(--sw-border);
+      border-radius: 0;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: background var(--ease), color var(--ease);
+      background: #fff;
+      transition: border-color var(--ease), color var(--ease);
     }
-    .btn-print:hover { background: rgba(212, 175, 55, 0.12); color: var(--white); }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-20);
-    }
-    @media (max-width: 768px) {
-      .menu-grid { grid-template-columns: 1fr; }
-      .menu-toolbar .section-title { text-align: center; width: 100%; }
-      .menu-toolbar { justify-content: center; }
-    }
-    .menu-category {
-      font-family: var(--font-serif);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin: var(--space-40) 0 var(--space-20);
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--gold-dim);
-    }
-    .menu-category:first-child { margin-top: 0; }
-    .dish-card {
-      padding: var(--space-20) var(--space-20) var(--space-20) 24px;
-      background: var(--gray-900);
-      border-left: 3px solid var(--gold);
-      transition: background var(--ease), border-left-width var(--ease), transform var(--ease);
-    }
-    .dish-card:hover {
-      background: #222;
-      border-left-width: 5px;
-      transform: translateX(2px);
-    }
-    .dish-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .dish-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-    .dish-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-    .dish-price {
-      margin-top: 12px;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
+    .btn-print:hover {
+      border-color: var(--sw-gold-nav);
+      color: var(--sw-gold-nav);
     }
 
     /* —— Highlights —— */
@@ -561,23 +699,28 @@
       .btn-print,
       #btn-print-menu-secondary,
       .menu-print-hint,
+      .sw-menu-hero,
+      .sw-menu-download-wrap,
+      .sw-menu-tabs,
       .contact-cta-wrap,
       .social-row {
         display: none !important;
       }
 
-      /* Alle Haupt-Sektionen außer Speisekarte */
       main > section:not(.menu-section) {
         display: none !important;
       }
 
-      /* Menü-Section erzwingen (auch wenn #menu Screen-Styles hat) */
       .menu-section {
         display: block !important;
         background: #fff !important;
         color: #111 !important;
         padding: 0 !important;
         border: none !important;
+      }
+
+      .sw-menu-light {
+        padding: 0 !important;
       }
 
       body {
@@ -590,56 +733,54 @@
         display: block !important;
       }
 
-      /* Wichtig: .reveal ist sonst oft opacity:0 bis Scroll → Druck leer */
       .menu-section .reveal {
         opacity: 1 !important;
         transform: none !important;
       }
 
-      .menu-section .menu-toolbar {
+      .sw-menu-panel,
+      .sw-menu-panel[hidden] {
         display: block !important;
+      }
+
+      .sw-menu-panel {
+        page-break-after: auto;
+      }
+
+      .sw-menu-panel + .sw-menu-panel {
+        margin-top: 16pt;
+        padding-top: 12pt;
+        border-top: 1px solid #ccc;
+      }
+
+      .sw-menu-cat {
+        color: var(--sw-green) !important;
         margin-bottom: 12pt !important;
-        padding: 0 !important;
-        border: none !important;
-        background: transparent !important;
       }
 
-      .menu-section .menu-toolbar .section-title {
-        margin-bottom: 8pt !important;
-      }
-
-      .menu-section .section-title {
-        color: #000 !important;
-        text-align: left !important;
-        font-size: 16pt !important;
-      }
-
-      .menu-grid {
+      .sw-menu-grid {
         grid-template-columns: 1fr !important;
       }
 
-      .menu-category {
-        color: #7a5c00 !important;
-        border-bottom-color: #ccc !important;
-      }
-
-      .dish-card {
-        background: #f9f9f9 !important;
-        border-left: 3pt solid #b8860b !important;
+      .sw-menu-item {
+        border-bottom-color: #ddd !important;
         page-break-inside: avoid;
       }
 
-      .dish-name {
+      .sw-menu-item__name {
+        color: #000 !important;
+      }
+
+      .sw-menu-item__price {
         color: #7a5c00 !important;
       }
 
-      .dish-meta,
-      .dish-desc {
+      .sw-menu-item__desc {
         color: #444 !important;
       }
 
-      .dish-price {
-        color: #000 !important;
+      .sw-menu-rule {
+        display: none !important;
       }
     }
   </style>
@@ -655,7 +796,7 @@
       </a>
       <nav class="nav-desktop" aria-label="Hauptnavigation">
         <a href="#home">Home</a>
-        <a href="#menu">Menü</a>
+        <a href="#spezialitaeten">Menü</a>
         <a href="#reservierung">Reservierung</a>
         <a href="#ueber-uns">Über uns</a>
         <a href="#kontakt">Kontakt</a>
@@ -668,7 +809,7 @@
       </div>
       <nav class="nav-mobile" id="mobile-nav" aria-label="Mobilmenü">
         <a href="#home">Home</a>
-        <a href="#menu">Menü</a>
+        <a href="#spezialitaeten">Menü</a>
         <a href="#reservierung">Reservierung</a>
         <a href="#ueber-uns">Über uns</a>
         <a href="#kontakt">Kontakt</a>
@@ -684,7 +825,7 @@
         <p class="tagline">Genießen Sie Premium Dry-Aged Steaks und authentische Grillspezialitäten — mit Herz, Handwerk und höchstem Anspruch.</p>
         <div class="hero-cta">
           <a class="btn-gold" href="#reservierung">Reservierung</a>
-          <a class="btn-outline" href="#menu">Menü ansehen</a>
+          <a class="btn-outline" href="#spezialitaeten">Menü ansehen</a>
         </div>
         <p class="hero-sub">Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen</p>
       </div>
@@ -713,78 +854,295 @@
       </div>
     </section>
 
-    <section id="menu" class="menu-section">
-      <div class="container">
-        <div class="menu-toolbar reveal">
-          <h2 class="section-title">Unsere Spezialitäten</h2>
-          <button type="button" class="btn-print" id="btn-print-menu" aria-label="Menü als PDF drucken">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
-            Menü als PDF drucken
-          </button>
+    <section id="spezialitaeten" class="menu-section" aria-labelledby="menu-page-title">
+      <div class="sw-menu-hero">
+        <img src="images/menu-hero.png" width="1600" height="900" alt="Gedeckter Tisch mit Steaks, Beilagen und Wein bei La Savi" fetchpriority="low" loading="lazy">
+        <div class="sw-menu-hero__text">
+          <p class="sw-menu-hero__eyebrow">La Savi · Duisburg</p>
+          <h2 class="sw-menu-hero__title" id="menu-page-title">Unsere Spezialitäten</h2>
         </div>
+      </div>
 
-        <p class="reveal menu-print-hint" style="text-align:center; color: var(--text-muted); font-size: 14px; margin: -32px 0 40px; max-width: 52ch; margin-inline: auto;">Tipp: <strong>Menü als PDF drucken</strong> öffnet den Druckdialog — dort „Als PDF speichern“ wählen. Auszug unserer Highlights:</p>
-
-        <div class="menu-grid">
-          <div>
-            <h3 class="menu-category reveal">Steaks</h3>
-            <article class="dish-card reveal">
-              <div class="dish-name">T-Bone Steak</div>
-              <div class="dish-meta">350 g · USDA Prime Dry-Aged</div>
-              <p class="dish-desc">Zart, saftig, intensiv im Geschmack — klassisches Steakhouse-Erlebnis.</p>
-              <div class="dish-price">€ 48,00</div>
-            </article>
-            <article class="dish-card reveal">
-              <div class="dish-name">Ribeye</div>
-              <div class="dish-meta">300 g · Premium marmoriert</div>
-              <p class="dish-desc">Saftig und aromatisch, perfekt für Liebhaber kräftiger Röstaromen.</p>
-              <div class="dish-price">€ 42,00</div>
-            </article>
-            <article class="dish-card reveal">
-              <div class="dish-name">Filet Mignon</div>
-              <div class="dish-meta">250 g · Feinste Faser</div>
-              <p class="dish-desc">Butterzart, elegant — für den besonderen Anlass.</p>
-              <div class="dish-price">€ 52,00</div>
-            </article>
+      <div class="sw-menu-light">
+        <div class="container">
+          <div class="sw-menu-download-wrap reveal">
+            <button type="button" class="sw-menu-download" id="btn-print-menu">Speisekarte drucken / als PDF speichern</button>
           </div>
-          <div>
-            <h3 class="menu-category reveal">Grill</h3>
-            <article class="dish-card reveal">
-              <div class="dish-name">Lamm Kotelett</div>
-              <div class="dish-meta">2 Stück · vom Grill</div>
-              <p class="dish-desc">Perfekt gegrillt, würzig und zart.</p>
-              <div class="dish-price">€ 38,00</div>
-            </article>
-            <article class="dish-card reveal">
-              <div class="dish-name">Adana Spieß</div>
-              <div class="dish-meta">Türkische Spezialität</div>
-              <p class="dish-desc">Kräftig gewürzt, authentisch zubereitet.</p>
-              <div class="dish-price">€ 28,00</div>
-            </article>
-            <article class="dish-card reveal">
-              <div class="dish-name">Gemischter Grill</div>
-              <div class="dish-meta">Für 2 Personen</div>
-              <p class="dish-desc">Steak, Lamm, Hähnchen — ideal zum Teilen.</p>
-              <div class="dish-price">€ 68,00</div>
-            </article>
-            <article class="dish-card reveal">
-              <div class="dish-name">Wet Aged Döner</div>
-              <div class="dish-meta">Unsere Spezialität</div>
-              <p class="dish-desc">Einzigartig mariniert und frisch zubereitet.</p>
-              <div class="dish-price">€ 22,00</div>
-            </article>
-            <h3 class="menu-category reveal">Getränke</h3>
-            <article class="dish-card reveal">
-              <div class="dish-name">Hausgemachter Ayran</div>
-              <div class="dish-meta">Täglich frisch</div>
-              <p class="dish-desc">Cremig, erfrischend — die perfekte Begleitung zum Grill.</p>
-              <div class="dish-price">€ 4,50</div>
-            </article>
-          </div>
-        </div>
+          <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Im Druckdialog „Als PDF speichern“ wählen — ohne externe Datei.</p>
+          <hr class="sw-menu-rule" aria-hidden="true">
 
-        <div style="margin-top: 48px; text-align: center;" class="reveal">
-          <button type="button" class="btn-outline" id="btn-print-menu-secondary" style="font: inherit;">Menü als PDF speichern (Druckdialog)</button>
+          <div class="sw-menu-panel is-active reveal">
+            <h3 class="sw-menu-cat">Salate</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">01. Hirtensalat</span>
+                  <span class="sw-menu-item__price">4,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">02. Hirtensalat mit Feta Käse</span>
+                  <span class="sw-menu-item__price">7,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">03. Kräuter Blätter Salat</span>
+                  <span class="sw-menu-item__price">7,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">04. Kräuter Blätter Salat mit Feta Käse</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">05. Kräuter Blätter Salat mit Büffelmozzarella</span>
+                  <span class="sw-menu-item__price">11,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Tägliche Teiggerichte (Hauseigene Herstellung)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">06. Hauseigene Türkische Tortellini</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">07. Hauseigene Pide mit Döner (oder Rinder-Lamm-Mix)</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">08. Hauseigene Lammfleisch Pide</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">09. Hauseigene Lahmacun</span>
+                  <span class="sw-menu-item__price">3,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">10. Hauseigene Lahmacun Dürüm</span>
+                  <span class="sw-menu-item__price">5,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">11. Hauseigene Lahmacun mit Döner</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">12. Hauseigene Gemüse Pide</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Tägliche Tagesgerichte (Tontopf / Kiremitte Kebap)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 1: Lammfleisch Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">14,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 2: Hähnchen Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">12,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 3: Lammfrikadellen Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">13,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 4: Garnelen Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">19,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 5: Gemüse Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">10,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wechselnde Tagessuppen</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Linsensuppe</span>
+                  <span class="sw-menu-item__price">4,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Hähnchensuppe</span>
+                  <span class="sw-menu-item__price">5,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Lammfleischsuppe</span>
+                  <span class="sw-menu-item__price">6,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wet Aged Spezial Döner &amp; Pommes</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">13. Wet Aged Döner im Brot</span>
+                  <span class="sw-menu-item__price">8,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">14. Wet Aged Döner auf Teller</span>
+                  <span class="sw-menu-item__price">14,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">15. Iskender Döner</span>
+                  <span class="sw-menu-item__price">15,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">16. Wet Aged Dürüm Döner</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Pommes klein</span>
+                  <span class="sw-menu-item__price">2,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Pommes groß</span>
+                  <span class="sw-menu-item__price">3,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Pommes mit Wet Aged Döner</span>
+                  <span class="sw-menu-item__price">7,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Grillgerichte</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">20. Adana Hackspieß Teller scharf</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">21. Urfa Hackspieß Teller</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">22. Gemischter Grill Teller</span><span class="sw-menu-item__price">23,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">23. Lammkotelett</span><span class="sw-menu-item__price">21,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">24. Lammspieß Teller</span><span class="sw-menu-item__price">19,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">25. Frikadellen mit Lammfleisch auf Grill</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">26. Sultan Kebap Grillteller für 2 Personen</span><span class="sw-menu-item__price">49,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">27. Sultan Kebap Grillteller für 4 Personen</span><span class="sw-menu-item__price">94,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">28. Hähnchenkotelett</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">29. Hähnchenspieß</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">30. Adana Dürüm</span><span class="sw-menu-item__price">9,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">31. Hähnchenspieß Dürüm</span><span class="sw-menu-item__price">9,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">32. Lammspieß Dürüm</span><span class="sw-menu-item__price">9,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Steakspezialitäten</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">33. Rump Steak (ca. 350 g)</span><span class="sw-menu-item__price">34,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">34. Filet Steak (ca. 300 g)</span><span class="sw-menu-item__price">39,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">35. Cowboy Steak (ca. 1000 g)</span><span class="sw-menu-item__price">49,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">36. T-Bone Steak (ca. 1000 g)</span><span class="sw-menu-item__price">49,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Büffel Steaks</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">37. Büffel Filet Steak (ca. 250 g)</span><span class="sw-menu-item__price">44,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">38. Büffel Ribeye Steak (ca. 300 g)</span><span class="sw-menu-item__price">44,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wagyu Steaks</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">39. Wagyu Filet (ca. 200 g)</span><span class="sw-menu-item__price">129,00 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">40. Wagyu Roastbeef (ca. 300 g)</span><span class="sw-menu-item__price">149,00 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">41. Wagyu Ribeye (ca. 300 g)</span><span class="sw-menu-item__price">149,00 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Beilagen &amp; Saucen (für Steaks)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Rahmspinat mit Sahne</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Bratkartoffeln mit Rosmarin</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Süßkartoffel Pommes</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sauce Hollandaise</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sauce Béarnaise</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sauce Pfeffer</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Kalte Getränke</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Coca Cola, Fanta, Sprite, Mezzo Mix (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Uludağ (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Mineralwasser (0,25 l)</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Mineralwasser (0,75 l)</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Orangen-Kirsch-Banane-Multi (0,2 l)</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Ayran hausgemacht (0,33 l)</span><span class="sw-menu-item__price">1,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Eistee Pfirsich, Zitrone (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Ginger (0,2 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Bitter (0,2 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Red Bull (0,25 l)</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Malzbier (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Krombacher alkoholfrei (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wein &amp; Sekt (Natureo alkoholfrei)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Rotwein Natureo (0,2 l)</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Weißwein Natureo (0,2 l)</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sekt Natureo Seco (0,2 l)</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Heiße Getränke</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Café Crema</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Espresso</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Cappuccino</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Latte</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Milchkaffee</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Türkischer Kaffee</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Kakao</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Nachtisch</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">42. Katmer</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">43. Künefe</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">44. Milchreis mit Vanille</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">45. Mascarpone</span><span class="sw-menu-item__price">1,00 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">46. Maraş Eis</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+            </div>
+                </div>
+                <p class="sw-menu-item__desc">Täglich frisch — cremig und erfrischend.</p>
+              </article>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px; text-align: center;" class="reveal">
+            <button type="button" class="btn-print" id="btn-print-menu-secondary" aria-label="Speisekarte drucken">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+              Drucken
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -949,6 +1307,7 @@
       }
       document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', openPrintDialog);
       document.getElementById('btn-print-menu-secondary') && document.getElementById('btn-print-menu-secondary').addEventListener('click', openPrintDialog);
+
     })();
   </script>
 </body>
