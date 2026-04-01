@@ -6,6 +6,7 @@
   <title>La Savi Steakhouse Duisburg | Premium Steaks & Grill</title>
   <meta name="description" content="La Savi Steakhouse in Duisburg: Premium Fleisch, Steaks, Döner, Lamm und Grill-Spezialitäten. Hausgemachter Ayran, freundlicher Service und stilvolle Atmosphäre.">
   <meta name="theme-color" content="#0c0a09">
+  <link rel="icon" href="logo-la-savi.webp" type="image/webp">
   <meta property="og:title" content="La Savi Steakhouse Duisburg">
   <meta property="og:description" content="Modernes Steakhouse mit Premium Fleisch, Grill-Spezialitäten und stilvoller Atmosphäre in Duisburg.">
   <meta property="og:type" content="website">
@@ -185,6 +186,217 @@
       border-radius: var(--radius-full);
     }
     .skip-link:focus { top: var(--space-4); }
+
+    /* —— Beef & Glory–inspiriert: dunkle Leiste + Teaser mit Logo —— */
+    .bag-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      isolation: isolate;
+      background: rgba(5, 5, 5, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.22);
+      transition: box-shadow var(--transition);
+    }
+    .bag-header.scrolled {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+    .bag-header.site-header.scrolled {
+      border-color: rgba(201, 162, 39, 0.3);
+      background: rgba(4, 4, 3, 0.96);
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+    }
+    .bag-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      flex: 1;
+      min-width: 0;
+      position: relative;
+    }
+    .bag-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(--space-4);
+    }
+    .bag-nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      min-height: 3.25rem;
+      padding-block: var(--space-3);
+    }
+    .bag-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem 0.15rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .bag-links a {
+      color: rgba(245, 236, 220, 0.82);
+      padding: 0.35rem 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+    .bag-links a:hover,
+    .bag-links a:focus-visible {
+      color: #f5ecd8;
+      background: rgba(201, 162, 39, 0.12);
+    }
+    .bag-links .sep {
+      color: rgba(201, 162, 39, 0.45);
+      user-select: none;
+      font-weight: 400;
+    }
+    .bag-meta {
+      text-align: right;
+      font-size: 0.7rem;
+      line-height: 1.45;
+      color: rgba(230, 220, 205, 0.75);
+      max-width: 22rem;
+    }
+    .bag-meta strong {
+      color: #e8d5a8;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .bag-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .bag-header .theme-toggle,
+    .bag-header .menu-toggle {
+      border-color: rgba(201, 162, 39, 0.25);
+      background: rgba(255, 255, 255, 0.04);
+      color: #e8d5a8;
+    }
+    .bag-header .site-nav a {
+      color: rgba(245, 236, 220, 0.88);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+    .bag-header .site-nav a:hover {
+      color: #fff;
+      background: rgba(201, 162, 39, 0.15);
+    }
+    .bag-header .site-nav .nav-sep {
+      color: rgba(201, 162, 39, 0.5);
+      font-size: 0.85rem;
+      font-weight: 400;
+      padding: 0 0.1rem;
+      user-select: none;
+      pointer-events: none;
+    }
+    @media (min-width: 761px) {
+      .bag-header .site-nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.1rem 0;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    .bag-teaser {
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201, 162, 39, 0.12), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(107, 28, 28, 0.15), transparent 50%),
+        #050504;
+      color: #f5f0e8;
+      padding-bottom: clamp(var(--space-16), 12vw, var(--space-24));
+    }
+    .bag-trennline {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #a8893d 15%, #e8c060 50%, #a8893d 85%, transparent);
+      box-shadow: 0 0 24px rgba(232, 192, 96, 0.35);
+    }
+    .bag-teaser-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: clamp(var(--space-8), 6vw, var(--space-16));
+      align-items: center;
+      padding-top: clamp(var(--space-12), 10vw, var(--space-20));
+    }
+    .bag-story p {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.5vw + 1rem, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: rgba(255, 252, 245, 0.92);
+      max-width: none;
+      margin: 0;
+    }
+    .bag-story .gold {
+      color: #e8c060;
+      text-shadow: 0 0 40px rgba(232, 192, 96, 0.2);
+    }
+    .bag-scroll {
+      display: inline-flex;
+      margin-top: var(--space-8);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      align-items: center;
+      justify-content: center;
+      color: #e8c060;
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .bag-scroll:hover {
+      background: rgba(201, 162, 39, 0.12);
+      transform: translateY(3px);
+    }
+    .bag-logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bag-logo-wrap a {
+      display: block;
+      filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.55));
+      transition: transform var(--transition);
+    }
+    .bag-logo-wrap a:hover {
+      transform: scale(1.02);
+    }
+    .bag-logo {
+      width: min(100%, 22rem);
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 900px) {
+      .bag-teaser-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .bag-story { order: 2; }
+      .bag-logo-wrap { order: 1; }
+      .bag-meta { text-align: left; width: 100%; }
+      .bag-nav-row { flex-direction: column; align-items: stretch; }
+      .bag-actions { justify-content: flex-end; }
+    }
 
     .container {
       width: min(calc(100% - 2rem), var(--content-default));
@@ -531,6 +743,30 @@
       max-width: 44rem;
     }
     .section-heading h2 { font-size: var(--text-2xl); }
+    .steak-tagline {
+      margin-top: var(--space-3);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .bag-look-small {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2vw + 0.5rem, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      margin: 0 0 0.15rem;
+      max-width: none;
+    }
+    .bag-look-big {
+      font-size: clamp(2rem, 3.5vw + 1rem, 3.6rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: var(--space-4);
+    }
 
     .highlights-grid {
       display: grid;
@@ -885,8 +1121,17 @@
         box-shadow: var(--shadow-lg);
         gap: 0;
       }
+      .bag-header .site-nav {
+        top: calc(100% + 0.35rem);
+        left: 0;
+        right: 0;
+        background: rgba(12, 10, 8, 0.98);
+        border: 1px solid rgba(201, 162, 39, 0.22);
+        border-radius: var(--radius-lg);
+      }
       .site-nav a { border-radius: var(--radius-md); }
       .site-nav.open { display: flex; }
+      .bag-header .site-nav .nav-sep { display: none; }
       .nav-wrap { gap: var(--space-2); }
       .hero { padding-top: var(--space-12); }
       .hero-card { min-height: auto; }
@@ -898,33 +1143,27 @@
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="La Savi Startseite">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 16C24 10 39 10 46 16C50 19 50 25 47 29L34 47C33 49 31 49 30 47L17 29C14 25 14 19 17 16Z" stroke="currentColor" stroke-width="2.7"/>
-            <path d="M24 21C29 18 35 18 40 21" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/>
-            <path d="M27 27C30 25 34 25 37 27" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/>
-            <path d="M32 16V8" stroke="currentColor" stroke-width="2.7" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>La Savi</strong>
-          <span>Steakhouse Duisburg</span>
-        </span>
-      </a>
-
-      <div class="nav-wrap">
+  <header class="bag-header site-header" id="top">
+    <div class="container bag-nav-row">
+      <div class="bag-left">
         <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
-          <a href="#highlights">Highlights</a>
+          <a href="#highlights">Über uns</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
           <a href="#speisekarte">Speisekarte</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
           <a href="#bewertungen">Bewertungen</a>
-          <a href="#kontakt">Kontakt</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a href="#kontakt">Reservierung · Kontakt</a>
         </nav>
+      </div>
+      <div class="bag-right">
+        <div class="bag-meta">
+          <p><strong>LA SAVI STEAKHOUSE</strong> — Duisburg · Untermauerstraße 4</p>
+          <p><strong>Mo – Sa:</strong> 12:00 – 22:00 Uhr · <strong>So:</strong> geschlossen</p>
+        </div>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Farbschema wechseln">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
@@ -932,54 +1171,30 @@
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Premium Fleisch · Duisburg</span>
-          <h1>
-            <span class="hero-line">Feine Grillkunst</span>
-            <span class="hero-line accent">mit Charakter.</span>
-          </h1>
-          <p>Im La Savi Steakhouse treffen saftige Steaks, würziges Lamm, frische Döner-Spezialitäten und hausgemachter Ayran auf einen stilvollen Abend in dunkler, eleganter Atmosphäre.</p>
-          <div class="hero-actions">
-            <a class="cta" href="#kontakt">Tisch reservieren</a>
-            <a class="secondary-btn" href="#speisekarte">Zur Speisekarte</a>
-          </div>
-        </div>
-
-        <aside class="hero-card reveal" aria-label="Restaurant Highlights">
-          <div class="hero-card-top">
-            <div>
-              <span>Signature Experience</span>
-              <strong>Steakhouse trifft Grillkultur</strong>
-            </div>
-            <span>Heute noch frei</span>
-          </div>
-
-          <div class="hero-platter" aria-hidden="true">
-            <div class="steak-visual"></div>
-          </div>
-
-          <div class="hero-card-bottom">
-            <div class="hero-stat">
-              <span>Hausspecial</span>
-              <strong>Premium Cuts & Grillgerichte</strong>
-            </div>
-            <div class="hero-stat">
-              <span>Service</span>
-              <strong>Freundlich, aufmerksam, herzlich</strong>
-            </div>
-          </div>
-        </aside>
+  <section class="bag-teaser" aria-label="Willkommen">
+    <div class="bag-trennline" aria-hidden="true"></div>
+    <div class="container bag-teaser-inner">
+      <div class="bag-story reveal">
+        <p>Erleben Sie</p>
+        <p>die Geschichte</p>
+        <p class="gold">von La Savi</p>
+        <a class="bag-scroll" href="#highlights" aria-label="Weiter zu Über uns">↓</a>
       </div>
-    </section>
+      <div class="bag-logo-wrap reveal">
+        <a href="#top" aria-label="La Savi — nach oben">
+          <img class="bag-logo" src="logo-la-savi.webp" width="400" height="400" alt="La Savi Steakhouse — Logo mit Stier und Schriftzug">
+        </a>
+      </div>
+    </div>
+  </section>
 
+  <main id="main">
     <section class="section alt" id="highlights">
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">Warum La Savi</span>
-          <h2>Genuss, Qualität und Gastfreundschaft an einem Ort.</h2>
+          <p class="bag-look-small">Werfen Sie einen Blick</p>
+          <h2 class="bag-look-big">hinter die Kulissen</h2>
           <p>Die Handschrift von La Savi liegt in hochwertigem Fleisch, souveräner Zubereitung und einer Atmosphäre, die modern wirkt und trotzdem entspannt bleibt.</p>
         </div>
 
@@ -1015,6 +1230,7 @@
           <div class="section-heading reveal">
             <span class="eyebrow">Speisekarte</span>
             <h2>Beliebte Gerichte aus unserer Küche.</h2>
+            <p class="steak-tagline">Unser Fleisch · Ihr Genuss</p>
             <p>Eine kleine Auswahl unserer gefragtesten Teller — markant, herzhaft und für Gäste, die Geschmack mit Qualität verbinden möchten.</p>
           </div>
 
