@@ -547,7 +547,7 @@
     /* —— Print —— */
     @media print {
       @page { size: A4; margin: 14mm; }
-      .site-header, .hero-cta, .menu-toggle, .nav-mobile, .btn-print, .contact-cta-wrap, .footer, .skip, .social-row { display: none !important; }
+      .site-header, .hero-cta, .menu-toggle, .nav-mobile, .btn-print, #btn-print-menu-secondary, .contact-cta-wrap, .footer, .skip, .social-row { display: none !important; }
       body { background: #fff !important; color: #111 !important; font-size: 11pt; }
       .hero { min-height: auto; padding-top: 0; background: #fff !important; border: none; }
       .hero h1 { color: #000 !important; font-size: 22pt; }
@@ -645,7 +645,7 @@
           </button>
         </div>
 
-        <p class="reveal" style="text-align:center; color: var(--text-muted); font-size: 14px; margin: -32px 0 40px; max-width: 52ch; margin-inline: auto;">Vollständige Karte mit allen Gerichten: PDF öffnen oder ausdrucken. Auszug unserer Highlights:</p>
+        <p class="reveal" style="text-align:center; color: var(--text-muted); font-size: 14px; margin: -32px 0 40px; max-width: 52ch; margin-inline: auto;">Tipp: <strong>Menü als PDF drucken</strong> öffnet den Druckdialog — dort „Als PDF speichern“ wählen. Auszug unserer Highlights:</p>
 
         <div class="menu-grid">
           <div>
@@ -706,7 +706,7 @@
         </div>
 
         <div style="margin-top: 48px; text-align: center;" class="reveal">
-          <a class="btn-outline" href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">Vollständige Speisekarte (PDF)</a>
+          <button type="button" class="btn-outline" id="btn-print-menu-secondary" style="font: inherit;">Menü als PDF speichern (Druckdialog)</button>
         </div>
       </div>
     </section>
@@ -866,18 +866,11 @@
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
       }
 
-      document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', function () {
-        var pdf = 'media/docs/La-Savi-Speisekarte.pdf';
-        var w = window.open(pdf, '_blank', 'noopener,noreferrer');
-        if (w) {
-          w.focus();
-          setTimeout(function () {
-            try { w.print(); } catch (e) {}
-          }, 500);
-        } else {
-          window.location.href = pdf;
-        }
-      });
+      function openPrintDialog() {
+        window.print();
+      }
+      document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', openPrintDialog);
+      document.getElementById('btn-print-menu-secondary') && document.getElementById('btn-print-menu-secondary').addEventListener('click', openPrintDialog);
     })();
   </script>
 </body>
