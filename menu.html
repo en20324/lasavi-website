@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Savi | Speisekarte</title>
+  <meta name="description" content="La Savi Speisekarte mit kompletter Auswahl: Steaks, Grill, Döner, Beilagen, Getränke und Desserts.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="logo-la-savi.webp" type="image/webp">
+  <style>
+    :root {
+      --black: #000;
+      --gold: #d4af37;
+      --text: #d0d0d0;
+      --muted: #8a8a8a;
+      --panel: #111;
+      --panel2: #171717;
+      --border: #2b2b2b;
+      --font-serif: Georgia, "Times New Roman", Times, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --header-h: 72px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-sans); color: var(--text); background: var(--black); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 50; height: var(--header-h);
+      background: rgba(0,0,0,.94); border-bottom: 1px solid rgba(212,175,55,.35);
+    }
+    .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 42px; height: 42px; object-fit: contain; }
+    .brand-text { font-family: var(--font-serif); letter-spacing: .22em; text-transform: uppercase; color: #fff; }
+    .nav { display: flex; gap: 10px; align-items: center; }
+    .nav a { padding: 9px 12px; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--text); border-radius: 4px; }
+    .nav a:hover { color: var(--gold); background: rgba(212,175,55,.08); }
+    .lang { display: inline-flex; gap: 6px; margin-right: 6px; }
+    .lang button { border: 1px solid #555; border-radius: 4px; padding: 8px 10px; font-size: 12px; font-weight: 700; color: #aaa; background: #1a1a1a; }
+    .lang button.active { background: var(--gold); border-color: var(--gold); color: #111; }
+    .btn-reserve { background: linear-gradient(145deg,#d4af37,#c9a961); color: #111; font-weight: 700; padding: 11px 18px; border-radius: 2px; text-transform: uppercase; font-size: 13px; letter-spacing: .05em; }
+
+    main { padding: 46px 0 80px; }
+    .page-head { text-align: center; margin-bottom: 36px; }
+    .page-head h1 { color: #fff; font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: .08em; text-transform: uppercase; }
+    .page-head p { margin-top: 12px; color: var(--muted); }
+    .print-wrap { text-align: center; margin-bottom: 34px; }
+    .print-btn { border: 1px solid rgba(212,175,55,.6); color: #f3d989; padding: 12px 18px; border-radius: 8px; font-weight: 700; background: rgba(212,175,55,.08); }
+
+    .menu-cat { margin-top: 34px; }
+    .menu-cat h2 { font-family: var(--font-serif); color: #f3d989; letter-spacing: .12em; font-size: 18px; text-transform: uppercase; margin-bottom: 14px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 36px; }
+    .item { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+    .row { display: flex; justify-content: space-between; gap: 12px; }
+    .name { color: #fff; font-size: 14px; }
+    .price { color: var(--gold); font-weight: 700; white-space: nowrap; }
+
+    .footer { border-top: 1px solid rgba(212,175,55,.3); background: #0d0d0d; padding: 36px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .footer h4 { color: var(--gold); text-transform: uppercase; letter-spacing: .14em; font-size: 12px; margin-bottom: 8px; }
+    .footer p, .footer a { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .social a { display: inline-flex; margin-right: 12px; }
+    .copyright { text-align: center; color: var(--muted); margin-top: 16px; font-size: 13px; }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .grid, .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      @page { size: A4; margin: 10mm; }
+      header, footer, .print-wrap { display: none !important; }
+      body { background: #fff !important; color: #111 !important; }
+      .item { page-break-inside: avoid; border-color: #ddd; }
+      .name { color: #000 !important; }
+      .price { color: #8a6a17 !important; }
+      .menu-cat h2 { color: #173f31 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="logo-la-savi.webp" alt="La Savi"><span class="brand-text">La Savi</span></a>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home">Home</a>
+        <a href="menu.html" data-i18n="nav_menu">Speisekarte</a>
+        <a href="index.html#reservierung" data-i18n="nav_reservation">Reservierung</a>
+        <a href="index.html#ueber-uns" data-i18n="nav_about">Über uns</a>
+        <a href="index.html#kontakt" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="lang">
+          <button id="lang-de" class="active">🇩🇪 DE</button>
+          <button id="lang-en">🇬🇧 EN</button>
+        </div>
+        <a class="btn-reserve" href="index.html#reservierung" data-i18n="btn_reservations">RESERVATIONS</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-head">
+        <h1 data-i18n="menu_title">UNSERE SPEISEKARTE</h1>
+        <p data-i18n="menu_subtitle">Genießen Sie unsere vollständige Auswahl</p>
+      </div>
+      <div class="print-wrap">
+        <button class="print-btn" id="print-btn" data-i18n="print_btn">🖨️ Menü als PDF drucken</button>
+      </div>
+      <div id="menu-root"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4 data-i18n="footer_contact">Kontakt</h4><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div>
+        <div><h4 data-i18n="footer_hours">Öffnungszeiten</h4><p data-i18n="footer_hours_text">Mon–Sat: 12:00–22:00<br>Sunday: Closed</p></div>
+        <div class="social"><h4>Social</h4><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></div>
+      </div>
+      <p class="copyright">© 2026 La Savi | Premium Steakhouse Duisburg</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var i18n = {
+        de: {
+          nav_home: "Home", nav_menu: "Speisekarte", nav_reservation: "Reservierung", nav_about: "Über uns", nav_contact: "Kontakt",
+          btn_reservations: "RESERVATIONS", menu_title: "UNSERE SPEISEKARTE", menu_subtitle: "Genießen Sie unsere vollständige Auswahl",
+          print_btn: "🖨️ Menü als PDF drucken", footer_contact: "Kontakt", footer_hours: "Öffnungszeiten", footer_hours_text: "Mo–Sa: 12:00–22:00<br>Sonntag: Geschlossen"
+        },
+        en: {
+          nav_home: "Home", nav_menu: "Menu", nav_reservation: "Reservation", nav_about: "About Us", nav_contact: "Contact",
+          btn_reservations: "RESERVATIONS", menu_title: "OUR MENU", menu_subtitle: "Enjoy our complete selection",
+          print_btn: "🖨️ Print Menu as PDF", footer_contact: "Contact", footer_hours: "Opening Hours", footer_hours_text: "Mon–Sat: 12:00–22:00<br>Sunday: Closed"
+        }
+      };
+      var cats = [
+        ["SALADS",[["01. Shepherd's Salad","€4,90"],["02. Shepherd's Salad with Feta cheese","€7,90"],["03. Herb leaves salad","€7,90"],["04. Herb leaves salad with Feta cheese","€9,90"],["05. Herb leaves salad with buffalo mozzarella","€11,90"]]],
+        ["DAILY DOUGH DISHES (Homemade)",[["06. Turkish Tortellini (Filled with minced meat with butter and yogurtsauce)","€9,90"],["07. Dough ship with kebab meat (or minced meat)","€9,90"],["08. Dough ship with Lamb cubes and Gouda cheese","€9,90"],["09. Turkish pizza without everything","€3,90"],["10. Turkish pizza with salad","€5,90"],["11. Turkish pizza with kebab meat","€9,90"],["12. Dough ship with Vegetables","€9,90"]]],
+        ["DAILY DISHES (Clay pot dishes from the oven)",[["MENU 1: Lamb meat clay pot with rice","€14,90"],["MENU 2: Chicken clay pot with rice","€12,90"],["MENU 3: Lamb meatballs clay pot with rice","€13,90"],["MENU 4: Shrimp clay pot with rice","€19,90"],["MENU 5: Vegetable clay pot with rice","€10,90"]]],
+        ["CHANGING DAILY SOUPS",[["Lentil soup","€4,90"],["Chicken soup","€5,90"],["Lamb soup","€6,90"]]],
+        ["WET AGED SPECIAL DÖNER & FRIES",[["13. Kebab in bread","€8,90"],["14. Kebab plate with fries and salad","€14,90"],["15. Iskender Döner (Kebab plate with sauce and yogurt)","€15,90"],["16. Kebab wrap","€9,90"],["Small fries","€2,90"],["Big fries","€3,90"],["Fries kebab (Fries with Wet Aged Döner)","€7,90"]]],
+        ["GRILL DISHES",[["20. Adana minced skewer plate hot","€17,90"],["21. Urfa minced skewer plate","€17,90"],["22. Mixed grill plate","€23,90"],["23. Lamb chop","€21,90"],["24. Lamb skewer plate","€19,90"],["25. Meatballs on the grill (with lamb meat)","€17,90"],["26. Sultan Kebap Grill plate for 2 persons","€49,90"],["27. Sultan Kebap Grill plate for 4 persons","€94,90"],["28. Chicken chop","€17,90"],["29. Chicken skewer","€17,90"],["30. Adana minced skewer wrap","€9,90"],["31. Chicken skewer wrap","€9,90"],["32. Lamb skewer wrap","€9,90"]]],
+        ["STEAK SPECIALTIES - Dry Aged (matured 3-4 weeks)",[["33. Rump Steak (approx. 350 gr)","€34,90"],["34. Filet Steak (approx. 300 gr)","€39,90"],["35. Cowboy Steak (approx. 1000 gr)","€49,90"],["36. T-Bone Steak (approx. 1000 gr)","€49,90"]]],
+        ["STEAK SPECIALTIES - Buffalo Steaks",[["37. Buffalo Filet Steak (approx. 250gr)","€44,90"],["38. Buffalo Ribeye Steak (approx. 300gr)","€44,90"]]],
+        ["STEAK SPECIALTIES - Wagyu Steaks",[["39. Wagyu Filet (approx. 200gr)","€129,00"],["40. Wagyu Roastbeef (approx. 300gr)","€149,00"],["41. Wagyu Ribeye (approx. 300gr)","€149,00"]]],
+        ["SIDE DISHES & SAUCES (for Steaks)",[["Cream spinach","€4,90"],["Fried potatoes with rosemary","€4,90"],["Sweet potato fries","€4,90"],["Hollandaise sauce","€4,90"],["Béarnaise sauce","€4,90"],["Pepper sauce","€4,90"]]],
+        ["COLD DRINKS",[["Coca Cola, Fanta, Sprite, Mezzo Mix (0.33l)","€2,90"],["Uludağ (Turkish soda) (0.33l)","€2,90"],["Mineral water with or without carbonation (0.25l)","€2,50"],["Mineral water with or without carbonation (0.75l)","€4,90"],["Orange-Cherry-Banana-Multi juice (0.2l)","€2,50"],["Ayran (homemade Turkish buttermilk) (0.33l)","€1,90"],["Ice tea (Peach, Lemon) (0.33l)","€2,90"],["Ginger Ale (0.2l)","€2,90"],["Bitter Lemon (0.2l)","€2,90"],["Red Bull (0.25l)","€2,50"],["Malt beer (0.33l)","€2,90"],["Krombacher (non-alcoholic beer) (0.33l)","€2,90"]]],
+        ["WINE & SPARKLING WINE (Natureo Non-Alcoholic)",[["Red wine Natureo (0.2l)","€7,90"],["White wine Natureo (0.2l)","€7,90"],["Sparkling wine Natureo Seco (0.2l)","€7,90"]]],
+        ["HOT DRINKS",[["Cafe Crema","€2,50"],["Espresso","€2,50"],["Cappuccino","€2,90"],["Latte","€2,90"],["Milk coffee","€2,90"],["Turkish Coffee","€2,50"],["Hot Cocoa","€2,90"]]],
+        ["DESSERTS",[["42. Katmer (crisp flaky pastry with Cream and pistachios)","€7,90"],["43. Künefe (String dough with cheese)","€7,90"],["44. Rice pudding vanilla","€4,90"],["45. Mascarpone","€1,00"],["46. Maras Ice Cream","€2,90"]]]
+      ];
+
+      function renderMenu() {
+        var root = document.getElementById("menu-root");
+        root.innerHTML = cats.map(function (cat) {
+          return '<section class="menu-cat"><h2>' + cat[0] + '</h2><div class="grid">' + cat[1].map(function (i) {
+            return '<article class="item"><div class="row"><span class="name">' + i[0] + '</span><strong class="price">' + i[1] + '</strong></div></article>';
+          }).join("") + '</div></section>';
+        }).join("");
+      }
+      function applyI18n(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var key = el.getAttribute("data-i18n");
+          var val = i18n[lang][key];
+          if (!val) return;
+          if (val.indexOf("<br>") >= 0) el.innerHTML = val; else el.textContent = val;
+        });
+        document.getElementById("lang-de").classList.toggle("active", lang === "de");
+        document.getElementById("lang-en").classList.toggle("active", lang === "en");
+      }
+      function setLang(lang) { localStorage.setItem("language", lang); applyI18n(lang); }
+
+      document.getElementById("lang-de").addEventListener("click", function () { setLang("de"); });
+      document.getElementById("lang-en").addEventListener("click", function () { setLang("en"); });
+      document.getElementById("print-btn").addEventListener("click", function () { window.print(); });
+      renderMenu();
+      applyI18n(localStorage.getItem("language") || "de");
+    })();
+  </script>
+</body>
+</html>

@@ -879,7 +879,7 @@
       </a>
       <nav class="nav-desktop" aria-label="Hauptnavigation">
         <a href="#home" id="nav-home-desktop">Home</a>
-        <a href="#spezialitaeten" id="nav-menu-desktop">Menü</a>
+        <a href="menu.html" id="nav-menu-desktop">Menü</a>
         <a href="#reservierung" id="nav-reservation-desktop">Reservierung</a>
         <a href="#ueber-uns" id="nav-about-desktop">Über uns</a>
         <a href="#kontakt" id="nav-contact-desktop">Kontakt</a>
@@ -896,7 +896,7 @@
       </div>
       <nav class="nav-mobile" id="mobile-nav" aria-label="Mobilmenü">
         <a href="#home" id="nav-home-mobile">Home</a>
-        <a href="#spezialitaeten" id="nav-menu-mobile">Menü</a>
+        <a href="menu.html" id="nav-menu-mobile">Menü</a>
         <a href="#reservierung" id="nav-reservation-mobile">Reservierung</a>
         <a href="#ueber-uns" id="nav-about-mobile">Über uns</a>
         <a href="#kontakt" id="nav-contact-mobile">Kontakt</a>
@@ -912,7 +912,7 @@
         <p class="tagline" id="hero-tagline">Genießen Sie Dry-Aged Steaks und authentische Grillspezialitäten — mit Herz, Handwerk und höchstem Anspruch.</p>
         <div class="hero-cta">
           <a class="btn-gold" href="#reservierung" id="hero-btn-reserve">Reservierung</a>
-          <a class="btn-outline" href="#spezialitaeten" id="hero-btn-menu">Menü ansehen</a>
+          <a class="btn-outline" href="menu.html" id="hero-btn-menu">Menü ansehen</a>
         </div>
         <p class="hero-sub" id="hero-subline">Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen</p>
       </div>
@@ -946,15 +946,15 @@
         <img src="images/spezialitaeten-hero.png" width="680" height="386" alt="La Savi Restaurant in Duisburg bei Abendbeleuchtung" fetchpriority="high" loading="eager">
         <div class="sw-menu-hero__text">
           <p class="sw-menu-hero__eyebrow">LA SAVI · DUISBURG</p>
-          <h2 class="sw-menu-hero__title" id="menu-page-title">UNSERE SPEZIALITÄTEN</h2>
+          <h2 class="sw-menu-hero__title" id="menu-page-title">UNSERE TOP-SPEZIALITÄTEN</h2>
         </div>
       </div>
       <div class="sw-menu-light">
         <div class="container">
           <div class="sw-menu-download-wrap reveal">
-            <button type="button" class="sw-menu-download" id="btn-print-menu">Menü als PDF drucken</button>
+            <button type="button" class="sw-menu-download" id="btn-print-menu">📋 Vollständige Speisekarte anzeigen</button>
           </div>
-          <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Im Druckdialog „Als PDF speichern“ wählen — ohne externe Datei.</p>
+          <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Top-Auswahl aus unserer Karte.</p>
           <hr class="sw-menu-rule" aria-hidden="true">
           <div class="sw-menu-panel is-active reveal" id="menu-panel-main">
             <h3 class="sw-menu-cat">Salate</h3>
@@ -1221,7 +1221,7 @@
           <div style="margin-top: 40px; text-align: center;" class="reveal">
             <button type="button" class="btn-print" id="btn-print-menu-secondary" aria-label="Speisekarte drucken">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
-              Menü als PDF speichern (Druckdialog)
+              📋 Vollständige Speisekarte anzeigen
             </button>
           </div>
         </div>
@@ -1387,7 +1387,7 @@
       }
 
       function openPrintDialog() {
-        window.print();
+        window.location.href = 'menu.html';
       }
       document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', openPrintDialog);
       document.getElementById('btn-print-menu-secondary') && document.getElementById('btn-print-menu-secondary').addEventListener('click', openPrintDialog);
@@ -1438,6 +1438,20 @@
         menuPanelEnHtml += makeCat('Desserts', [['42. Katmer (crisp flaky pastry with Cream and pistachios)', '7.90 €'], ['43. Künefe (String dough with cheese)', '7.90 €'], ['44. Rice pudding vanilla', '4.90 €'], ['45. Mascarpone', '1.00 €'], ['46. Maras Ice Cream', '2.90 €']]);
       }
 
+      // Homepage zeigt nur gekürzte Top-Highlights.
+      if (menuPanelMain) {
+        menuPanelDeHtml = ''
+          + makeCat('STEAKS', [['T-Bone Steak (ca. 1000 gr)', '€49,90'], ['Wagyu Filet (ca. 200gr)', '€129,00']])
+          + makeCat('GRILL', [['Adana Hackspieß Teller scharf', '€17,90'], ['Sultan Kebap Grillteller für 2 Personen', '€49,90']])
+          + makeCat('WET AGED DÖNER', [['Iskender Döner', '€15,90']])
+          + makeCat('GETRÄNKE', [['Ayran (hausgemacht) (0,33l)', '€1,90'], ['Cafe Crema', '€2,50']]);
+        menuPanelEnHtml = ''
+          + makeCat('STEAKS', [['T-Bone Steak (approx. 1000 gr)', '€49,90'], ['Wagyu Filet (approx. 200gr)', '€129,00']])
+          + makeCat('GRILL', [['Adana minced skewer plate hot', '€17,90'], ['Sultan Kebap Grill plate for 2 persons', '€49,90']])
+          + makeCat('WET AGED DÖNER', [['Iskender Döner (Kebab plate with sauce and yogurt)', '€15,90']])
+          + makeCat('DRINKS', [['Ayran (homemade Turkish buttermilk) (0.33l)', '€1,90'], ['Cafe Crema', '€2,50']]);
+      }
+
       function setTxt(id, text, asHtml) {
         var el = document.getElementById(id);
         if (!el) return;
@@ -1463,7 +1477,7 @@
         setTxt('btn-reserve-mobile', en ? 'RESERVATIONS' : 'Reservierung');
         setTxt('hero-tagline', en ? 'Enjoy premium steaks, authentic grill specialties and homemade delicacies in an elegant atmosphere' : 'Genießen Sie erstklassige Steaks, authentische Grillspezialitäten und hausgemachte Köstlichkeiten in eleganter Atmosphäre');
         setTxt('hero-btn-reserve', en ? 'RESERVATIONS' : 'Reservierung');
-        setTxt('hero-btn-menu', en ? 'Menu' : 'Menü ansehen');
+        setTxt('hero-btn-menu', en ? 'View Menu' : 'Menü ansehen');
         setTxt('hero-subline', en ? 'Untermauerstraße 4, Duisburg | Mon-Sat 12:00-22:00' : 'Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen');
         setTxt('feature-1-title', en ? 'Premium Quality' : 'Höchste Qualität');
         setTxt('feature-1-text', en ? 'Hand-selected premium meat, carefully prepared and perfectly served.' : 'Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.');
@@ -1471,9 +1485,9 @@
         setTxt('feature-2-text', en ? 'Traditional grill artistry with modern excellence – every dish a masterpiece.' : 'Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.');
         setTxt('feature-3-title', en ? 'Cozy Atmosphere' : 'Atmosphere');
         setTxt('feature-3-text', en ? 'Elegant, stylish and inviting – the perfect place for any occasion.' : 'Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.');
-        setTxt('menu-page-title', en ? 'OUR SPECIALTIES' : 'UNSERE SPEZIALITÄTEN');
-        setTxt('btn-print-menu', en ? 'Print Menu as PDF' : 'Menü als PDF drucken');
-        setTxt('btn-print-menu-secondary', en ? 'Save Menu as PDF (Print Dialog)' : 'Menü als PDF speichern (Druckdialog)');
+        setTxt('menu-page-title', en ? 'OUR TOP SPECIALTIES' : 'UNSERE TOP-SPEZIALITÄTEN');
+        setTxt('btn-print-menu', en ? '📋 View Full Menu' : '📋 Vollständige Speisekarte anzeigen');
+        setTxt('btn-print-menu-secondary', en ? '📋 View Full Menu' : '📋 Vollständige Speisekarte anzeigen');
         setTxt('testimonials-title', en ? 'What Our Guests Say' : 'Stimmen unserer Gäste');
         setTxt('reservation-title', en ? 'RESERVE YOUR TABLE' : 'Reservieren Sie Ihren Tisch');
         setTxt('reservation-address-title', en ? 'ADDRESS' : 'Adresse');
