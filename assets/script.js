@@ -26,6 +26,28 @@ function setupMenuModal() {
   });
 }
 
+function openModal(event) {
+  const card = event && event.currentTarget ? event.currentTarget : null;
+  if (!card) return;
+  const modal = document.getElementById("menu-modal");
+  if (!modal) return;
+  const title = document.getElementById("modal-title");
+  const desc = document.getElementById("modal-desc");
+  const price = document.getElementById("modal-price");
+  title.textContent = card.dataset.title || "";
+  desc.textContent = card.dataset.desc || "";
+  price.textContent = card.dataset.price || "";
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const modal = document.getElementById("menu-modal");
+  if (!modal) return;
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
 function setupShareButton() {
   const btn = document.getElementById("share-btn");
   if (!btn) return;
@@ -62,3 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMenuModal();
   setupShareButton();
 });
+
+window.openModal = openModal;
+window.closeModal = closeModal;

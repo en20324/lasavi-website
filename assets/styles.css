@@ -38,9 +38,31 @@ button,a.btn,.btn-modern,.btn-icon-modern,.contact-btn,.social-btn,.btn-large{mi
 .menu-quick-actions{display:flex;flex-direction:column;gap:10px;margin:16px 0 24px}.menu-quick-actions>*{width:100%;justify-content:center}
 .menu-card{background:var(--panel);border:1px solid var(--border);padding:16px;border-radius:8px;min-height:140px;cursor:pointer}.menu-desc{font-size:12px;color:var(--muted);margin-top:4px}
 .menu-modal{display:none;position:fixed;inset:0;z-index:100}.menu-modal.open{display:block}.menu-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.7)}.menu-modal-content{position:relative;max-width:560px;margin:10vh auto;background:#101010;border:1px solid var(--gold);border-radius:10px;padding:20px}
+.spezialitaeten-section,.hauptspeisen-section,.testimonials-section{background:#0a0a0a}
+.section-title{text-align:center;letter-spacing:.08em;color:#fff;font-size:32px;margin:0 0 8px}
+.section-subtitle{text-align:center;color:#999;margin:0 0 28px}
+.spezialitaeten-grid,.hauptspeisen-grid,.testimonials-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.spezialitaeten-card,.hauptspeisen-card,.testimonial-card{background:#1a1a1a;border:1px solid #333;border-left:3px solid var(--gold);border-radius:6px;padding:16px}
+.spezialitaeten-card:hover,.hauptspeisen-card:hover{background:#242424}
+.menu-card-image{width:100%;height:180px;background:#0f0f0f;border-radius:6px;margin-bottom:12px;display:flex;align-items:center;justify-content:center}
+.menu-card-image img,.beef-diagram{max-width:100%;max-height:100%}
+.category-title{color:var(--gold);margin:0 0 14px;font-size:20px}
+.menu-cta-section{text-align:center;padding:24px 0}
+.btn-view-full-menu{display:inline-block;padding:12px 24px;border:2px solid var(--gold);color:var(--gold);border-radius:6px}
+.btn-view-full-menu:hover{background:var(--gold);color:#000}
+.rating-summary{text-align:center;background:#1a1a1a;border:1px solid #333;border-radius:8px;padding:24px;margin-bottom:26px}
+.rating-stars{font-size:26px}
+.rating-text{font-size:22px;color:var(--gold);font-weight:700}
+.review-count{font-size:13px;color:#999;margin:8px 0 16px}
+.btn-read-reviews{display:inline-block;padding:10px 18px;background:var(--gold);color:#000;border-radius:6px}
+.review-header{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.review-text{font-size:13px;color:#b5b5b5;font-style:italic}
+.review-meta{font-size:12px;color:#666;margin-top:10px}
 @media (min-width:480px){h1{font-size:36px}.contact-buttons-grid{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:768px){body{font-size:15px}.container{padding:24px}.brand img{width:140px;height:140px}.hamburger-menu{display:none}.nav-mobile{display:none!important}.nav-desktop{display:flex}.header-contact-buttons{display:flex}.hero-cta-buttons{flex-direction:row;justify-content:center}.hero-cta-buttons .btn-large{width:auto}.menu-items,.menu-grid{grid-template-columns:1fr 1fr}.footer{padding:24px 0;text-align:left}.social-buttons-group{flex-direction:row}}
+@media (min-width:768px){.spezialitaeten-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr)}.hauptspeisen-grid{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1024px){body{font-size:16px}.container{padding:32px;max-width:1200px;margin:0 auto}.brand img{width:160px;height:160px}}
+@media (min-width:1024px){.spezialitaeten-grid{grid-template-columns:repeat(3,1fr)}.hauptspeisen-grid{grid-template-columns:repeat(4,1fr)}.testimonials-grid{grid-template-columns:repeat(3,1fr)}}
 @media (min-width:1366px){.container{max-width:1400px}.brand img{width:200px;height:200px}}
 @media (max-width:479px){.brand img{width:80px;height:80px}}
 @media (max-width:767px){button,a.btn,.btn-modern,.btn-icon-modern,.contact-btn,.social-btn,.btn-large{min-height:48px;font-size:15px}.social-buttons-group{flex-direction:column}.social-btn{width:100%}}
