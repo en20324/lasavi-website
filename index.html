@@ -3,1992 +3,822 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Savi Steakhouse Duisburg | Premium Steaks & Grill</title>
-  <meta name="description" content="La Savi Steakhouse in Duisburg: Premium Fleisch, Steaks, Döner, Lamm und Grill-Spezialitäten. Hausgemachter Ayran, freundlicher Service und stilvolle Atmosphäre.">
-  <meta name="theme-color" content="#0c0a09">
+  <title>La Savi — Premium Steakhouse Duisburg | Dry-Aged Steaks &amp; Grill</title>
+  <meta name="description" content="La Savi Premium Steakhouse in Duisburg. USDA Prime Dry-Aged Steaks, authentische Grillspezialitäten, Wet Aged Döner und hausgemachter Ayran. Reservierung unter +49 163 458 898 8.">
+  <meta name="keywords" content="Steakhouse Duisburg, Premium Steaks, Grill, Restaurant, Reservierung, La Savi, Dry-Aged">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="logo-la-savi.webp" type="image/webp">
-  <meta property="og:title" content="La Savi Steakhouse Duisburg">
-  <meta property="og:description" content="Modernes Steakhouse mit Premium Fleisch, Grill-Spezialitäten und stilvoller Atmosphäre in Duisburg.">
+  <meta property="og:title" content="La Savi — Premium Steakhouse Duisburg">
+  <meta property="og:description" content="Luxuriöses Steakhouse mit Premium Dry-Aged Steaks und Grillkultur.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=zodiak@400,500,700&display=swap" rel="stylesheet">
   <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.8rem);
-      --text-hero: clamp(3rem, 1rem + 6vw, 6.2rem);
-
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --space-24: 6rem;
-      --space-32: 8rem;
-
-      --color-bg: #faf7f2;
-      --color-surface: #ffffff;
-      --color-surface-2: #f5f0e8;
-      --color-surface-offset: #ebe4d8;
-      --color-divider: #ddd4c4;
-      --color-border: rgba(46, 32, 18, 0.1);
-      --color-text: #1c1410;
-      --color-text-muted: #5c5349;
-      --color-text-faint: #8a8074;
-      --color-text-inverse: #0c0a09;
-      --color-primary: #b8822e;
-      --color-primary-hover: #9a6d24;
-      --color-primary-active: #7a5618;
-      --color-primary-highlight: rgba(184, 130, 46, 0.12);
-      --color-gold: #c9a227;
-      --color-wine: #6b1c1c;
-      --color-wine-soft: rgba(107, 28, 28, 0.08);
-      --radius-sm: 0.5rem;
-      --radius-md: 0.875rem;
-      --radius-lg: 1.25rem;
-      --radius-xl: 1.75rem;
-      --radius-full: 9999px;
-      --shadow-sm: 0 4px 20px rgba(28, 20, 16, 0.06);
-      --shadow-md: 0 12px 40px rgba(28, 20, 16, 0.1);
-      --shadow-lg: 0 24px 64px rgba(20, 14, 10, 0.14);
-      --shadow-glow: 0 0 0 1px rgba(184, 130, 46, 0.15), 0 20px 50px rgba(184, 130, 46, 0.12);
-      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
-      --content-default: 1140px;
-      --font-display: 'Zodiak', Georgia, serif;
-      --font-body: 'Satoshi', system-ui, sans-serif;
-    }
-
-    [data-theme="dark"] {
-      --color-bg: #0c0a09;
-      --color-surface: #141210;
-      --color-surface-2: #1a1714;
-      --color-surface-offset: #221e1a;
-      --color-divider: #2a2520;
-      --color-border: rgba(245, 230, 210, 0.1);
-      --color-text: #f5f0e8;
-      --color-text-muted: #b8aea0;
-      --color-text-faint: #7d7368;
-      --color-text-inverse: #0c0a09;
-      --color-primary: #d4a84b;
-      --color-primary-hover: #e4bc68;
-      --color-primary-active: #f0d080;
-      --color-primary-highlight: rgba(212, 168, 75, 0.14);
-      --color-gold: #e8c060;
-      --color-wine: #c45c5c;
-      --color-wine-soft: rgba(196, 92, 92, 0.12);
-      --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.35);
-      --shadow-md: 0 16px 48px rgba(0, 0, 0, 0.45);
-      --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.55);
-      --shadow-glow: 0 0 0 1px rgba(212, 168, 75, 0.2), 0 24px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --color-bg: #0c0a09;
-        --color-surface: #141210;
-        --color-surface-2: #1a1714;
-        --color-surface-offset: #221e1a;
-        --color-divider: #2a2520;
-        --color-border: rgba(245, 230, 210, 0.1);
-        --color-text: #f5f0e8;
-        --color-text-muted: #b8aea0;
-        --color-text-faint: #7d7368;
-        --color-text-inverse: #0c0a09;
-        --color-primary: #d4a84b;
-        --color-primary-hover: #e4bc68;
-        --color-primary-active: #f0d080;
-        --color-primary-highlight: rgba(212, 168, 75, 0.14);
-        --color-gold: #e8c060;
-        --color-wine: #c45c5c;
-        --color-wine-soft: rgba(196, 92, 92, 0.12);
-        --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.35);
-        --shadow-md: 0 16px 48px rgba(0, 0, 0, 0.45);
-        --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.55);
-        --shadow-glow: 0 0 0 1px rgba(212, 168, 75, 0.2), 0 24px 60px rgba(0, 0, 0, 0.4);
-      }
+    /* La Savi Premium — Single-File, System-Fonts, Smith & Wollensky–Anmutung */
+    :root {
+      --black: #000000;
+      --gray-950: #0a0a0a;
+      --gray-900: #1a1a1a;
+      --gold: #d4af37;
+      --gold-soft: #c9a961;
+      --gold-dim: rgba(212, 175, 55, 0.35);
+      --white: #ffffff;
+      --text-soft: #cccccc;
+      --text-muted: #888888;
+      --wine: #8b0000;
+      --font-serif: Georgia, "Times New Roman", Times, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --space-20: 20px;
+      --space-40: 40px;
+      --space-60: 60px;
+      --space-80: 80px;
+      --header-h: 72px;
+      --ease: 0.25s ease;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: none;
-      text-size-adjust: none;
-      scroll-padding-top: 5.5rem;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
     body {
-      min-height: 100dvh;
-      line-height: 1.65;
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      font-feature-settings: "kern" 1, "liga" 1;
-      background-color: var(--color-bg);
-      background-image:
-        radial-gradient(ellipse 100% 80% at 100% -20%, rgba(184, 130, 46, 0.14), transparent 50%),
-        radial-gradient(ellipse 60% 50% at 0% 50%, rgba(107, 28, 28, 0.06), transparent 45%),
-        radial-gradient(ellipse 50% 40% at 80% 100%, rgba(184, 130, 46, 0.08), transparent 40%);
-      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      background: var(--black);
     }
-    [data-theme="dark"] body {
-      background-image:
-        radial-gradient(ellipse 100% 80% at 100% -10%, rgba(212, 168, 75, 0.12), transparent 55%),
-        radial-gradient(ellipse 50% 40% at 0% 40%, rgba(196, 92, 92, 0.06), transparent 45%),
-        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212, 168, 75, 0.05), transparent 50%);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) body {
-        background-image:
-          radial-gradient(ellipse 100% 80% at 100% -10%, rgba(212, 168, 75, 0.12), transparent 55%),
-          radial-gradient(ellipse 50% 40% at 0% 40%, rgba(196, 92, 92, 0.06), transparent 45%),
-          radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212, 168, 75, 0.05), transparent 50%);
-      }
-    }
-    img, svg { display: block; max-width: 100%; height: auto; }
+    img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
-    button { border: none; background: none; font: inherit; color: inherit; cursor: pointer; }
-    input, textarea { font: inherit; color: inherit; }
-    ul[role="list"] { list-style: none; }
-    h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; letter-spacing: -0.035em; font-weight: 500; }
-    p { max-width: 62ch; color: var(--color-text-muted); }
-    ::selection { background: rgba(184, 130, 46, 0.28); }
-    :focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 3px;
-      border-radius: var(--radius-sm);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    ul { list-style: none; }
 
-    .skip-link {
+    .skip {
       position: absolute;
-      top: -100%;
-      left: var(--space-4);
-      background: var(--color-primary);
-      color: var(--color-text-inverse);
-      padding: var(--space-3) var(--space-4);
-      z-index: 100;
-      border-radius: var(--radius-full);
-    }
-    .skip-link:focus { top: var(--space-4); }
-
-    /* —— Beef & Glory–inspiriert: dunkle Leiste + Teaser mit Logo —— */
-    .bag-header {
-      position: sticky;
-      top: 0;
-      z-index: 60;
-      isolation: isolate;
-      background: rgba(5, 5, 5, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(201, 162, 39, 0.22);
-      transition: box-shadow var(--transition);
-    }
-    .bag-header.scrolled {
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-    }
-    .bag-header.site-header.scrolled {
-      border-color: rgba(201, 162, 39, 0.3);
-      background: rgba(4, 4, 3, 0.96);
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
-    }
-    .bag-left {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      flex: 1;
-      min-width: 0;
-      position: relative;
-    }
-    .bag-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-end;
-      gap: var(--space-4);
-    }
-    .bag-nav-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-      min-height: 3.25rem;
-      padding-block: var(--space-3);
-    }
-    .bag-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.35rem 0.15rem;
-      font-size: 0.7rem;
+      left: -9999px;
+      top: 12px;
+      z-index: 200;
+      padding: 12px 20px;
+      background: var(--gold);
+      color: var(--black);
       font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
     }
-    .bag-links a {
-      color: rgba(245, 236, 220, 0.82);
-      padding: 0.35rem 0.5rem;
-      border-radius: var(--radius-sm);
-      transition: color var(--transition), background var(--transition);
-    }
-    .bag-links a:hover,
-    .bag-links a:focus-visible {
-      color: #f5ecd8;
-      background: rgba(201, 162, 39, 0.12);
-    }
-    .bag-links .sep {
-      color: rgba(201, 162, 39, 0.45);
-      user-select: none;
-      font-weight: 400;
-    }
-    .bag-meta {
-      text-align: right;
-      font-size: 0.7rem;
-      line-height: 1.45;
-      color: rgba(230, 220, 205, 0.75);
-      max-width: 22rem;
-    }
-    .bag-meta strong {
-      color: #e8d5a8;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-    }
-    .bag-actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-    .bag-header .theme-toggle,
-    .bag-header .menu-toggle {
-      border-color: rgba(201, 162, 39, 0.25);
-      background: rgba(255, 255, 255, 0.04);
-      color: #e8d5a8;
-    }
-    .bag-header .site-nav a {
-      color: rgba(245, 236, 220, 0.88);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-    }
-    .bag-header .site-nav a:hover {
-      color: #fff;
-      background: rgba(201, 162, 39, 0.15);
-    }
-    .bag-header .site-nav .nav-sep {
-      color: rgba(201, 162, 39, 0.5);
-      font-size: 0.85rem;
-      font-weight: 400;
-      padding: 0 0.1rem;
-      user-select: none;
-      pointer-events: none;
-    }
-    @media (min-width: 761px) {
-      .bag-header .site-nav {
-        position: static;
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.1rem 0;
-        padding: 0;
-        margin: 0;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-      }
-    }
-
-    .bag-teaser {
-      position: relative;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201, 162, 39, 0.12), transparent 55%),
-        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(107, 28, 28, 0.15), transparent 50%),
-        #050504;
-      color: #f5f0e8;
-      padding-bottom: clamp(var(--space-16), 12vw, var(--space-24));
-    }
-    .bag-trennline {
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #a8893d 15%, #e8c060 50%, #a8893d 85%, transparent);
-      box-shadow: 0 0 24px rgba(232, 192, 96, 0.35);
-    }
-    .bag-teaser-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: clamp(var(--space-8), 6vw, var(--space-16));
-      align-items: center;
-      padding-top: clamp(var(--space-12), 10vw, var(--space-20));
-    }
-    .bag-story p {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 2.5vw + 1rem, 3.25rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: rgba(255, 252, 245, 0.92);
-      max-width: none;
-      margin: 0;
-    }
-    .bag-story .gold {
-      color: #e8c060;
-      text-shadow: 0 0 40px rgba(232, 192, 96, 0.2);
-    }
-    .bag-scroll {
-      display: inline-flex;
-      margin-top: var(--space-8);
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 1px solid rgba(201, 162, 39, 0.35);
-      align-items: center;
-      justify-content: center;
-      color: #e8c060;
-      font-size: 1.25rem;
-      line-height: 1;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .bag-scroll:hover {
-      background: rgba(201, 162, 39, 0.12);
-      transform: translateY(3px);
-    }
-    .bag-logo-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .bag-logo-wrap a {
-      display: block;
-      filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.55));
-      transition: transform var(--transition);
-    }
-    .bag-logo-wrap a:hover {
-      transform: scale(1.02);
-    }
-    .bag-logo {
-      width: min(100%, 22rem);
-      height: auto;
-      object-fit: contain;
-    }
-
-    /* Smith & Wollensky–inspiriert: Vollbild-Video-Hero */
-    .sw-hero {
-      position: relative;
-      min-height: min(92svh, 56rem);
-      display: grid;
-      align-items: center;
-      justify-items: center;
-      overflow: clip;
-      background: #0a0908;
-    }
-    .sw-hero__video-wrap {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .sw-hero__video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-    .sw-hero__tint {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 45%, rgba(5,4,3,0.75) 100%);
-      pointer-events: none;
-    }
-    .sw-hero__content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: var(--space-12) var(--space-4) var(--space-16);
-    }
-    .sw-hero__kicker {
-      font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #e8d9b8;
-      margin: 0 0 var(--space-4);
-      max-width: none;
-    }
-    .sw-hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem);
-      font-weight: 500;
-      letter-spacing: -0.04em;
-      line-height: 1.02;
-      color: #fff;
-      text-shadow: 0 4px 40px rgba(0,0,0,0.45);
-      margin: 0 0 var(--space-4);
-      max-width: 20ch;
-      margin-inline: auto;
-    }
-    .sw-hero__sub {
-      font-size: var(--text-lg);
-      color: rgba(255, 250, 242, 0.82);
-      margin: 0 auto var(--space-8);
-      max-width: 40ch;
-    }
-    .sw-hero__cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      justify-content: center;
-    }
-    .sw-hero__cta .cta {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-    }
-    .sw-hero__btn-light {
-      border-color: rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      backdrop-filter: blur(8px);
-    }
-    .sw-hero__btn-light:hover {
-      background: rgba(255,255,255,0.14);
-      color: #fff;
-    }
-    .sw-hero__chevron {
-      position: absolute;
-      bottom: var(--space-6);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 1px solid rgba(232, 192, 96, 0.4);
-      display: grid;
-      place-items: center;
-      color: #e8c060;
-      font-size: 1.2rem;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .sw-hero__chevron:hover {
-      background: rgba(232, 192, 96, 0.12);
-      transform: translateX(-50%) translateY(3px);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .sw-hero__video { display: none; }
-      .sw-hero { min-height: 70svh; background: radial-gradient(ellipse at center, #1a1512, #050504); }
-    }
-
-    /* Videogalerie */
-    .section-impressionen {
-      background: #060504;
-      color: #f5f0e8;
-      border-block: 1px solid rgba(201, 162, 39, 0.2);
-    }
-    .section-impressionen .section-heading h2,
-    .section-impressionen h2.bag-look-big,
-    .section-impressionen .bag-look-small {
-      color: #f5f0e8;
-    }
-    #impressionen { scroll-margin-top: 5.5rem; }
-    .section-impressionen .section-heading p {
-      color: rgba(230, 220, 205, 0.75);
-    }
-    .section-impressionen .eyebrow {
-      border-color: rgba(201, 162, 39, 0.35);
-      color: #e8c060;
-      background: rgba(201, 162, 39, 0.1);
-    }
-    /* Smith & Wollensky: ein Hauptvideo + horizontale Clip-Auswahl (nur 1 Decoder = flüssig in Safari) */
-    .sw-pslider {
-      margin-top: var(--space-10);
-    }
-    .sw-pslider__title {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 2vw + 0.75rem, 2.15rem);
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #e8c060;
-      margin: 0 0 var(--space-8);
-      text-align: center;
-    }
-    .sw-pslider__nav {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 0;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x proximity;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(201, 162, 39, 0.5) transparent;
-      border-bottom: 1px solid rgba(201, 162, 39, 0.22);
-      margin-bottom: var(--space-10);
-      padding-bottom: 2px;
-    }
-    .sw-pslider__nav::-webkit-scrollbar {
-      height: 6px;
-    }
-    .sw-pslider__nav::-webkit-scrollbar-thumb {
-      background: rgba(201, 162, 39, 0.45);
-      border-radius: 3px;
-    }
-    .sw-pslider__tab {
-      flex: 0 0 auto;
-      scroll-snap-align: start;
-      padding: 0.65rem 1.1rem;
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(210, 195, 165, 0.65);
-      background: none;
-      border: none;
-      cursor: pointer;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
-      transition: color var(--transition), border-color var(--transition);
-      white-space: nowrap;
-    }
-    .sw-pslider__tab:hover {
-      color: rgba(245, 236, 220, 0.95);
-    }
-    .sw-pslider__tab.is-active {
-      color: #f5ecd8;
-      border-bottom-color: #e8c060;
-    }
-    .sw-pslider__stage {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
-      align-items: center;
-    }
-    @media (min-width: 1024px) {
-      .sw-pslider__stage {
-        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-        gap: var(--space-10);
-      }
-      .sw-pslider__stage.sw-pslider__stage--reverse .sw-pslider__video-col {
-        order: -1;
-      }
-    }
-    .sw-pslider__text-col {
-      padding: var(--space-2) 0;
-    }
-    .sw-pslider__clip-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw + 1rem, 3.25rem);
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      color: #f0e8d8;
-      margin: 0 0 var(--space-4);
-      line-height: 1.05;
-    }
-    .sw-pslider__divider {
-      width: 3.5rem;
-      height: 2px;
-      background: linear-gradient(90deg, #e8c060, transparent);
-      margin-bottom: var(--space-5);
-    }
-    .sw-pslider__excerpt {
-      font-size: var(--text-lg);
-      line-height: 1.65;
-      color: rgba(220, 205, 180, 0.88);
-      margin: 0;
-      max-width: 42ch;
-    }
-    .sw-pslider__video-col {
-      position: relative;
-    }
-    .sw-pslider__video-shell {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(201, 162, 39, 0.28);
-      background: #000;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-      aspect-ratio: 16 / 10;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-    }
-    .sw-pslider__video-shell video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      background: #000;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
-    }
-    .video-hint {
-      margin-top: var(--space-10);
-      font-size: var(--text-sm);
-      color: rgba(230, 220, 205, 0.5);
-      max-width: 62ch;
-    }
-
-    /* PDF Speisekarte */
-    .pdf-panel {
-      margin-top: var(--space-12);
-      border-radius: calc(var(--radius-xl) + 0.25rem);
-      border: 1px solid var(--color-border);
-      overflow: hidden;
-      background: var(--color-surface);
-      box-shadow: var(--shadow-md);
-    }
-    .pdf-toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-      padding: var(--space-5) var(--space-6);
-      border-bottom: 1px solid var(--color-divider);
-      background: var(--color-surface-2);
-    }
-    .pdf-toolbar h3 {
-      font-family: var(--font-body);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin: 0;
-      color: var(--color-text);
-    }
-    .pdf-toolbar-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-2);
-    }
-    .print-hint kbd {
-      font-family: inherit;
-      font-size: 0.85em;
-      padding: 0.1rem 0.35rem;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-sm);
-      background: var(--color-surface-2);
-    }
-    .pdf-frame-wrap {
-      position: relative;
-      min-height: min(75vh, 52rem);
-      background: #2a2622;
-    }
-    .pdf-frame-wrap iframe {
-      width: 100%;
-      height: min(75vh, 52rem);
-      border: none;
-      display: block;
-    }
-    @media (max-width: 760px) {
-      .pdf-frame-wrap { min-height: 50vh; }
-      .pdf-frame-wrap iframe { height: 50vh; }
-    }
-    .btn-print {
-      min-height: 44px;
-      padding: 0.65rem 1.15rem;
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      border: 1px solid rgba(201, 162, 39, 0.45);
-      background: transparent;
-      color: var(--color-primary);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: background var(--transition), color var(--transition);
-    }
-    .btn-print:hover {
-      background: var(--color-primary-highlight);
-      color: var(--color-text);
-    }
-    .print-hint {
-      margin-top: var(--space-4);
-      font-size: var(--text-sm);
-      color: var(--color-text-muted);
-      max-width: 55ch;
-    }
-
-    @media print {
-      @page {
-        margin: 12mm;
-        size: A4;
-      }
-      .skip-link,
-      .bag-header,
-      .sw-hero,
-      .bag-teaser,
-      #impressionen,
-      #highlights,
-      #bewertungen,
-      #kontakt,
-      .footer,
-      .theme-toggle,
-      .menu-toggle,
-      .sw-hero__chevron,
-      .bag-scroll,
-      .cta-band,
-      .menu-shell > div:first-child .menu-list,
-      .menu-aside,
-      .pdf-toolbar .cta,
-      .pdf-toolbar .secondary-btn,
-      .pdf-toolbar .btn-print {
-        display: none !important;
-      }
-      body {
-        background: #fff !important;
-        color: #111 !important;
-      }
-      .pdf-panel {
-        border: none;
-        box-shadow: none;
-      }
-      .pdf-toolbar {
-        border-bottom: 1px solid #ccc;
-        padding: 0 0 0.75rem;
-        background: #fff !important;
-      }
-      .pdf-toolbar h3::after {
-        content: " — Druckversion";
-        font-weight: 400;
-        font-size: 0.85em;
-      }
-      .pdf-frame-wrap,
-      .pdf-frame-wrap iframe {
-        min-height: auto !important;
-        height: auto !important;
-        max-height: none !important;
-      }
-      #speisekarte .menu-shell {
-        display: none !important;
-      }
-      #speisekarte {
-        padding-block: 0 !important;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .bag-teaser-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .bag-story { order: 2; }
-      .bag-logo-wrap { order: 1; }
-      .bag-meta { text-align: left; width: 100%; }
-      .bag-nav-row { flex-direction: column; align-items: stretch; }
-      .bag-actions { justify-content: flex-end; }
-    }
+    .skip:focus { left: 12px; }
 
     .container {
-      width: min(calc(100% - 2rem), var(--content-default));
+      width: min(1140px, calc(100% - var(--space-40)));
       margin-inline: auto;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-full);
-      border: 1px solid var(--color-border);
-      background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary-highlight) 90%, transparent), transparent);
-      color: var(--color-primary);
-      font-size: var(--text-xs);
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
+    /* —— Header —— */
     .site-header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(20px) saturate(1.2);
-      -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      background: color-mix(in srgb, var(--color-bg) 78%, transparent);
-      border-bottom: 1px solid transparent;
-      transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
-    }
-    .site-header.scrolled {
-      border-color: var(--color-border);
-      background: color-mix(in srgb, var(--color-bg) 92%, transparent);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.03), 0 12px 40px rgba(0,0,0,0.06);
-    }
-    [data-theme="dark"] .site-header.scrolled {
-      box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 12px 40px rgba(0,0,0,0.35);
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-dim);
     }
     .header-inner {
-      min-height: 4.75rem;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-4);
+      gap: var(--space-20);
     }
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: var(--space-3);
+      gap: 14px;
       min-height: 44px;
     }
-    .brand-mark {
-      width: 3rem;
-      height: 3rem;
-      padding: 0.55rem;
-      border-radius: 50%;
-      color: var(--color-primary);
-      border: 1px solid var(--color-border);
-      background: linear-gradient(145deg, color-mix(in srgb, var(--color-primary-highlight) 85%, transparent), transparent 60%);
-      box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
     }
-    .brand-text strong {
-      display: block;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      font-weight: 600;
-    }
-    .brand-text span {
-      display: block;
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--color-text-faint);
-    }
-
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-    }
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-    .site-nav a {
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-text-muted);
-      min-height: 44px;
-      padding: 0 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      border-radius: var(--radius-full);
-      transition: color var(--transition), background var(--transition);
-    }
-    .site-nav a:hover,
-    .site-nav a:focus-visible {
-      color: var(--color-text);
-      background: color-mix(in srgb, var(--color-primary-highlight) 50%, transparent);
-    }
-
-    .theme-toggle,
-    .menu-toggle {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--color-border);
-      display: inline-grid;
-      place-items: center;
-      background: var(--color-surface);
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), border-color var(--transition);
-    }
-    .theme-toggle:hover,
-    .menu-toggle:hover { transform: scale(1.05); border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border)); }
-    .menu-toggle { display: none; }
-
-    .hero {
-      position: relative;
-      overflow: clip;
-      padding-block: clamp(var(--space-16), 9vw, var(--space-28));
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -20% -10% auto;
-      height: 70%;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 70%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: clamp(var(--space-8), 4vw, var(--space-16));
-      align-items: center;
-    }
-    .hero-copy h1 {
-      font-size: var(--text-hero);
-      max-width: 11ch;
-      margin-top: var(--space-6);
-      font-weight: 500;
-    }
-    .hero-line {
-      display: block;
-    }
-    .hero-line.accent {
-      background: linear-gradient(120deg, var(--color-text) 0%, var(--color-primary) 55%, color-mix(in srgb, var(--color-gold) 90%, var(--color-primary)) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-copy p {
-      margin-top: var(--space-6);
-      font-size: var(--text-lg);
-      max-width: 54ch;
-      line-height: 1.7;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-top: var(--space-10);
-    }
-    .cta,
-    .secondary-btn {
-      min-height: 52px;
-      padding: 1rem 1.5rem;
-      border-radius: var(--radius-full);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-    }
-    .cta {
-      background: linear-gradient(145deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 70%, #2a1810));
-      color: #fff;
-      box-shadow: var(--shadow-md), 0 0 0 1px rgba(255,255,255,0.08) inset;
-    }
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-glow);
-    }
-    .secondary-btn {
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      color: var(--color-text);
-      box-shadow: var(--shadow-sm);
-    }
-    .secondary-btn:hover {
-      background: var(--color-surface-2);
-      transform: translateY(-1px);
-    }
-
-    .hero-card {
-      position: relative;
-      padding: clamp(var(--space-8), 5vw, var(--space-10));
-      border-radius: calc(var(--radius-xl) + 0.5rem);
-      background:
-        linear-gradient(165deg, rgba(255,255,255,0.04) 0%, transparent 40%),
-        linear-gradient(135deg, color-mix(in srgb, var(--color-primary-highlight) 70%, transparent), transparent 50%),
-        var(--color-surface);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-lg);
-      min-height: 500px;
-      isolation: isolate;
-    }
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: 0.75rem;
-      border-radius: calc(var(--radius-xl) + 0.15rem);
-      border: 1px solid color-mix(in srgb, var(--color-primary) 15%, transparent);
-      pointer-events: none;
-      opacity: 0.6;
-    }
-    .hero-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: var(--space-4);
-    }
-    .hero-card-top span,
-    .hero-card-bottom span {
-      display: block;
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--color-text-faint);
-    }
-    .hero-card-top strong {
-      display: block;
-      margin-top: var(--space-2);
-      font-size: var(--text-lg);
-      font-family: var(--font-display);
-      color: var(--color-text);
-    }
-    .hero-platter {
-      position: relative;
-      display: grid;
-      place-items: center;
-      margin: clamp(var(--space-10), 5vw, var(--space-14)) auto;
-      width: min(100%, 20rem);
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 32% 28%, rgba(255,255,255,0.14), transparent 20%),
-        radial-gradient(circle at center, color-mix(in srgb, var(--color-primary) 22%, transparent), transparent 62%),
-        linear-gradient(155deg, #2a221c, #0c0a09);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.07),
-        inset 0 32px 60px rgba(255,255,255,0.03),
-        0 32px 80px rgba(0,0,0,0.35);
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .hero-platter { animation: float 7s ease-in-out infinite; }
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
-      }
-    }
-    .hero-platter::before,
-    .hero-platter::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      inset: 13%;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-    .hero-platter::after {
-      inset: 25%;
-      border-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
-    }
-    .steak-visual {
-      position: relative;
-      width: 58%;
-      aspect-ratio: 1.1 / 0.82;
-      border-radius: 45% 55% 48% 52% / 60% 38% 62% 40%;
-      background:
-        radial-gradient(circle at 35% 38%, rgba(255, 214, 176, 0.5), transparent 18%),
-        radial-gradient(circle at 68% 56%, rgba(67, 18, 6, 0.3), transparent 30%),
-        linear-gradient(135deg, #6b2715 0%, #8d3920 26%, #4a150b 62%, #2c0c06 100%);
-      box-shadow:
-        inset 0 0 0 2px rgba(255, 196, 143, 0.18),
-        inset 0 -24px 28px rgba(0, 0, 0, 0.28),
-        0 20px 40px rgba(0,0,0,0.35);
-      transform: rotate(-8deg);
-    }
-    .steak-visual::before {
-      content: "";
-      position: absolute;
-      inset: 18% 12% 20% 20%;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 225, 194, 0.45), rgba(255,255,255,0) 70%);
-      filter: blur(2px);
-    }
-    .steak-visual::after {
-      content: "";
-      position: absolute;
-      inset: 18% 18% 18% 18%;
-      border-radius: 48% 52% 43% 57% / 46% 58% 42% 54%;
-      border: 2px dashed rgba(255, 179, 118, 0.28);
-    }
-    .hero-card-bottom {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4);
-    }
-    .hero-stat {
-      padding: var(--space-5);
-      border-radius: var(--radius-lg);
-      background: color-mix(in srgb, var(--color-surface-2) 90%, transparent);
-      border: 1px solid var(--color-border);
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .hero-stat:hover {
-      border-color: color-mix(in srgb, var(--color-primary) 25%, var(--color-border));
-      transform: translateY(-2px);
-    }
-    .hero-stat strong {
-      display: block;
-      margin-top: var(--space-2);
-      color: var(--color-text);
-      font-size: var(--text-base);
-      font-weight: 600;
-    }
-
-    .section {
-      padding-block: clamp(var(--space-12), 7vw, var(--space-22));
-    }
-    .section.alt {
-      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface-2) 65%, transparent) 0%, transparent 100%);
-      border-block: 1px solid var(--color-border);
-    }
-    .section-heading {
-      display: grid;
-      gap: var(--space-4);
-      margin-bottom: var(--space-12);
-      max-width: 44rem;
-    }
-    .section-heading h2 { font-size: var(--text-2xl); }
-    .steak-tagline {
-      margin-top: var(--space-3);
-      font-size: var(--text-xs);
-      font-weight: 700;
+    .brand-text {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--color-primary);
+      color: var(--white);
     }
-    .bag-look-small {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 2vw + 0.5rem, 2rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--color-text);
-      margin: 0 0 0.15rem;
-      max-width: none;
-    }
-    .bag-look-big {
-      font-size: clamp(2rem, 3.5vw + 1rem, 3.6rem);
-      font-weight: 500;
-      letter-spacing: -0.035em;
-      line-height: 1.05;
-      margin-bottom: var(--space-4);
-    }
-
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-5);
-    }
-    .highlight-card {
-      position: relative;
-      padding: var(--space-8) var(--space-6);
-      border-radius: var(--radius-xl);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      overflow: hidden;
-    }
-    .highlight-card::before {
-      content: attr(data-step);
-      position: absolute;
-      top: var(--space-5);
-      right: var(--space-5);
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 4vw, 3.25rem);
-      font-weight: 500;
-      line-height: 1;
-      color: color-mix(in srgb, var(--color-primary) 18%, transparent);
-      letter-spacing: -0.05em;
-    }
-    .highlight-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: color-mix(in srgb, var(--color-primary) 22%, var(--color-border));
-    }
-    .highlight-icon-wrap {
-      width: 3rem;
-      height: 3rem;
-      border-radius: var(--radius-md);
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--color-primary-highlight), transparent);
-      border: 1px solid var(--color-border);
-      margin-bottom: var(--space-5);
-    }
-    .highlight-card svg {
-      width: 1.35rem;
-      height: 1.35rem;
-      color: var(--color-primary);
-    }
-    .highlight-card h3 {
-      font-family: var(--font-body);
-      font-size: var(--text-lg);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-3);
-      color: var(--color-text);
-    }
-
-    .menu-shell {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: var(--space-8);
-      align-items: start;
-    }
-    .menu-list {
-      display: grid;
-      gap: var(--space-4);
-    }
-    .dish-card {
-      position: relative;
-      padding: var(--space-6);
-      padding-left: calc(var(--space-6) + 4px);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      overflow: hidden;
-    }
-    .dish-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--color-primary), color-mix(in srgb, var(--color-wine) 70%, var(--color-primary)));
-      opacity: 0.85;
-      border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-    }
-    .dish-card:hover {
-      transform: translateX(4px);
-      box-shadow: var(--shadow-md);
-      border-color: color-mix(in srgb, var(--color-primary) 20%, var(--color-border));
-    }
-    .dish-top {
+    .nav-desktop {
       display: flex;
-      justify-content: space-between;
-      gap: var(--space-4);
-      align-items: baseline;
-      margin-bottom: var(--space-3);
+      align-items: center;
+      gap: 8px;
     }
-    .dish-top h3 {
-      font-family: var(--font-body);
-      font-size: 1.08rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--color-text);
-    }
-    .price {
-      color: var(--color-primary);
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-      font-size: 1.05rem;
-    }
-    .menu-aside {
-      padding: var(--space-8);
-      border-radius: calc(var(--radius-xl) + 0.25rem);
-      background:
-        linear-gradient(160deg, color-mix(in srgb, var(--color-primary-highlight) 55%, transparent), transparent 45%),
-        var(--color-surface-2);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-md);
-      position: sticky;
-      top: 6rem;
-    }
-    .menu-aside h3.aside-title {
-      font-size: var(--text-xl);
-      margin-top: var(--space-5);
-      color: var(--color-text);
-    }
-    .menu-aside ul {
-      display: grid;
-      gap: var(--space-4);
-      margin-top: var(--space-6);
-      color: var(--color-text-muted);
-    }
-    .menu-aside li {
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .menu-aside li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--color-primary);
-      opacity: 0.7;
-    }
-    .menu-note {
-      margin-top: var(--space-8);
-      padding-top: var(--space-5);
-      border-top: 1px solid var(--color-divider);
-      font-size: var(--text-sm);
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: var(--space-5);
-    }
-    .testimonial {
-      position: relative;
-      padding: var(--space-8) var(--space-6);
-      border-radius: var(--radius-xl);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      box-shadow: var(--shadow-sm);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .testimonial:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-    .testimonial .quote-mark {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      line-height: 0.5;
-      color: color-mix(in srgb, var(--color-primary) 35%, transparent);
-      margin-bottom: var(--space-2);
-    }
-    .stars {
-      color: var(--color-gold);
-      letter-spacing: 0.12em;
-      margin-bottom: var(--space-4);
-      font-size: 1rem;
-    }
-    .testimonial footer {
-      margin-top: var(--space-6);
-      padding-top: var(--space-4);
-      border-top: 1px solid var(--color-divider);
-      color: var(--color-text);
-      font-weight: 700;
-      font-size: var(--text-sm);
-    }
-
-    .contact-panel {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: var(--space-8);
-      align-items: stretch;
-    }
-    .info-card,
-    .hours-card {
-      padding: clamp(var(--space-8), 4vw, var(--space-10));
-      border-radius: calc(var(--radius-xl) + 0.25rem);
-      border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      box-shadow: var(--shadow-md);
-    }
-    .info-block + .info-block {
-      margin-top: var(--space-8);
-      padding-top: var(--space-8);
-      border-top: 1px solid var(--color-divider);
-    }
-    .info-label {
-      display: block;
-      margin-bottom: var(--space-2);
-      color: var(--color-text-faint);
+    .nav-desktop a {
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: var(--text-xs);
+      color: var(--text-soft);
+      border-radius: 4px;
+      transition: color var(--ease), background var(--ease);
     }
-    .info-value {
-      color: var(--color-text);
+    .nav-desktop a:hover,
+    .nav-desktop a:focus-visible {
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+    .btn-reserve {
+      padding: 12px 22px;
+      font-size: 14px;
       font-weight: 700;
-      font-size: var(--text-lg);
-      line-height: 1.4;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(145deg, var(--gold), var(--gold-soft));
+      border-radius: 2px;
+      transition: transform var(--ease), box-shadow var(--ease), filter var(--ease);
     }
-    .hours-card h3.aside-title {
-      font-size: var(--text-xl);
-      margin-top: var(--space-5);
+    .btn-reserve:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 8px 28px rgba(212, 175, 55, 0.25);
     }
-    .hours-card ul {
-      margin-top: var(--space-6);
-      display: grid;
-      gap: 0;
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
     }
-    .hours-card li {
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: var(--space-20);
+      right: var(--space-20);
+      padding: var(--space-20);
+      background: var(--gray-950);
+      border: 1px solid var(--gold-dim);
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-soft);
+      border-radius: 4px;
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(212, 175, 55, 0.06); }
+    .nav-mobile .btn-reserve { text-align: center; margin-top: 8px; }
+
+    @media (max-width: 900px) {
+      .nav-desktop, .header-inner .btn-reserve { display: none; }
+      .menu-toggle { display: flex; }
+    }
+    .header-inner .btn-reserve { margin-left: 8px; }
+
+    /* —— Hero —— */
+    .hero {
+      min-height: 100svh;
+      padding-top: var(--header-h);
       display: flex;
-      justify-content: space-between;
-      gap: var(--space-4);
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-divider);
-      color: var(--color-text-muted);
-    }
-    .hours-card li:last-child { border-bottom: none; }
-    .hours-card li strong { color: var(--color-text); font-weight: 600; }
-
-    .cta-band {
-      margin-top: var(--space-4);
-      padding: var(--space-10) var(--space-8);
-      border-radius: calc(var(--radius-xl) + 0.5rem);
-      background: linear-gradient(135deg, color-mix(in srgb, var(--color-primary) 88%, #1a1208), color-mix(in srgb, var(--color-wine) 45%, #1a1008));
-      color: #fff;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 80% 100%, rgba(139, 0, 0, 0.12), transparent 45%),
+        linear-gradient(180deg, var(--gray-950) 0%, var(--black) 100%);
+      border-bottom: 1px solid var(--gold-dim);
     }
-    .cta-band h2 {
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-4);
-      color: #fff;
-      max-width: none;
-    }
-    .cta-band p {
-      color: rgba(255,255,255,0.85);
+    .hero .container { padding-block: var(--space-60); }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      max-width: 18ch;
       margin-inline: auto;
-      max-width: 48ch;
     }
-    .cta-band .cta {
-      margin-top: var(--space-6);
-      background: #fff;
-      color: var(--color-text-inverse);
-      box-shadow: var(--shadow-md);
+    .hero .tagline {
+      margin-top: var(--space-20);
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 36ch;
+      margin-inline: auto;
     }
-    .cta-band .cta:hover {
-      background: color-mix(in srgb, #fff 92%, var(--color-primary));
-    }
-
-    .footer {
-      padding-block: var(--space-12);
-      border-top: 1px solid var(--color-border);
-      background: linear-gradient(180deg, color-mix(in srgb, var(--color-surface) 80%, transparent), var(--color-bg));
-    }
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: var(--space-8);
-      align-items: start;
-    }
-    @media (max-width: 600px) {
-      .footer-inner { grid-template-columns: 1fr; }
-    }
-    .footer-brand strong {
-      font-family: var(--font-display);
-      font-size: var(--text-lg);
-    }
-    .footer-brand p {
-      margin-top: var(--space-2);
-      font-size: var(--text-sm);
-    }
-    .footer-links {
+    .hero-cta {
+      margin-top: var(--space-40);
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-5);
-      color: var(--color-text-muted);
-      font-size: var(--text-sm);
-      font-weight: 500;
+      gap: 16px;
+      justify-content: center;
     }
-    .footer-links a:hover { color: var(--color-primary); }
+    .btn-gold {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      background: linear-gradient(145deg, var(--gold), var(--gold-soft));
+      border-radius: 2px;
+      transition: filter var(--ease), box-shadow var(--ease), transform var(--ease);
+    }
+    .btn-gold:hover { filter: brightness(1.1); box-shadow: 0 10px 32px rgba(212, 175, 55, 0.22); transform: translateY(-1px); }
+    .btn-outline {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 2px;
+      background: transparent;
+      transition: background var(--ease), color var(--ease);
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--white);
+    }
+    .hero-sub {
+      margin-top: var(--space-60);
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
 
+    /* —— Sections common —— */
+    section { padding-block: var(--space-80); }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3vw, 2.375rem);
+      font-weight: 400;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: var(--space-60);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* —— Quickinfo 3 cards —— */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+    }
+    @media (max-width: 768px) {
+      .cards-3 { grid-template-columns: 1fr; }
+    }
+    .info-card {
+      padding: var(--space-40) var(--space-40) var(--space-40);
+      background: var(--gray-900);
+      border-top: 3px solid var(--gold);
+      border-radius: 0 0 4px 4px;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+    .info-card .icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: var(--space-20);
+      color: var(--gold);
+    }
+    .info-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .info-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* —— Menu —— */
+    #menu { background: var(--gray-950); }
+    .menu-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-20);
+      margin-bottom: var(--space-40);
+    }
+    .menu-toolbar .section-title {
+      margin-bottom: 0;
+      text-align: left;
+    }
+    .btn-print {
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background var(--ease), color var(--ease);
+    }
+    .btn-print:hover { background: rgba(212, 175, 55, 0.12); color: var(--white); }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-20);
+    }
+    @media (max-width: 768px) {
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-toolbar .section-title { text-align: center; width: 100%; }
+      .menu-toolbar { justify-content: center; }
+    }
+    .menu-category {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: var(--space-40) 0 var(--space-20);
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gold-dim);
+    }
+    .menu-category:first-child { margin-top: 0; }
+    .dish-card {
+      padding: var(--space-20) var(--space-20) var(--space-20) 24px;
+      background: var(--gray-900);
+      border-left: 3px solid var(--gold);
+      transition: background var(--ease), border-left-width var(--ease), transform var(--ease);
+    }
+    .dish-card:hover {
+      background: #222;
+      border-left-width: 5px;
+      transform: translateX(2px);
+    }
+    .dish-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .dish-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    .dish-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .dish-price {
+      margin-top: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* —— Highlights —— */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-20);
+    }
+    @media (max-width: 600px) {
+      .highlights { grid-template-columns: 1fr; }
+    }
+    .highlight-item {
+      padding: var(--space-40);
+      background: var(--gray-900);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+      transition: border-color var(--ease);
+    }
+    .highlight-item:hover { border-color: var(--gold); }
+    .highlight-item strong {
+      display: block;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .highlight-item span { font-size: 14px; color: var(--text-muted); }
+
+    /* —— Testimonials —— */
+    #bewertungen { background: var(--gray-950); }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+    }
+    @media (max-width: 900px) {
+      .testimonials { grid-template-columns: 1fr; }
+    }
+    .testimonial {
+      padding: var(--space-40);
+      background: var(--gray-900);
+      border-top: 3px solid var(--gold);
+      border-radius: 0 0 4px 4px;
+    }
+    .stars { color: var(--gold); letter-spacing: 4px; margin-bottom: 16px; font-size: 14px; }
+    .testimonial blockquote {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-soft);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .testimonial cite {
+      font-size: 13px;
+      font-weight: 700;
+      font-style: normal;
+      color: var(--white);
+    }
+
+    /* —— Kontakt —— */
+    .contact-head {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      margin-bottom: var(--space-60);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+      margin-bottom: var(--space-60);
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    .contact-box {
+      text-align: center;
+      padding: var(--space-40);
+      background: var(--gray-900);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+    }
+    .contact-box .emoji { font-size: 28px; margin-bottom: 12px; }
+    .contact-box h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .contact-box p, .contact-box a {
+      font-size: 15px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .contact-box a[href^="tel"] {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .contact-box a[href^="tel"]:hover { text-decoration: underline; }
+    .contact-cta-wrap { text-align: center; }
+    .contact-cta-wrap .btn-gold { font-size: 18px; padding: 16px 36px; }
+
+    /* —— Footer —— */
+    .footer {
+      padding: var(--space-60) 0 var(--space-40);
+      background: var(--gray-950);
+      border-top: 1px solid var(--gold-dim);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+      margin-bottom: var(--space-40);
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .social-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-grid .social-row { justify-content: flex-start; }
+    @media (max-width: 768px) {
+      .footer-grid .social-row { justify-content: center; }
+    }
+    .social-row a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .copyright {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      padding-top: var(--space-40);
+      border-top: 1px solid #2a2a2a;
+    }
+
+    /* —— Reveal —— */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
-      transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .menu-shell,
-      .contact-panel,
-      .highlights-grid,
-      .testimonial-grid {
-        grid-template-columns: 1fr;
+    /* —— Print —— */
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      .site-header, .hero-cta, .menu-toggle, .nav-mobile, .btn-print, .contact-cta-wrap, .footer, .skip, .social-row { display: none !important; }
+      body { background: #fff !important; color: #111 !important; font-size: 11pt; }
+      .hero { min-height: auto; padding-top: 0; background: #fff !important; border: none; }
+      .hero h1 { color: #000 !important; font-size: 22pt; }
+      .hero .tagline, .hero-sub { color: #444 !important; }
+      section { padding: 16pt 0 !important; page-break-inside: avoid; }
+      .section-title { color: #000 !important; text-align: left; font-size: 16pt; }
+      .menu-grid { grid-template-columns: 1fr !important; }
+      .dish-card {
+        background: #f9f9f9 !important;
+        border-left: 3pt solid #b8860b !important;
+        page-break-inside: avoid;
       }
-      .hero-copy h1 { max-width: 14ch; }
-      .menu-aside { position: static; }
-    }
-
-    @media (max-width: 760px) {
-      .menu-toggle { display: inline-grid; }
-      .site-nav {
-        position: absolute;
-        top: calc(100% + 0.5rem);
-        left: 1rem;
-        right: 1rem;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        padding: var(--space-4);
-        border-radius: var(--radius-xl);
-        background: color-mix(in srgb, var(--color-bg) 95%, transparent);
-        border: 1px solid var(--color-border);
-        box-shadow: var(--shadow-lg);
-        gap: 0;
-      }
-      .bag-header .site-nav {
-        top: calc(100% + 0.35rem);
-        left: 0;
-        right: 0;
-        background: rgba(12, 10, 8, 0.98);
-        border: 1px solid rgba(201, 162, 39, 0.22);
-        border-radius: var(--radius-lg);
-      }
-      .site-nav a { border-radius: var(--radius-md); }
-      .site-nav.open { display: flex; }
-      .bag-header .site-nav .nav-sep { display: none; }
-      .nav-wrap { gap: var(--space-2); }
-      .hero { padding-top: var(--space-12); }
-      .hero-card { min-height: auto; }
-      .hero-card-bottom { grid-template-columns: 1fr; }
-      .section-heading { margin-bottom: var(--space-10); }
+      .dish-name { color: #7a5c00 !important; }
+      .dish-price { color: #000 !important; }
+      .info-card, .highlight-item, .testimonial, .contact-box { border: 1px solid #ccc !important; background: #fff !important; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip" href="#main">Zum Inhalt</a>
 
-  <header class="bag-header site-header" id="top">
-    <div class="container bag-nav-row">
-      <div class="bag-left">
-        <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-        <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
-          <a href="#highlights">Über uns</a>
-          <span class="nav-sep" aria-hidden="true">·</span>
-          <a href="#impressionen">Impressionen</a>
-          <span class="nav-sep" aria-hidden="true">·</span>
-          <a href="#speisekarte">Speisekarte</a>
-          <span class="nav-sep" aria-hidden="true">·</span>
-          <a href="#speisekarte-pdf">PDF</a>
-          <span class="nav-sep" aria-hidden="true">·</span>
-          <a href="#bewertungen">Bewertungen</a>
-          <span class="nav-sep" aria-hidden="true">·</span>
-          <a href="#kontakt">Reservierung · Kontakt</a>
-        </nav>
-      </div>
-      <div class="bag-right">
-        <div class="bag-meta">
-          <p><strong>LA SAVI STEAKHOUSE</strong> — Duisburg · Untermauerstraße 4</p>
-          <p><strong>Mo – Sa:</strong> 12:00 – 22:00 Uhr · <strong>So:</strong> geschlossen</p>
-        </div>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Farbschema wechseln">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="La Savi Startseite">
+        <img src="logo-la-savi.webp" width="48" height="48" alt="La Savi Steakhouse Logo">
+        <span class="brand-text">La Savi</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Hauptnavigation">
+        <a href="#home">Home</a>
+        <a href="#menu">Menü</a>
+        <a href="#reservierung">Reservierung</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a class="btn-reserve" href="#reservierung">Reservierung</a>
+        <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
+      <nav class="nav-mobile" id="mobile-nav" aria-label="Mobilmenü">
+        <a href="#home">Home</a>
+        <a href="#menu">Menü</a>
+        <a href="#reservierung">Reservierung</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="btn-reserve" href="#reservierung">Reservierung</a>
+      </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="sw-hero" id="willkommen" aria-label="Willkommen bei La Savi">
-      <div class="sw-hero__video-wrap" aria-hidden="true">
-        <video class="sw-hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="logo-la-savi.webp" disablepictureinpicture disableremoteplayback>
-          <source src="media/videos/lasavi-highlight.mp4" type="video/mp4">
-        </video>
-        <div class="sw-hero__tint"></div>
-      </div>
-      <div class="container sw-hero__content">
-        <p class="sw-hero__kicker">Willkommen bei</p>
-        <h1 class="sw-hero__title">La Savi Steakhouse</h1>
-        <p class="sw-hero__sub">Premium Steaks, Grill &amp; Gastlichkeit in Duisburg — wie bei den großen Steakhouses, mit unserem eigenen Charakter.</p>
-        <div class="sw-hero__cta">
-          <a class="cta" href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">Speisekarte als PDF</a>
-          <a class="secondary-btn sw-hero__btn-light" href="#kontakt">Tisch reservieren</a>
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>La Savi Premium Steakhouse</h1>
+        <p class="tagline">Genießen Sie Premium Dry-Aged Steaks und authentische Grillspezialitäten — mit Herz, Handwerk und höchstem Anspruch.</p>
+        <div class="hero-cta">
+          <a class="btn-gold" href="#reservierung">Reservierung</a>
+          <a class="btn-outline" href="#menu">Menü ansehen</a>
         </div>
+        <p class="hero-sub">Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen</p>
       </div>
-      <a class="sw-hero__chevron" href="#teaser-brand" aria-label="Weiter zur Marke">↓</a>
     </section>
 
-    <section class="bag-teaser" id="teaser-brand" aria-label="La Savi Marke">
-    <div class="bag-trennline" aria-hidden="true"></div>
-    <div class="container bag-teaser-inner">
-      <div class="bag-story reveal">
-        <p>Erleben Sie</p>
-        <p>die Geschichte</p>
-        <p class="gold">von La Savi</p>
-        <a class="bag-scroll" href="#highlights" aria-label="Weiter zu Über uns">↓</a>
-      </div>
-      <div class="bag-logo-wrap reveal">
-        <a href="#top" aria-label="La Savi — nach oben">
-          <img class="bag-logo" src="logo-la-savi.webp" width="400" height="400" alt="La Savi Steakhouse — Logo mit Stier und Schriftzug">
-        </a>
-      </div>
-    </div>
-  </section>
-
-    <section class="section alt" id="highlights">
+    <section id="ueber-uns">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Warum La Savi</span>
-          <p class="bag-look-small">Werfen Sie einen Blick</p>
-          <h2 class="bag-look-big">hinter die Kulissen</h2>
-          <p>Die Handschrift von La Savi liegt in hochwertigem Fleisch, souveräner Zubereitung und einer Atmosphäre, die modern wirkt und trotzdem entspannt bleibt.</p>
-        </div>
-
-        <div class="highlights-grid">
-          <article class="highlight-card reveal" data-step="01">
-            <div class="highlight-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 13.5 10.5 17 17 8"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9Z"/></svg>
-            </div>
+        <h2 class="section-title reveal">Ihr Erlebnis bei La Savi</h2>
+        <div class="cards-3">
+          <article class="info-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
             <h3>Premium Qualität</h3>
-            <p>Ausgewählte Fleischqualität, saftige Steaks und kräftige Grill-Spezialitäten sorgen für ein hochwertiges Geschmackserlebnis bei jedem Besuch.</p>
+            <p>Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.</p>
           </article>
-          <article class="highlight-card reveal" data-step="02">
-            <div class="highlight-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3v4"/><path d="M16 3v4"/><path d="M12 13v8"/><path d="M5 8h14"/><path d="M7 21h10"/></svg>
-            </div>
-            <h3>Erfahren am Grill</h3>
-            <p>Präzise Garstufen, kräftige Röstaromen und eine durchdachte Auswahl an Steaks, Lamm und Döner bringen echte Grillkompetenz auf den Teller.</p>
+          <article class="info-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3v4M16 3v4M12 13v8M5 8h14M7 21h10"/></svg>
+            <h3>Expertise</h3>
+            <p>Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.</p>
           </article>
-          <article class="highlight-card reveal" data-step="03">
-            <div class="highlight-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14c2-4 5-6 8-6s6 2 8 6"/><path d="M3 19h18"/><path d="M7 14v5"/><path d="M17 14v5"/></svg>
-            </div>
-            <h3>Stilvolle Atmosphäre</h3>
-            <p>Dunkle Töne, warme Akzente und freundlicher Service schaffen den passenden Rahmen für Dinner, Treffen mit Freunden oder einen entspannten Abend in der Stadt.</p>
+          <article class="info-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 14c2-4 5-6 8-6s6 2 8 6M3 19h18"/></svg>
+            <h3>Atmosphere</h3>
+            <p>Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-impressionen" id="impressionen">
+    <section id="menu">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Stimmung &amp; Kulisse</span>
-          <p class="bag-look-small">Einblicke</p>
-          <h2 class="bag-look-big">La Savi in Bewegung</h2>
-          <p>Auszüge aus unserem Werbematerial — Ambiente, Gerichte und Details, die Sie bei uns erleben können.</p>
+        <div class="menu-toolbar reveal">
+          <h2 class="section-title">Unsere Spezialitäten</h2>
+          <button type="button" class="btn-print" id="btn-print-menu" aria-label="Menü als PDF drucken">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+            Menü als PDF drucken
+          </button>
         </div>
-        <div class="sw-pslider reveal" data-impressionen-slider>
-          <h3 class="sw-pslider__title">La Savi — Momente am Grill &amp; am Tisch</h3>
-          <div class="sw-pslider__nav" role="tablist" aria-label="Video-Clips wählen" id="impressionen-tabs"></div>
-          <div class="sw-pslider__stage sw-pslider__stage--reverse">
-            <div class="sw-pslider__text-col">
-              <p class="sw-pslider__clip-title" id="impressionen-clip-title">Highlight</p>
-              <div class="sw-pslider__divider" aria-hidden="true"></div>
-              <p class="sw-pslider__excerpt" id="impressionen-clip-desc">Unser Hausband — Stimmung, Küche und Gastlichkeit in einem Clip.</p>
-            </div>
-            <div class="sw-pslider__video-col">
-              <div class="sw-pslider__video-shell">
-                <video id="impressionen-video" controls playsinline webkit-playsinline preload="metadata" poster="logo-la-savi.webp">
-                  <source id="impressionen-source" src="media/videos/lasavi-highlight.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="video-hint reveal">Ein Video zur Zeit — so bleibt die Wiedergabe auf <strong>iPhone, iPad und Safari</strong> flüssig. MOV-Clips laufen dort nativ; andere Browser nutzen am besten die MP4-Version (Highlight).</p>
-      </div>
-    </section>
 
-    <section class="section" id="speisekarte">
-      <div class="container menu-shell">
-        <div>
-          <div class="section-heading reveal">
-            <span class="eyebrow">Speisekarte</span>
-            <h2>Beliebte Gerichte aus unserer Küche.</h2>
-            <p class="steak-tagline">Unser Fleisch · Ihr Genuss</p>
-            <p>Eine kleine Auswahl unserer gefragtesten Teller — markant, herzhaft und für Gäste, die Geschmack mit Qualität verbinden möchten.</p>
-          </div>
+        <p class="reveal" style="text-align:center; color: var(--text-muted); font-size: 14px; margin: -32px 0 40px; max-width: 52ch; margin-inline: auto;">Vollständige Karte mit allen Gerichten: PDF öffnen oder ausdrucken. Auszug unserer Highlights:</p>
 
-          <div class="menu-list">
+        <div class="menu-grid">
+          <div>
+            <h3 class="menu-category reveal">Steaks</h3>
             <article class="dish-card reveal">
-              <div class="dish-top">
-                <h3>Ribeye Steak</h3>
-                <span class="price">29,90 €</span>
-              </div>
-              <p>Intensiv marmoriert, saftig gegrillt und mit kräftigen Röstaromen serviert.</p>
+              <div class="dish-name">T-Bone Steak</div>
+              <div class="dish-meta">350 g · USDA Prime Dry-Aged</div>
+              <p class="dish-desc">Zart, saftig, intensiv im Geschmack — klassisches Steakhouse-Erlebnis.</p>
+              <div class="dish-price">€ 48,00</div>
             </article>
             <article class="dish-card reveal">
-              <div class="dish-top">
-                <h3>Lammkoteletts vom Grill</h3>
-                <span class="price">24,90 €</span>
-              </div>
-              <p>Zartes Lamm mit würziger Note, frisch vom Grill und perfekt für Liebhaber aromatischer Fleischgerichte.</p>
+              <div class="dish-name">Ribeye</div>
+              <div class="dish-meta">300 g · Premium marmoriert</div>
+              <p class="dish-desc">Saftig und aromatisch, perfekt für Liebhaber kräftiger Röstaromen.</p>
+              <div class="dish-price">€ 42,00</div>
             </article>
             <article class="dish-card reveal">
-              <div class="dish-top">
-                <h3>La Savi Döner Teller</h3>
-                <span class="price">14,90 €</span>
-              </div>
-              <p>Herzhaftes Fleisch, frische Beilagen und ein ausgewogener Teller für ein entspanntes Mittag- oder Abendessen.</p>
+              <div class="dish-name">Filet Mignon</div>
+              <div class="dish-meta">250 g · Feinste Faser</div>
+              <p class="dish-desc">Butterzart, elegant — für den besonderen Anlass.</p>
+              <div class="dish-price">€ 52,00</div>
+            </article>
+          </div>
+          <div>
+            <h3 class="menu-category reveal">Grill</h3>
+            <article class="dish-card reveal">
+              <div class="dish-name">Lamm Kotelett</div>
+              <div class="dish-meta">2 Stück · vom Grill</div>
+              <p class="dish-desc">Perfekt gegrillt, würzig und zart.</p>
+              <div class="dish-price">€ 38,00</div>
             </article>
             <article class="dish-card reveal">
-              <div class="dish-top">
-                <h3>Mixed Grill Spezial</h3>
-                <span class="price">27,90 €</span>
-              </div>
-              <p>Eine Auswahl aus Steak, Lamm und Grill-Spezialitäten für Gäste, die die Vielfalt von La Savi entdecken möchten.</p>
+              <div class="dish-name">Adana Spieß</div>
+              <div class="dish-meta">Türkische Spezialität</div>
+              <p class="dish-desc">Kräftig gewürzt, authentisch zubereitet.</p>
+              <div class="dish-price">€ 28,00</div>
+            </article>
+            <article class="dish-card reveal">
+              <div class="dish-name">Gemischter Grill</div>
+              <div class="dish-meta">Für 2 Personen</div>
+              <p class="dish-desc">Steak, Lamm, Hähnchen — ideal zum Teilen.</p>
+              <div class="dish-price">€ 68,00</div>
+            </article>
+            <article class="dish-card reveal">
+              <div class="dish-name">Wet Aged Döner</div>
+              <div class="dish-meta">Unsere Spezialität</div>
+              <p class="dish-desc">Einzigartig mariniert und frisch zubereitet.</p>
+              <div class="dish-price">€ 22,00</div>
+            </article>
+            <h3 class="menu-category reveal">Getränke</h3>
+            <article class="dish-card reveal">
+              <div class="dish-name">Hausgemachter Ayran</div>
+              <div class="dish-meta">Täglich frisch</div>
+              <p class="dish-desc">Cremig, erfrischend — die perfekte Begleitung zum Grill.</p>
+              <div class="dish-price">€ 4,50</div>
             </article>
           </div>
         </div>
 
-        <aside class="menu-aside reveal">
-          <span class="eyebrow">Unsere Handschrift</span>
-          <h3 class="aside-title">Wofür Gäste wiederkommen.</h3>
-          <ul role="list">
-            <li>Premium Fleisch mit ehrlicher Grillnote.</li>
-            <li>Hausgemachter Ayran als frische Begleitung.</li>
-            <li>Freundlicher Service mit persönlichem Stil.</li>
-            <li>Ideal für Lunch, Dinner und Abendtreffen.</li>
-          </ul>
-          <p class="menu-note">Die vollständige Karte liegt als PDF vor — öffnen oder herunterladen Sie sie unten oder über den Button im Hero.</p>
-        </aside>
-      </div>
-
-      <div class="container" id="speisekarte-pdf" style="margin-top: var(--space-12); scroll-margin-top: 6rem;">
-        <div class="section-heading reveal">
-          <span class="eyebrow">PDF</span>
-          <h2 class="bag-look-big" style="margin-bottom: var(--space-3);">Speisekarte zum Blättern</h2>
-          <p>Offizielle Speisekarte als Dokument — ideal am Tablet oder zum Ausdrucken.</p>
-        </div>
-        <div class="pdf-panel reveal">
-          <div class="pdf-toolbar">
-            <h3>La-Savi-Speisekarte.pdf</h3>
-            <div class="pdf-toolbar-actions">
-              <button type="button" class="btn-print" id="print-speisekarte" aria-label="Speisekarte drucken">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
-                Speisekarte drucken
-              </button>
-              <a class="cta" href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">In neuem Tab öffnen</a>
-              <a class="secondary-btn" href="media/docs/La-Savi-Speisekarte.pdf" download>Herunterladen</a>
-            </div>
-          </div>
-          <p class="print-hint reveal">Für <strong>gedruckte Menükarten</strong> am besten hier auf <strong>Speisekarte drucken</strong> tippen oder die PDF öffnen und im Viewer <kbd>Drucken</kbd> wählen (empfohlen: A4, Hochformat, „Ganze Seite“).</p>
-          <div class="pdf-frame-wrap">
-            <iframe title="Speisekarte La Savi (PDF)" src="media/docs/La-Savi-Speisekarte.pdf#view=FitH"></iframe>
-          </div>
-        </div>
-      </div>
-
-      <div class="container" style="margin-top: var(--space-12);">
-        <div class="cta-band reveal">
-          <h2>Bereit für den nächsten Genussmoment?</h2>
-          <p>Reservieren Sie Ihren Tisch oder kommen Sie spontan vorbei — wir freuen uns auf Sie.</p>
-          <a class="cta" href="#kontakt">Kontakt &amp; Öffnungszeiten</a>
+        <div style="margin-top: 48px; text-align: center;" class="reveal">
+          <a class="btn-outline" href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">Vollständige Speisekarte (PDF)</a>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="bewertungen">
+    <section>
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Stimmen unserer Gäste</span>
-          <h2>Was La Savi auszeichnet.</h2>
-          <p>Authentische Eindrücke — später lassen sich echte Google- oder Lieferplattform-Bewertungen nahtlos ergänzen.</p>
+        <h2 class="section-title reveal">Das macht La Savi aus</h2>
+        <div class="highlights">
+          <div class="highlight-item reveal"><strong>Wet Aged Döner</strong><span>Unsere Spezialität — einzigartig in der Region.</span></div>
+          <div class="highlight-item reveal"><strong>Hausgemachter Ayran</strong><span>Täglich frisch für Sie zubereitet.</span></div>
+          <div class="highlight-item reveal"><strong>Chef's Selection</strong><span>Premium-Auswahl empfohlen vom Küchenteam.</span></div>
+          <div class="highlight-item reveal"><strong>4,8 ★ bei Google</strong><span>Von über 2.550 Gästen bewertet — vielen Dank für Ihr Vertrauen.</span></div>
         </div>
+      </div>
+    </section>
 
-        <div class="testimonial-grid">
+    <section id="bewertungen">
+      <div class="container">
+        <h2 class="section-title reveal">Stimmen unserer Gäste</h2>
+        <div class="testimonials">
           <article class="testimonial reveal">
-            <div class="quote-mark" aria-hidden="true">“</div>
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>„Tolles Ambiente, sehr freundlicher Service und ein Steak, das genau auf den Punkt gegart war. Man merkt sofort den Premium-Anspruch.“</p>
-            <footer>— Aylin K.</footer>
+            <blockquote>„Erst beruflich, dann privat — Ayran-Fan geworden. Mit Familie willkommen!“</blockquote>
+            <cite>— Pascal D.</cite>
           </article>
           <article class="testimonial reveal">
-            <div class="quote-mark" aria-hidden="true">“</div>
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>„Besonders stark fand ich die Kombination aus modernen Räumen, kräftigen Grillaromen und hausgemachtem Ayran. Sehr stimmig insgesamt.“</p>
-            <footer>— Mehmet T.</footer>
+            <blockquote>„Wie Mutter kocht! Mit besonderen Details &amp; Fürsorge.“</blockquote>
+            <cite>— Ebru A.</cite>
           </article>
           <article class="testimonial reveal">
-            <div class="quote-mark" aria-hidden="true">“</div>
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>„La Savi fühlt sich hochwertig an, ohne distanziert zu wirken. Das Team ist herzlich, und die Fleischqualität überzeugt beim ersten Bissen.“</p>
-            <footer>— Sarah D.</footer>
+            <blockquote>„Detailliertes Steak-Lob, perfekte Beratung zu Fleischsorten.“</blockquote>
+            <cite>— Eray B.</cite>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="kontakt">
-      <div class="container contact-panel">
-        <div class="info-card reveal">
-          <span class="eyebrow">Besuchen Sie uns</span>
-          <div class="info-block">
-            <span class="info-label">Adresse</span>
-            <p class="info-value">Untermauerstraße 4<br>47051 Duisburg</p>
+    <section id="reservierung">
+      <div class="container">
+        <h2 class="contact-head reveal">Reservieren Sie Ihren Tisch</h2>
+        <div class="contact-grid">
+          <div class="contact-box reveal">
+            <div class="emoji" aria-hidden="true">📍</div>
+            <h3>Adresse</h3>
+            <p>Untermauerstraße 4<br>47051 Duisburg</p>
           </div>
-          <div class="info-block">
-            <span class="info-label">Kulinarischer Fokus</span>
-            <p class="info-value">Steaks, Döner, Lamm und Grill-Spezialitäten</p>
+          <div class="contact-box reveal">
+            <div class="emoji" aria-hidden="true">☎</div>
+            <h3>Telefon</h3>
+            <p><a href="tel:+491634588988">+49 163 458 898 8</a></p>
+            <p style="margin-top:8px; font-size:13px;">Jetzt anrufen — wir freuen uns auf Sie.</p>
           </div>
-          <div class="info-block">
-            <span class="info-label">Reservierung</span>
-            <p>Auf der Live-Seite eignen sich Telefon- oder WhatsApp-Buttons, damit Gäste direkt einen Tisch anfragen können.</p>
+          <div class="contact-box reveal">
+            <div class="emoji" aria-hidden="true">🕐</div>
+            <h3>Öffnungszeiten</h3>
+            <p>Mo–Sa: 12:00–22:00 Uhr<br>So: geschlossen</p>
           </div>
         </div>
+        <div class="contact-cta-wrap reveal">
+          <a class="btn-gold" href="tel:+491634588988">Jetzt reservieren — anrufen</a>
+        </div>
+      </div>
+    </section>
 
-        <aside class="hours-card reveal">
-          <span class="eyebrow">Öffnungszeiten</span>
-          <h3 class="aside-title">Wir sind für Sie da.</h3>
-          <ul role="list">
-            <li><span>Montag</span><strong>12:00 – 22:00 Uhr</strong></li>
-            <li><span>Dienstag</span><strong>12:00 – 22:00 Uhr</strong></li>
-            <li><span>Mittwoch</span><strong>12:00 – 22:00 Uhr</strong></li>
-            <li><span>Donnerstag</span><strong>12:00 – 22:00 Uhr</strong></li>
-            <li><span>Freitag</span><strong>12:00 – 22:00 Uhr</strong></li>
-            <li><span>Samstag</span><strong>12:00 – 22:00 Uhr</strong></li>
-            <li><span>Sonntag</span><strong>Geschlossen</strong></li>
-          </ul>
-        </aside>
+    <section id="kontakt">
+      <div class="container">
+        <h2 class="section-title reveal">Kontakt</h2>
+        <p style="text-align:center; color: var(--text-muted); max-width: 48ch; margin: -40px auto 0;">Folgen Sie uns auf Instagram für Neuigkeiten, Gerichte und Stimmungsbilder.</p>
+        <p style="text-align:center; margin-top: 24px;"><a class="btn-outline" href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">@lasavi_restaurant auf Instagram</a></p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <strong>La Savi Steakhouse</strong>
-        <p>Dunkel, modern — gemacht für Gäste mit Geschmack.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <p>La Savi Premium Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p>
+          <p style="margin-top:12px;"><a href="tel:+491634588988">+49 163 458 898 8</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Öffnungszeiten</h4>
+          <p>Montag – Samstag<br>12:00 – 22:00 Uhr</p>
+          <p style="margin-top:12px;">Sonntag geschlossen</p>
+        </div>
+        <div class="footer-col">
+          <h4>Folgen</h4>
+          <div class="social-row">
+            <a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer" aria-label="La Savi auf Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a href="#" aria-label="Facebook (Link folgt)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
       </div>
-      <nav class="footer-links" aria-label="Footer Navigation">
-        <a href="#top">Start</a>
-        <a href="#impressionen">Impressionen</a>
-        <a href="#speisekarte">Speisekarte</a>
-        <a href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">PDF</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+      <p class="copyright">© 2026 La Savi · Premium Steakhouse Duisburg</p>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const toggle = document.querySelector('[data-theme-toggle]');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      let theme = prefersDark ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-
-      const updateIcon = () => {
-        if (!toggle) return;
-        toggle.setAttribute('aria-label', theme === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln');
-        toggle.innerHTML = theme === 'dark'
-          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-      };
-      updateIcon();
-      toggle?.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        updateIcon();
-      });
-
-      const header = document.querySelector('.site-header');
-      const onScroll = () => {
-        if (window.scrollY > 20) header?.classList.add('scrolled');
-        else header?.classList.remove('scrolled');
-      };
-      onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-
-      const menuToggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.site-nav');
-      menuToggle?.addEventListener('click', () => {
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', String(!expanded));
-        nav?.classList.toggle('open');
-      });
-      nav?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          nav.classList.remove('open');
-          menuToggle?.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('is-visible');
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-      const heroVideo = document.querySelector('.sw-hero__video');
-      const heroSection = document.querySelector('.sw-hero');
-      if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        heroVideo.removeAttribute('autoplay');
-        heroVideo.pause();
-      } else if (heroVideo && heroSection && 'IntersectionObserver' in window) {
-        const tryPlay = () => { heroVideo.play().catch(() => {}); };
-        new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) tryPlay();
-            else heroVideo.pause();
-          });
-        }, { threshold: 0.2 }).observe(heroSection);
-      }
-
-      (function initImpressionenSlider() {
-        const CLIPS = [
-          { label: 'Highlight', title: 'Highlight', desc: 'Unser Hausband — Stimmung, Küche und Gastlichkeit in einem Clip.', src: 'media/videos/lasavi-highlight.mp4', type: 'video/mp4' },
-          { label: 'Clip 2', title: 'Moment 2', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi2.mov', type: 'video/quicktime' },
-          { label: 'Clip 3', title: 'Moment 3', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi3.mov', type: 'video/quicktime' },
-          { label: 'Clip 4', title: 'Moment 4', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi4.mov', type: 'video/quicktime' },
-          { label: 'Clip 5', title: 'Moment 5', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi5.mov', type: 'video/quicktime' },
-          { label: 'Clip 6', title: 'Moment 6', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi6.mov', type: 'video/quicktime' },
-          { label: 'Clip 7', title: 'Moment 7', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi7.mov', type: 'video/quicktime' },
-          { label: 'Clip 8', title: 'Moment 8', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi8.mov', type: 'video/quicktime' },
-          { label: 'Clip 9', title: 'Moment 9', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi9.mov', type: 'video/quicktime' },
-          { label: 'Clip 10', title: 'Moment 10', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi10.mov', type: 'video/quicktime' },
-          { label: 'Clip 11', title: 'Moment 11', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi11.mov', type: 'video/quicktime' },
-          { label: 'Clip 12', title: 'Moment 12', desc: 'Impression aus unserem Werbematerial — Ambiente & Details.', src: 'media/videos/lasavi12.mov', type: 'video/quicktime' }
-        ];
-        const nav = document.getElementById('impressionen-tabs');
-        const video = document.getElementById('impressionen-video');
-        const source = document.getElementById('impressionen-source');
-        const titleEl = document.getElementById('impressionen-clip-title');
-        const descEl = document.getElementById('impressionen-clip-desc');
-        if (!nav || !video || !source || !titleEl || !descEl) return;
-
-        function activate(i) {
-          const clip = CLIPS[i];
-          nav.querySelectorAll('.sw-pslider__tab').forEach((btn, j) => {
-            btn.classList.toggle('is-active', j === i);
-            btn.setAttribute('aria-selected', String(j === i));
-          });
-          titleEl.textContent = clip.title;
-          descEl.textContent = clip.desc;
-          source.src = clip.src;
-          source.type = clip.type;
-          video.setAttribute('aria-label', clip.label + ' — La Savi');
-          video.load();
-        }
-
-        CLIPS.forEach((clip, i) => {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'sw-pslider__tab' + (i === 0 ? ' is-active' : '');
-          btn.setAttribute('role', 'tab');
-          btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-          btn.setAttribute('id', 'impressionen-tab-' + i);
-          btn.textContent = clip.label;
-          btn.addEventListener('click', () => activate(i));
-          nav.appendChild(btn);
-        });
-      })();
-
-      document.getElementById('print-speisekarte')?.addEventListener('click', () => {
-        const pdfPath = 'media/docs/La-Savi-Speisekarte.pdf';
-        const iframe = document.querySelector('.pdf-frame-wrap iframe');
-        try {
-          if (iframe?.contentWindow) {
-            iframe.contentWindow.focus();
-            iframe.contentWindow.print();
-            return;
-          }
-        } catch (e) { /* z. B. file:// — Fallback */ }
-        const win = window.open(pdfPath, '_blank', 'noopener,noreferrer');
-        if (win) {
-          win.focus();
-          setTimeout(() => {
-            try { win.print(); } catch (err) { /* Nutzer druckt manuell im PDF-Viewer */ }
-          }, 600);
-        }
-      });
-    }());
-  </script>
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      "name": "La Savi Steakhouse",
+      "name": "La Savi Premium Steakhouse",
+      "image": "logo-la-savi.webp",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Untermauerstraße 4",
@@ -1996,16 +826,59 @@
         "addressLocality": "Duisburg",
         "addressCountry": "DE"
       },
-      "servesCuisine": ["Steakhouse", "Grill", "Döner", "Lammgerichte"],
-      "openingHours": [
-        "Mo 12:00-22:00",
-        "Tu 12:00-22:00",
-        "We 12:00-22:00",
-        "Th 12:00-22:00",
-        "Fr 12:00-22:00",
-        "Sa 12:00-22:00"
-      ]
+      "telephone": "+491634588988",
+      "servesCuisine": ["Steakhouse", "Grill", "Steaks"],
+      "priceRange": "€€€",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "12:00", "closes": "22:00" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2552"
+      }
     }
+  </script>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var mobile = document.getElementById('mobile-nav');
+      toggle && toggle.addEventListener('click', function () {
+        var open = mobile.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mobile && mobile.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          mobile.classList.remove('open');
+          toggle && toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', function () {
+        var pdf = 'media/docs/La-Savi-Speisekarte.pdf';
+        var w = window.open(pdf, '_blank', 'noopener,noreferrer');
+        if (w) {
+          w.focus();
+          setTimeout(function () {
+            try { w.print(); } catch (e) {}
+          }, 500);
+        } else {
+          window.location.href = pdf;
+        }
+      });
+    })();
   </script>
 </body>
 </html>
