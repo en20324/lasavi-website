@@ -2,8 +2,1514 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/de/">
-  <title>La Savi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Savi — Steakhouse Duisburg | Dry-Aged Steaks &amp; Grill</title>
+  <meta name="description" content="La Savi Steakhouse in Duisburg. USDA Prime Dry-Aged Steaks, authentische Grillspezialitäten, Wet Aged Döner und hausgemachter Ayran. Reservierung unter +49 163 458 898 8.">
+  <meta name="keywords" content="Steakhouse Duisburg, Dry-Aged Steaks, Grill, Restaurant, Reservierung, La Savi">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="logo-la-savi.webp" type="image/webp">
+  <meta property="og:title" content="La Savi — Steakhouse Duisburg">
+  <meta property="og:description" content="Luxuriöses Steakhouse mit Dry-Aged Steaks und Grillkultur.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <style>
+    /* La Savi — Single-File, System-Fonts, Smith & Wollensky–Anmutung */
+    :root {
+      --black: #000000;
+      --gray-950: #0a0a0a;
+      --gray-900: #1a1a1a;
+      --gold: #d4af37;
+      --gold-soft: #c9a961;
+      --gold-dim: rgba(212, 175, 55, 0.35);
+      --white: #ffffff;
+      --text-soft: #cccccc;
+      --text-muted: #888888;
+      --wine: #8b0000;
+      --sw-green: #1e4d3b;
+      --sw-gold-nav: #a67c52;
+      --sw-border: #d9d9d9;
+      --sw-text: #1a1a1a;
+      --sw-text-soft: #6b6b6b;
+      --font-serif: Georgia, "Times New Roman", Times, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --space-20: 20px;
+      --space-40: 40px;
+      --space-60: 60px;
+      --space-80: 80px;
+      --header-h: 72px;
+      --ease: 0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      background: var(--black);
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    ul { list-style: none; }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 12px;
+      z-index: 200;
+      padding: 12px 20px;
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 700;
+    }
+    .skip:focus { left: 12px; }
+
+    .container {
+      width: min(1140px, calc(100% - var(--space-40)));
+      margin-inline: auto;
+    }
+
+    /* —— Header —— */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-dim);
+    }
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-20);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 44px;
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+    .brand-text {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-desktop a {
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      border-radius: 4px;
+      transition: color var(--ease), background var(--ease);
+    }
+    .nav-desktop a:hover,
+    .nav-desktop a:focus-visible {
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+    .btn-reserve {
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: linear-gradient(145deg, var(--gold), var(--gold-soft));
+      border-radius: 2px;
+      transition: transform var(--ease), box-shadow var(--ease), filter var(--ease);
+    }
+    .btn-reserve:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 8px 28px rgba(212, 175, 55, 0.25);
+    }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+    }
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: var(--space-20);
+      right: var(--space-20);
+      padding: var(--space-20);
+      background: var(--gray-950);
+      border: 1px solid var(--gold-dim);
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-soft);
+      border-radius: 4px;
+    }
+    .nav-mobile a:hover { color: var(--gold); background: rgba(212, 175, 55, 0.06); }
+    .nav-mobile .btn-reserve { text-align: center; margin-top: 8px; }
+
+    @media (max-width: 900px) {
+      .nav-desktop, .header-inner .btn-reserve { display: none; }
+      .menu-toggle { display: flex; }
+    }
+    .header-inner .btn-reserve { margin-left: 8px; }
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
+      margin-right: 6px;
+    }
+    .lang-btn {
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 1px solid #555;
+      border-radius: 4px;
+      color: #aaa;
+      background: #1a1a1a;
+    }
+    .lang-btn.is-active {
+      color: #111;
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    /* —— Hero —— */
+    .hero {
+      min-height: 100svh;
+      padding-top: var(--header-h);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gold-dim);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("images/home-hero.png") center / cover no-repeat;
+      transform: scale(1.06);
+      filter: blur(10px) brightness(0.42);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 52% at 50% 44%, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.72) 78%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.84));
+    }
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .hero .container { padding-block: var(--space-60); }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      max-width: 18ch;
+      margin-inline: auto;
+    }
+    .hero .tagline {
+      margin-top: var(--space-20);
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 36ch;
+      margin-inline: auto;
+    }
+    .hero-cta {
+      margin-top: var(--space-40);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .btn-gold {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      background: linear-gradient(145deg, var(--gold), var(--gold-soft));
+      border-radius: 2px;
+      transition: filter var(--ease), box-shadow var(--ease), transform var(--ease);
+    }
+    .btn-gold:hover { filter: brightness(1.1); box-shadow: 0 10px 32px rgba(212, 175, 55, 0.22); transform: translateY(-1px); }
+    .btn-outline {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      border-radius: 2px;
+      background: transparent;
+      transition: background var(--ease), color var(--ease);
+    }
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--white);
+    }
+    .hero-sub {
+      margin-top: var(--space-60);
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* —— Sections common —— */
+    section { padding-block: var(--space-80); }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 3vw, 2.375rem);
+      font-weight: 400;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: var(--space-60);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* —— Quickinfo 3 cards —— */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+    }
+    @media (max-width: 768px) {
+      .cards-3 { grid-template-columns: 1fr; }
+    }
+    .info-card {
+      padding: var(--space-40) var(--space-40) var(--space-40);
+      background: var(--gray-900);
+      border-top: 3px solid var(--gold);
+      border-radius: 0 0 4px 4px;
+      transition: transform var(--ease), box-shadow var(--ease);
+    }
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+    .info-card .icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: var(--space-20);
+      color: var(--gold);
+    }
+    .info-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .info-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* —— Speisekarte (Smith & Wollensky „Menus“-Layout) —— */
+    .menu-section {
+      padding-block: 0 !important;
+      background: var(--white);
+    }
+    .sw-menu-hero {
+      position: relative;
+      width: 100%;
+      min-height: min(52vh, 520px);
+      max-height: 640px;
+      overflow: hidden;
+    }
+    .sw-menu-hero img {
+      width: 100%;
+      height: 100%;
+      min-height: min(52vh, 520px);
+      object-fit: cover;
+      object-position: top center;
+    }
+    .sw-menu-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%);
+      pointer-events: none;
+    }
+    .sw-menu-hero__text {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-40);
+    }
+    .sw-menu-hero__eyebrow {
+      font-family: var(--font-serif);
+      font-size: clamp(11px, 1.8vw, 13px);
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .sw-menu-hero__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.25rem, 7vw, 4rem);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.05;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.45);
+    }
+    .sw-menu-light {
+      background: #fff;
+      color: var(--sw-text);
+      padding: var(--space-60) 0 var(--space-80);
+    }
+    .sw-menu-light .container {
+      max-width: 920px;
+    }
+    .sw-menu-download-wrap {
+      text-align: center;
+      margin-bottom: var(--space-40);
+    }
+    .sw-menu-download {
+      display: inline-block;
+      padding: 14px 36px;
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sw-text);
+      background: #fff;
+      border: 1px solid var(--sw-border);
+      transition: border-color var(--ease), color var(--ease);
+    }
+    .sw-menu-download:hover {
+      border-color: var(--sw-gold-nav);
+      color: var(--sw-gold-nav);
+    }
+    .sw-menu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px 20px;
+      margin-bottom: var(--space-20);
+    }
+    .sw-menu-tabs__btn {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sw-gold-nav);
+      background: none;
+      padding: 8px 4px 10px;
+      border-bottom: 2px solid transparent;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .sw-menu-tabs__btn:hover,
+    .sw-menu-tabs__btn:focus-visible {
+      color: #8a6644;
+    }
+    .sw-menu-tabs__btn.is-active {
+      border-bottom-color: var(--sw-gold-nav);
+    }
+    .sw-menu-tabs__sep {
+      font-family: var(--font-serif);
+      color: #c4c4c4;
+      font-size: 14px;
+      user-select: none;
+    }
+    .sw-menu-rule {
+      border: none;
+      height: 1px;
+      background: var(--sw-border);
+      margin: 0 0 var(--space-60);
+    }
+    .sw-menu-panel {
+      display: none;
+    }
+    .sw-menu-panel.is-active {
+      display: block;
+    }
+    .sw-menu-cat {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--sw-green);
+      margin-bottom: var(--space-40);
+    }
+    .sw-menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 56px;
+    }
+    @media (max-width: 700px) {
+      .sw-menu-grid { grid-template-columns: 1fr; gap: 8px 0; }
+    }
+    .sw-menu-item {
+      font-family: var(--font-serif);
+      padding: 20px 0 28px;
+      border-bottom: 1px solid #eee;
+      transition: background var(--ease);
+    }
+    .sw-menu-item:hover {
+      background: rgba(0,0,0,0.02);
+    }
+    .sw-menu-item__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .sw-menu-item__name {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sw-text);
+      line-height: 1.35;
+    }
+    .sw-menu-item__price {
+      flex-shrink: 0;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--sw-gold-nav);
+      letter-spacing: 0.04em;
+    }
+    .sw-menu-item__desc {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--sw-text-soft);
+      line-height: 1.55;
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+    .btn-print {
+      padding: 12px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sw-text);
+      border: 1px solid var(--sw-border);
+      border-radius: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      transition: border-color var(--ease), color var(--ease);
+    }
+    .btn-print:hover {
+      border-color: var(--sw-gold-nav);
+      color: var(--sw-gold-nav);
+    }
+
+    /* —— Highlights —— */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-20);
+    }
+    @media (max-width: 600px) {
+      .highlights { grid-template-columns: 1fr; }
+    }
+    .highlight-item {
+      padding: var(--space-40);
+      background: var(--gray-900);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+      transition: border-color var(--ease);
+    }
+    .highlight-item:hover { border-color: var(--gold); }
+    .highlight-item strong {
+      display: block;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .highlight-item span { font-size: 14px; color: var(--text-muted); }
+
+    /* —— Testimonials —— */
+    #bewertungen { background: var(--gray-950); }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+    }
+    @media (max-width: 900px) {
+      .testimonials { grid-template-columns: 1fr; }
+    }
+    .testimonial {
+      padding: var(--space-40);
+      background: var(--gray-900);
+      border-top: 3px solid var(--gold);
+      border-radius: 0 0 4px 4px;
+    }
+    .stars { color: var(--gold); letter-spacing: 4px; margin-bottom: 16px; font-size: 14px; }
+    .testimonial blockquote {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--text-soft);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .testimonial cite {
+      font-size: 13px;
+      font-weight: 700;
+      font-style: normal;
+      color: var(--white);
+    }
+
+    /* —— Kontakt —— */
+    .contact-head {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      margin-bottom: var(--space-60);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+      margin-bottom: var(--space-60);
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    .contact-box {
+      text-align: center;
+      padding: var(--space-40);
+      background: var(--gray-900);
+      border: 1px solid var(--gold-dim);
+      border-radius: 4px;
+    }
+    .contact-box .emoji { font-size: 28px; margin-bottom: 12px; }
+    .contact-box h3 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .contact-box p, .contact-box a {
+      font-size: 15px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .contact-box a[href^="tel"] {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .contact-box a[href^="tel"]:hover { text-decoration: underline; }
+    .contact-cta-wrap { text-align: center; }
+    .contact-cta-wrap .btn-gold { font-size: 18px; padding: 16px 36px; }
+
+    /* —— Footer —— */
+    .footer {
+      padding: var(--space-60) 0 var(--space-40);
+      background: var(--gray-950);
+      border-top: 1px solid var(--gold-dim);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-40);
+      margin-bottom: var(--space-40);
+    }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-col p, .footer-col a {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .social-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-grid .social-row { justify-content: flex-start; }
+    @media (max-width: 768px) {
+      .footer-grid .social-row { justify-content: center; }
+    }
+    .social-row a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .contact-socials {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .contact-social-btn {
+      min-width: 320px;
+      padding: 14px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #f6d365;
+      letter-spacing: 0.01em;
+      border: 1px solid rgba(246, 211, 101, 0.75);
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgba(246, 211, 101, 0.14), rgba(212, 175, 55, 0.04));
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease), color var(--ease);
+    }
+    .contact-social-btn:hover {
+      transform: translateY(-2px);
+      color: #ffefb0;
+      border-color: rgba(246, 211, 101, 1);
+      box-shadow: 0 14px 36px rgba(212, 175, 55, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+    .contact-social-btn:focus-visible {
+      outline: 2px solid rgba(246, 211, 101, 0.9);
+      outline-offset: 2px;
+    }
+    @media (max-width: 560px) {
+      .contact-socials {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-social-btn {
+        min-width: min(100%, 340px);
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+    .copyright {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      padding-top: var(--space-40);
+      border-top: 1px solid #2a2a2a;
+    }
+
+    /* —— Reveal —— */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* —— Print: nur Menü-Section (A4), Rest ausgeblendet —— */
+    @media print {
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+
+      /* Navigation, Footer, Skip, UI-Buttons */
+      .skip,
+      .site-header,
+      .footer,
+      .hero-cta,
+      .menu-toggle,
+      .nav-mobile,
+      .btn-print,
+      #btn-print-menu-secondary,
+      .menu-print-hint,
+      .sw-menu-hero,
+      .sw-menu-download-wrap,
+      .sw-menu-tabs,
+      .contact-cta-wrap,
+      .social-row {
+        display: none !important;
+      }
+
+      main > section:not(.menu-section) {
+        display: none !important;
+      }
+
+      .menu-section {
+        display: block !important;
+        background: #fff !important;
+        color: #111 !important;
+        padding: 0 !important;
+        border: none !important;
+      }
+
+      .sw-menu-light {
+        padding: 0 !important;
+      }
+
+      body {
+        background: #fff !important;
+        color: #111 !important;
+        font-size: 11pt;
+      }
+
+      main {
+        display: block !important;
+      }
+
+      .menu-section .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .sw-menu-panel,
+      .sw-menu-panel[hidden] {
+        display: block !important;
+      }
+
+      .sw-menu-panel {
+        page-break-after: auto;
+      }
+
+      .sw-menu-panel + .sw-menu-panel {
+        margin-top: 16pt;
+        padding-top: 12pt;
+        border-top: 1px solid #ccc;
+      }
+
+      .sw-menu-cat {
+        color: var(--sw-green) !important;
+        margin-bottom: 12pt !important;
+      }
+
+      .sw-menu-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .sw-menu-item {
+        border-bottom-color: #ddd !important;
+        page-break-inside: avoid;
+      }
+
+      .sw-menu-item__name {
+        color: #000 !important;
+      }
+
+      .sw-menu-item__price {
+        color: #7a5c00 !important;
+      }
+
+      .sw-menu-item__desc {
+        color: #444 !important;
+      }
+
+      .sw-menu-rule {
+        display: none !important;
+      }
+    }
+  </style>
 </head>
-<body></body>
+<body>
+  <a class="skip" href="#main">Zum Inhalt</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="La Savi Startseite">
+        <img src="logo-la-savi.webp" width="48" height="48" alt="La Savi Steakhouse Logo">
+        <span class="brand-text">La Savi</span>
+      </a>
+      <nav class="nav-desktop" aria-label="Hauptnavigation">
+        <a href="#home" id="nav-home-desktop">Home</a>
+        <a href="menu.html" id="nav-menu-desktop">Menü</a>
+        <a href="#reservierung" id="nav-reservation-desktop">Reservierung</a>
+        <a href="#ueber-uns" id="nav-about-desktop">Über uns</a>
+        <a href="#kontakt" id="nav-contact-desktop">Kontakt</a>
+      </nav>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" id="lang-de">🇩🇪 DE</button>
+          <button type="button" class="lang-btn" id="lang-en">🇬🇧 EN</button>
+        </div>
+        <a class="btn-reserve" href="#reservierung" id="btn-reserve-top">Reservierung</a>
+        <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <nav class="nav-mobile" id="mobile-nav" aria-label="Mobilmenü">
+        <a href="#home" id="nav-home-mobile">Home</a>
+        <a href="menu.html" id="nav-menu-mobile">Menü</a>
+        <a href="#reservierung" id="nav-reservation-mobile">Reservierung</a>
+        <a href="#ueber-uns" id="nav-about-mobile">Über uns</a>
+        <a href="#kontakt" id="nav-contact-mobile">Kontakt</a>
+        <a class="btn-reserve" href="#reservierung" id="btn-reserve-mobile">Reservierung</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>La Savi Steakhouse</h1>
+        <p class="tagline" id="hero-tagline">Genießen Sie Dry-Aged Steaks und authentische Grillspezialitäten — mit Herz, Handwerk und höchstem Anspruch.</p>
+        <div class="hero-cta">
+          <a class="btn-gold" href="#reservierung" id="hero-btn-reserve">Reservierung</a>
+          <a class="btn-outline" href="menu.html" id="hero-btn-menu">Menü ansehen</a>
+        </div>
+        <p class="hero-sub" id="hero-subline">Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen</p>
+      </div>
+    </section>
+
+    <section id="ueber-uns">
+      <div class="container">
+        <h2 class="section-title reveal">Ihr Erlebnis bei La Savi</h2>
+        <div class="cards-3">
+          <article class="info-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+            <h3 id="feature-1-title">Höchste Qualität</h3>
+            <p id="feature-1-text">Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.</p>
+          </article>
+          <article class="info-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3v4M16 3v4M12 13v8M5 8h14M7 21h10"/></svg>
+            <h3 id="feature-2-title">Expertise</h3>
+            <p id="feature-2-text">Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.</p>
+          </article>
+          <article class="info-card reveal">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 14c2-4 5-6 8-6s6 2 8 6M3 19h18"/></svg>
+            <h3 id="feature-3-title">Atmosphere</h3>
+            <p id="feature-3-text">Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="spezialitaeten" class="menu-section" aria-labelledby="menu-page-title">
+      <div class="sw-menu-hero">
+        <img src="images/spezialitaeten-hero.png" width="680" height="386" alt="La Savi Restaurant in Duisburg bei Abendbeleuchtung" fetchpriority="high" loading="eager">
+        <div class="sw-menu-hero__text">
+          <p class="sw-menu-hero__eyebrow">LA SAVI · DUISBURG</p>
+          <h2 class="sw-menu-hero__title" id="menu-page-title">UNSERE TOP-SPEZIALITÄTEN</h2>
+        </div>
+      </div>
+      <div class="sw-menu-light">
+        <div class="container">
+          <div class="sw-menu-download-wrap reveal">
+            <button type="button" class="sw-menu-download" id="btn-print-menu">📋 Vollständige Speisekarte anzeigen</button>
+          </div>
+          <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Top-Auswahl aus unserer Karte.</p>
+          <hr class="sw-menu-rule" aria-hidden="true">
+          <div class="sw-menu-panel is-active reveal" id="menu-panel-main">
+            <h3 class="sw-menu-cat">Salate</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">01. Hirtensalat</span>
+                  <span class="sw-menu-item__price">4,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">02. Hirtensalat mit Feta Käse</span>
+                  <span class="sw-menu-item__price">7,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">03. Kräuter Blätter Salat</span>
+                  <span class="sw-menu-item__price">7,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">04. Kräuter Blätter Salat mit Feta Käse</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">05. Kräuter Blätter Salat mit Büffelmozzarella</span>
+                  <span class="sw-menu-item__price">11,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Tägliche Teiggerichte (Hauseigene Herstellung)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">06. Hauseigene Türkische Tortellini</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">07. Hauseigene Pide mit Döner (oder Rinder-Lamm-Mix)</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">08. Hauseigene Lammfleisch Pide</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">09. Hauseigene Lahmacun</span>
+                  <span class="sw-menu-item__price">3,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">10. Hauseigene Lahmacun Dürüm</span>
+                  <span class="sw-menu-item__price">5,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">11. Hauseigene Lahmacun mit Döner</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">12. Hauseigene Gemüse Pide</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Tägliche Tagesgerichte (Tontopf / Kiremitte Kebap)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 1: Lammfleisch Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">14,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 2: Hähnchen Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">12,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 3: Lammfrikadellen Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">13,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 4: Garnelen Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">19,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Menü 5: Gemüse Tontopf mit Reis</span>
+                  <span class="sw-menu-item__price">10,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wechselnde Tagessuppen</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Linsensuppe</span>
+                  <span class="sw-menu-item__price">4,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Hähnchensuppe</span>
+                  <span class="sw-menu-item__price">5,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Lammfleischsuppe</span>
+                  <span class="sw-menu-item__price">6,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wet Aged Spezial Döner &amp; Pommes</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">13. Wet Aged Döner im Brot</span>
+                  <span class="sw-menu-item__price">8,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">14. Wet Aged Döner auf Teller</span>
+                  <span class="sw-menu-item__price">14,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">15. Iskender Döner</span>
+                  <span class="sw-menu-item__price">15,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">16. Wet Aged Dürüm Döner</span>
+                  <span class="sw-menu-item__price">9,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Pommes klein</span>
+                  <span class="sw-menu-item__price">2,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Pommes groß</span>
+                  <span class="sw-menu-item__price">3,90 €</span>
+                </div>
+              </article>
+              <article class="sw-menu-item">
+                <div class="sw-menu-item__row">
+                  <span class="sw-menu-item__name">Pommes mit Wet Aged Döner</span>
+                  <span class="sw-menu-item__price">7,90 €</span>
+                </div>
+              </article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Grillgerichte</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">20. Adana Hackspieß Teller scharf</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">21. Urfa Hackspieß Teller</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">22. Gemischter Grill Teller</span><span class="sw-menu-item__price">23,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">23. Lammkotelett</span><span class="sw-menu-item__price">21,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">24. Lammspieß Teller</span><span class="sw-menu-item__price">19,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">25. Frikadellen mit Lammfleisch auf Grill</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">26. Sultan Kebap Grillteller für 2 Personen</span><span class="sw-menu-item__price">49,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">27. Sultan Kebap Grillteller für 4 Personen</span><span class="sw-menu-item__price">94,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">28. Hähnchenkotelett</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">29. Hähnchenspieß</span><span class="sw-menu-item__price">17,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">30. Adana Dürüm</span><span class="sw-menu-item__price">9,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">31. Hähnchenspieß Dürüm</span><span class="sw-menu-item__price">9,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">32. Lammspieß Dürüm</span><span class="sw-menu-item__price">9,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Steakspezialitäten</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">33. Rump Steak (ca. 350 g)</span><span class="sw-menu-item__price">34,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">34. Filet Steak (ca. 300 g)</span><span class="sw-menu-item__price">39,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">35. Cowboy Steak (ca. 1000 g)</span><span class="sw-menu-item__price">49,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">36. T-Bone Steak (ca. 1000 g)</span><span class="sw-menu-item__price">49,90 €</span></div><p class="sw-menu-item__desc">Dry Aged Steaks (3-4 Wochen gereift)</p></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Büffel Steaks</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">37. Büffel Filet Steak (ca. 250 g)</span><span class="sw-menu-item__price">44,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">38. Büffel Ribeye Steak (ca. 300 g)</span><span class="sw-menu-item__price">44,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wagyu Steaks</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">39. Wagyu Filet (ca. 200 g)</span><span class="sw-menu-item__price">129,00 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">40. Wagyu Roastbeef (ca. 300 g)</span><span class="sw-menu-item__price">149,00 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">41. Wagyu Ribeye (ca. 300 g)</span><span class="sw-menu-item__price">149,00 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Beilagen &amp; Saucen (für Steaks)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Rahmspinat mit Sahne</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Bratkartoffeln mit Rosmarin</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Süßkartoffel Pommes</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sauce Hollandaise</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sauce Béarnaise</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sauce Pfeffer</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Kalte Getränke</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Coca Cola, Fanta, Sprite, Mezzo Mix (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Uludağ (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Mineralwasser (0,25 l)</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Mineralwasser (0,75 l)</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Orangen-Kirsch-Banane-Multi (0,2 l)</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Ayran hausgemacht (0,33 l)</span><span class="sw-menu-item__price">1,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Eistee Pfirsich, Zitrone (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Ginger (0,2 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Bitter (0,2 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Red Bull (0,25 l)</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Malzbier (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Krombacher alkoholfrei (0,33 l)</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Wein &amp; Sekt (Natureo alkoholfrei)</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Rotwein Natureo (0,2 l)</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Weißwein Natureo (0,2 l)</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Sekt Natureo Seco (0,2 l)</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Heiße Getränke</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Café Crema</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Espresso</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Cappuccino</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Latte</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Milchkaffee</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Türkischer Kaffee</span><span class="sw-menu-item__price">2,50 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">Kakao</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+            </div>
+            <h3 class="sw-menu-cat" style="margin-top:48px;">Nachtisch</h3>
+            <div class="sw-menu-grid">
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">42. Katmer</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">43. Künefe</span><span class="sw-menu-item__price">7,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">44. Milchreis mit Vanille</span><span class="sw-menu-item__price">4,90 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">45. Mascarpone</span><span class="sw-menu-item__price">1,00 €</span></div></article>
+              <article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">46. Maraş Eis</span><span class="sw-menu-item__price">2,90 €</span></div></article>
+            </div>
+          </div>
+
+          <div style="margin-top: 40px; text-align: center;" class="reveal">
+            <button type="button" class="btn-print" id="btn-print-menu-secondary" aria-label="Speisekarte drucken">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+              📋 Vollständige Speisekarte anzeigen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title reveal">Das macht La Savi aus</h2>
+        <div class="highlights">
+          <div class="highlight-item reveal"><strong>Wet Aged Döner</strong><span>Unsere Spezialität — einzigartig in der Region.</span></div>
+          <div class="highlight-item reveal"><strong>Hausgemachter Ayran</strong><span>Täglich frisch für Sie zubereitet.</span></div>
+          <div class="highlight-item reveal"><strong>Chef's Selection</strong><span>Empfohlene Auswahl vom Küchenteam.</span></div>
+          <div class="highlight-item reveal"><strong>4,8 ★ bei Google</strong><span>Von über 2.550 Gästen bewertet — vielen Dank für Ihr Vertrauen.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bewertungen">
+      <div class="container">
+        <h2 class="section-title reveal" id="testimonials-title">Stimmen unserer Gäste</h2>
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>„Erst beruflich, dann privat — Ayran-Fan geworden. Mit Familie willkommen!“</blockquote>
+            <cite>— Pascal D.</cite>
+          </article>
+          <article class="testimonial reveal">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>„Wie Mutter kocht! Mit besonderen Details &amp; Fürsorge.“</blockquote>
+            <cite>— Ebru A.</cite>
+          </article>
+          <article class="testimonial reveal">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>„Detailliertes Steak-Lob, perfekte Beratung zu Fleischsorten.“</blockquote>
+            <cite>— Eray B.</cite>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reservierung">
+      <div class="container">
+        <h2 class="contact-head reveal" id="reservation-title">Reservieren Sie Ihren Tisch</h2>
+        <div class="contact-grid">
+          <div class="contact-box reveal">
+            <div class="emoji" aria-hidden="true">📍</div>
+            <h3 id="reservation-address-title">Adresse</h3>
+            <p>Untermauerstraße 4<br>47051 Duisburg</p>
+          </div>
+          <div class="contact-box reveal">
+            <div class="emoji" aria-hidden="true">☎</div>
+            <h3 id="reservation-phone-title">Telefon</h3>
+            <p><a href="tel:+491634588988">+49 163 458 898 8</a></p>
+            <p style="margin-top:8px; font-size:13px;">Jetzt anrufen — wir freuen uns auf Sie.</p>
+          </div>
+          <div class="contact-box reveal">
+            <div class="emoji" aria-hidden="true">🕐</div>
+            <h3 id="reservation-hours-title">Öffnungszeiten</h3>
+            <p id="reservation-hours-text">Mo–Sa: 12:00–22:00 Uhr<br>So: geschlossen</p>
+          </div>
+        </div>
+        <div class="contact-cta-wrap reveal">
+          <a class="btn-gold" href="tel:+491634588988" id="reservation-cta">Jetzt reservieren — anrufen</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <h2 class="section-title reveal">Kontakt</h2>
+        <p style="text-align:center; color: var(--text-muted); max-width: 48ch; margin: -40px auto 0;">Folgen Sie uns auf Instagram und TikTok für Neuigkeiten, Gerichte und Stimmungsbilder.</p>
+        <div class="contact-socials reveal">
+          <a class="contact-social-btn" href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer" aria-label="La Savi auf Instagram">@lasavi_restaurant auf Instagram</a>
+          <a class="contact-social-btn" href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="La Savi auf TikTok">@lasavirestaurant auf TikTok</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 id="footer-contact-title">Kontakt</h4>
+          <p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p>
+          <p style="margin-top:12px;"><a href="tel:+491634588988">+49 163 458 898 8</a></p>
+        </div>
+        <div class="footer-col">
+          <h4 id="footer-hours-title">Öffnungszeiten</h4>
+          <p>Montag – Samstag<br>12:00 – 22:00 Uhr</p>
+          <p style="margin-top:12px;">Sonntag geschlossen</p>
+        </div>
+        <div class="footer-col">
+          <h4>Folgen</h4>
+          <div class="social-row">
+            <a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer" aria-label="La Savi auf Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="La Savi auf TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.31V2h-3.1v13.32a2.75 2.75 0 1 1-1.9-2.62v-3.2a5.95 5.95 0 1 0 5 5.88V8.58a7.9 7.9 0 0 0 4.77 1.6V6.99c-.34 0-.67-.1-1.01-.3z"/></svg>
+              TikTok
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright" id="footer-copyright">© 2026 La Savi | Premium Steakhouse Duisburg</p>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "La Savi Steakhouse",
+      "image": "logo-la-savi.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Untermauerstraße 4",
+        "postalCode": "47051",
+        "addressLocality": "Duisburg",
+        "addressCountry": "DE"
+      },
+      "telephone": "+491634588988",
+      "servesCuisine": ["Steakhouse", "Grill", "Steaks"],
+      "priceRange": "€€€",
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "12:00", "closes": "22:00" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2552"
+      }
+    }
+  </script>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.menu-toggle');
+      var mobile = document.getElementById('mobile-nav');
+      toggle && toggle.addEventListener('click', function () {
+        var open = mobile.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mobile && mobile.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          mobile.classList.remove('open');
+          toggle && toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      function openPrintDialog() {
+        window.location.href = 'menu.html';
+      }
+      document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', openPrintDialog);
+      document.getElementById('btn-print-menu-secondary') && document.getElementById('btn-print-menu-secondary').addEventListener('click', openPrintDialog);
+      var langDeBtn = document.getElementById('lang-de');
+      var langEnBtn = document.getElementById('lang-en');
+      var menuPanelMain = document.getElementById('menu-panel-main');
+      var menuPanelDeHtml = menuPanelMain ? menuPanelMain.innerHTML : '';
+      var menuPanelEnHtml = '';
+
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function makeCat(title, items) {
+        var html = '<h3 class="sw-menu-cat" style="margin-top:48px;">' + esc(title) + '</h3><div class="sw-menu-grid">';
+        items.forEach(function (it) {
+          html += '<article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">' + esc(it[0]) + '</span><span class="sw-menu-item__price">' + esc(it[1]) + '</span></div></article>';
+        });
+        html += '</div>';
+        return html;
+      }
+
+      if (menuPanelMain) {
+        menuPanelEnHtml += makeCat('Salads', [
+          ["01. Shepherd's Salad", '4.90 €'], ["02. Shepherd's Salad with Feta cheese", '7.90 €'], ['03. Herb leaves salad', '7.90 €'], ['04. Herb leaves salad with Feta cheese', '9.90 €'], ['05. Herb leaves salad with buffalo mozzarella', '11.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Daily Dough Dishes (Homemade)', [
+          ['06. Turkish Tortellini (Filled with minced meat with butter and yogurtsauce)', '9.90 €'], ['07. Dough ship with kebab meat (or minced meat)', '9.90 €'], ['08. Dough ship with Lamb cubes and Gouda cheese', '9.90 €'], ['09. Turkish pizza without everything', '3.90 €'], ['10. Turkish pizza with salad', '5.90 €'], ['11. Turkish pizza with kebab meat', '9.90 €'], ['12. Dough ship with Vegetables', '9.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Daily Dishes (Clay pot dishes from the oven)', [
+          ['MENU 1: Lamb meat clay pot with rice', '14.90 €'], ['MENU 2: Chicken clay pot with rice', '12.90 €'], ['MENU 3: Lamb meatballs clay pot with rice', '13.90 €'], ['MENU 4: Shrimp clay pot with rice', '19.90 €'], ['MENU 5: Vegetable clay pot with rice', '10.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Changing Daily Soups', [['Lentil soup', '4.90 €'], ['Chicken soup', '5.90 €'], ['Lamb soup', '6.90 €']]);
+        menuPanelEnHtml += makeCat('Wet Aged Special Döner & Fries', [
+          ['13. Kebab in bread', '8.90 €'], ['14. Kebab plate with fries and salad', '14.90 €'], ['15. Iskender Döner (Kebab plate with sauce and yogurt)', '15.90 €'], ['16. Kebab wrap', '9.90 €'], ['Small fries', '2.90 €'], ['Big fries', '3.90 €'], ['Fries kabap (Fries with Wet Aged Döner)', '7.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Grill Dishes', [
+          ['20. Adana minced skewer plate hot', '17.90 €'], ['21. Urfa minced skewer plate', '17.90 €'], ['22. Mixed grill plate', '23.90 €'], ['23. Lamb chop', '21.90 €'], ['24. Lamb skewer plate', '19.90 €'], ['25. Meatballs on the grill (with lamb meat)', '17.90 €'], ['26. Sultan Kebap Grill plate for 2 persons', '49.90 €'], ['27. Sultan Kebap Grill plate for 4 persons', '94.90 €'], ['28. Chicken chop', '17.90 €'], ['29. Chicken skewer', '17.90 €'], ['30. Adana minced skewer wrap', '9.90 €'], ['31. Chicken skewer wrap', '9.90 €'], ['32. Lamb skewer wrap', '9.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Steak Specialties', [
+          ['33. Rump Steak (approx. 350 gr)', '34.90 €'], ['34. Filet Steak (approx. 300 gr)', '39.90 €'], ['35. Cowboy Steak (approx. 1000 gr)', '49.90 €'], ['36. T-Bone Steak (approx. 1000 gr)', '49.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Buffalo Steaks', [['37. Buffalo Filet Steak (approx. 250gr)', '44.90 €'], ['38. Buffalo Ribeye Steak (approx. 300gr)', '44.90 €']]);
+        menuPanelEnHtml += makeCat('Wagyu Steaks', [['39. Wagyu Filet (approx. 200gr)', '129.00 €'], ['40. Wagyu Roastbeef (approx. 300gr)', '149.00 €'], ['41. Wagyu Ribeye (approx. 300gr)', '149.00 €']]);
+        menuPanelEnHtml += makeCat('Side Dishes & Sauces (for Steaks)', [['Cream spinach', '4.90 €'], ['Fried potatoes with rosemary', '4.90 €'], ['Sweet potato fries', '4.90 €'], ['Hollandaise sauce', '4.90 €'], ['Béarnaise sauce', '4.90 €'], ['Pepper sauce', '4.90 €']]);
+        menuPanelEnHtml += makeCat('Cold Drinks', [['Coca Cola, Fanta, Sprite, Mezzo Mix (0.33l)', '2.90 €'], ['Uludağ (Turkish soda) (0.33l)', '2.90 €'], ['Mineral water with or without carbonation (0.25l)', '2.50 €'], ['Mineral water with or without carbonation (0.75l)', '4.90 €'], ['Orange-Cherry-Banana-Multi juice (0.2l)', '2.50 €'], ['Ayran (homemade Turkish buttermilk) (0.33l)', '1.90 €'], ['Ice tea (Peach, Lemon) (0.33l)', '2.90 €'], ['Ginger Ale (0.2l)', '2.90 €'], ['Bitter Lemon (0.2l)', '2.90 €'], ['Red Bull (0.25l)', '2.50 €'], ['Malt beer (0.33l)', '2.90 €'], ['Krombacher (non-alcoholic beer) (0.33l)', '2.90 €']]);
+        menuPanelEnHtml += makeCat('Wine & Sparkling Wine (Natureo Non-Alcoholic)', [['Red wine Natureo (0.2l)', '7.90 €'], ['White wine Natureo (0.2l)', '7.90 €'], ['Sparkling wine Natureo Seco (0.2l)', '7.90 €']]);
+        menuPanelEnHtml += makeCat('Hot Drinks', [['Cafe Crema', '2.50 €'], ['Espresso', '2.50 €'], ['Cappuccino', '2.90 €'], ['Latte', '2.90 €'], ['Milk coffee', '2.90 €'], ['Turkish Coffee', '2.50 €'], ['Hot Cocoa', '2.90 €']]);
+        menuPanelEnHtml += makeCat('Desserts', [['42. Katmer (crisp flaky pastry with Cream and pistachios)', '7.90 €'], ['43. Künefe (String dough with cheese)', '7.90 €'], ['44. Rice pudding vanilla', '4.90 €'], ['45. Mascarpone', '1.00 €'], ['46. Maras Ice Cream', '2.90 €']]);
+      }
+
+      // Homepage zeigt nur gekürzte Top-Highlights.
+      if (menuPanelMain) {
+        menuPanelDeHtml = ''
+          + makeCat('STEAKS', [['T-Bone Steak (ca. 1000 gr)', '€49,90'], ['Wagyu Filet (ca. 200gr)', '€129,00']])
+          + makeCat('GRILL', [['Adana Hackspieß Teller scharf', '€17,90'], ['Sultan Kebap Grillteller für 2 Personen', '€49,90']])
+          + makeCat('WET AGED DÖNER', [['Iskender Döner', '€15,90']])
+          + makeCat('GETRÄNKE', [['Ayran (hausgemacht) (0,33l)', '€1,90'], ['Cafe Crema', '€2,50']]);
+        menuPanelEnHtml = ''
+          + makeCat('STEAKS', [['T-Bone Steak (approx. 1000 gr)', '€49,90'], ['Wagyu Filet (approx. 200gr)', '€129,00']])
+          + makeCat('GRILL', [['Adana minced skewer plate hot', '€17,90'], ['Sultan Kebap Grill plate for 2 persons', '€49,90']])
+          + makeCat('WET AGED DÖNER', [['Iskender Döner (Kebab plate with sauce and yogurt)', '€15,90']])
+          + makeCat('DRINKS', [['Ayran (homemade Turkish buttermilk) (0.33l)', '€1,90'], ['Cafe Crema', '€2,50']]);
+      }
+
+      function setTxt(id, text, asHtml) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        if (asHtml) el.innerHTML = text;
+        else el.textContent = text;
+      }
+      function applyLanguage(lang) {
+        var en = lang === 'en';
+        document.documentElement.lang = en ? 'en' : 'de';
+        if (langDeBtn && langEnBtn) {
+          langDeBtn.classList.toggle('is-active', !en);
+          langEnBtn.classList.toggle('is-active', en);
+        }
+        setTxt('nav-menu-desktop', en ? 'Menu' : 'Menü');
+        setTxt('nav-reservation-desktop', en ? 'Reservation' : 'Reservierung');
+        setTxt('nav-about-desktop', en ? 'About Us' : 'Über uns');
+        setTxt('nav-contact-desktop', en ? 'Contact' : 'Kontakt');
+        setTxt('nav-menu-mobile', en ? 'Menu' : 'Menü');
+        setTxt('nav-reservation-mobile', en ? 'Reservation' : 'Reservierung');
+        setTxt('nav-about-mobile', en ? 'About Us' : 'Über uns');
+        setTxt('nav-contact-mobile', en ? 'Contact' : 'Kontakt');
+        setTxt('btn-reserve-top', en ? 'RESERVATIONS' : 'Reservierung');
+        setTxt('btn-reserve-mobile', en ? 'RESERVATIONS' : 'Reservierung');
+        setTxt('hero-tagline', en ? 'Enjoy premium steaks, authentic grill specialties and homemade delicacies in an elegant atmosphere' : 'Genießen Sie erstklassige Steaks, authentische Grillspezialitäten und hausgemachte Köstlichkeiten in eleganter Atmosphäre');
+        setTxt('hero-btn-reserve', en ? 'RESERVATIONS' : 'Reservierung');
+        setTxt('hero-btn-menu', en ? 'View Menu' : 'Menü ansehen');
+        setTxt('hero-subline', en ? 'Untermauerstraße 4, Duisburg | Mon-Sat 12:00-22:00' : 'Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen');
+        setTxt('feature-1-title', en ? 'Premium Quality' : 'Höchste Qualität');
+        setTxt('feature-1-text', en ? 'Hand-selected premium meat, carefully prepared and perfectly served.' : 'Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.');
+        setTxt('feature-2-title', en ? 'Expert Chef' : 'Expertise');
+        setTxt('feature-2-text', en ? 'Traditional grill artistry with modern excellence – every dish a masterpiece.' : 'Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.');
+        setTxt('feature-3-title', en ? 'Cozy Atmosphere' : 'Atmosphere');
+        setTxt('feature-3-text', en ? 'Elegant, stylish and inviting – the perfect place for any occasion.' : 'Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.');
+        setTxt('menu-page-title', en ? 'OUR TOP SPECIALTIES' : 'UNSERE TOP-SPEZIALITÄTEN');
+        setTxt('btn-print-menu', en ? '📋 View Full Menu' : '📋 Vollständige Speisekarte anzeigen');
+        setTxt('btn-print-menu-secondary', en ? '📋 View Full Menu' : '📋 Vollständige Speisekarte anzeigen');
+        setTxt('testimonials-title', en ? 'What Our Guests Say' : 'Stimmen unserer Gäste');
+        setTxt('reservation-title', en ? 'RESERVE YOUR TABLE' : 'Reservieren Sie Ihren Tisch');
+        setTxt('reservation-address-title', en ? 'ADDRESS' : 'Adresse');
+        setTxt('reservation-phone-title', en ? 'PHONE' : 'Telefon');
+        setTxt('reservation-hours-title', en ? 'OPENING HOURS' : 'Öffnungszeiten');
+        setTxt('reservation-hours-text', en ? 'Mon–Sat: 12:00–22:00<br>Sunday: Closed' : 'Mo–Sa: 12:00–22:00 Uhr<br>So: geschlossen', true);
+        setTxt('reservation-cta', en ? 'RESERVATIONS — CALL' : 'Jetzt reservieren — anrufen');
+        setTxt('footer-contact-title', en ? 'Contact' : 'Kontakt');
+        setTxt('footer-hours-title', en ? 'Opening Hours' : 'Öffnungszeiten');
+        setTxt('footer-copyright', '© 2026 La Savi | Premium Steakhouse Duisburg');
+        if (menuPanelMain) menuPanelMain.innerHTML = en ? menuPanelEnHtml : menuPanelDeHtml;
+      }
+      function setLanguage(lang) {
+        var use = lang === 'en' ? 'en' : 'de';
+        localStorage.setItem('language', use);
+        applyLanguage(use);
+      }
+      langDeBtn && langDeBtn.addEventListener('click', function () { setLanguage('de'); });
+      langEnBtn && langEnBtn.addEventListener('click', function () { setLanguage('en'); });
+      applyLanguage(localStorage.getItem('language') || 'de');
+
+    })();
+  </script>
+</body>
 </html>

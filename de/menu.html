@@ -2,39 +2,154 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#000000">
-  <title>Speisekarte – La Savi Steakhouse Duisburg | Menü & Preise</title>
-  <meta name="description" content="Vollständige Speisekarte La Savi: Steaks, Grillspezialitäten, Döner, Beilagen, Getränke. Alle Preise und Gerichte im Überblick.">
-  <meta name="keywords" content="Speisekarte, Menü Duisburg, Grill, Steaks, Preise, Döner">
-  <link rel="canonical" href="https://lasavi.de/de/menu.html">
-  <link rel="alternate" hreflang="de" href="https://lasavi.de/de/menu.html">
-  <link rel="alternate" hreflang="en" href="https://lasavi.de/en/menu.html">
-  <link rel="alternate" hreflang="tr" href="https://lasavi.de/tr/menu.html">
-  <link rel="alternate" hreflang="nl" href="https://lasavi.de/nl/menu.html">
-  <meta property="og:title" content="Speisekarte – La Savi Premium Steakhouse">
-  <meta property="og:description" content="Vollständige Speisekarte mit allen Gerichten, Preisen und Beschreibungen.">
-  <meta property="og:url" content="https://lasavi.de/de/menu.html">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_DE">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Savi | Speisekarte</title>
+  <meta name="description" content="La Savi Speisekarte mit Zoom-Modal, Steak-Illustrationen und vollständiger Auswahl.">
   <link rel="icon" href="../logo-la-savi.webp" type="image/webp">
-  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    :root{--bg:#000;--gold:#d4af37;--txt:#fff;--muted:#ccc;--panel:#1a1a1a;--border:#333;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--h:72px}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--sans);background:var(--bg);color:var(--txt)} a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;height:var(--h);background:rgba(0,0,0,.94);border-bottom:1px solid rgba(212,175,55,.35)}
+    .head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase}
+    nav{display:flex;gap:10px} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
+    .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
+    main{padding:44px 0 78px}
+    .title{text-align:center;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:clamp(2rem,5vw,3.4rem)}
+    .sub{text-align:center;color:var(--muted);margin-top:10px}
+    .print{text-align:center;margin:22px 0}
+    .print button{width:36px;height:36px;border:1px solid rgba(212,175,55,.45);border-radius:999px;background:rgba(212,175,55,.06);color:#f3d989;font-size:16px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+    .cat{margin-top:30px}
+    .cat h2{font-family:var(--serif);color:#f3d989;text-transform:uppercase;letter-spacing:.12em;font-size:18px;margin-bottom:10px}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+    .menu-card{display:flex;gap:18px;padding:18px;background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);cursor:pointer;transition:all .28s ease;border-radius:4px}
+    .menu-card:hover{background:#242424;border-left-color:#fff;transform:translateX(4px)}
+    .menu-card-image{width:120px;height:120px;flex-shrink:0;background:#0a0a0a;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .menu-card-image img{width:100%;height:100%;object-fit:cover}
+    .menu-card-info{display:flex;flex-direction:column;justify-content:space-between;flex:1}
+    .item-name{font-size:14px;font-weight:700;color:#fff}
+    .item-description{font-size:12px;color:#999;margin-top:5px;line-height:1.5}
+    .item-price{font-size:14px;font-weight:700;color:var(--gold);margin-top:8px}
+    .modal{display:none;position:fixed;inset:0;z-index:1000;animation:fadeIn .3s ease}
+    .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.72)}
+    .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(92vw,760px);max-height:90vh;overflow:auto;background:#000;border-top:3px solid var(--gold);border-radius:6px;padding:26px;animation:slideIn .3s ease}
+    .modal-close{position:absolute;top:10px;right:12px;background:transparent;border:0;color:var(--gold);font-size:30px;cursor:pointer}
+    .modal-close:hover{color:#fff}
+    .modal-image-container{margin-bottom:16px;text-align:center}
+    .modal-image-container img,.modal-image-container svg{width:100%;max-width:600px;height:auto;max-height:500px;border-radius:4px;background:#111}
+    .modal-title{font-size:22px;color:#fff;margin-bottom:8px}
+    .modal-description{font-size:14px;color:#ccc;line-height:1.6;margin-bottom:10px}
+    .modal-details{font-size:13px;color:var(--gold);margin-bottom:16px}
+    .modal-actions{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .modal-price{font-size:18px;font-weight:700;color:var(--gold)}
+    .close-btn{padding:10px 20px;background:var(--gold);color:#000;border:0;cursor:pointer;font-weight:700}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}} @keyframes slideIn{from{transform:translate(-50%,-58%);opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
+    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:32px 0 22px;margin-top:40px}
+    .f{display:grid;grid-template-columns:repeat(3,1fr);gap:22px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:#8a8a8a;font-size:14px;line-height:1.7}
+    .copy{text-align:center;color:#8a8a8a;font-size:13px;margin-top:12px}
+    @media(max-width:900px){nav{display:none}.cards,.f{grid-template-columns:1fr}}
+    @media(max-width:600px){.menu-card{flex-direction:column}.menu-card-image{width:100%;height:200px}}
+    @media print{@page{size:A4;margin:10mm} #dish-modal,header,footer,.print{display:none!important}.menu-card-image{display:none!important}.menu-card{border:1px solid #000;page-break-inside:avoid} body{background:#fff!important}}
+  </style>
 </head>
 <body>
-  <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="/de/"><img src="../logo-la-savi.webp" alt="La Savi Speisekarte Logo" width="200" height="200"><span>La Savi</span></a>
-    <button class="hamburger-menu" id="menu-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop"><a href="/de/">Home</a><a href="/de/menu.html">Speisekarte</a></nav>
-    <div class="switch"><a class="active" href="/de/">🇩🇪 DE</a><a href="/en/">🇬🇧 EN</a><a href="/tr/">🇹🇷 TR</a><a href="/nl/">🇳🇱 NL</a></div>
-    <nav class="nav-mobile" id="mobile-nav"><a href="/de/">Home</a><a href="/de/menu.html">Speisekarte</a></nav>
+  <header><div class="container head">
+    <a class="brand" href="./index.html"><img src="../logo-la-savi.webp" alt="La Savi"><span>La Savi</span></a>
+    <nav><a href="./index.html">Home</a><a href="./menu.html">Speisekarte</a><a href="./index.html#reservierung">Reservierung</a><a href="./index.html#ueber">Über uns</a><a href="./index.html#kontakt">Kontakt</a></nav>
+    <div class="switch"><a class="active" href="/de/">🇩🇪 DE</a><a href="/en/">🇬🇧 EN</a></div>
   </div></header>
-  <main class="container">
-    <h1>Unsere Speisekarte</h1><p>Genießen Sie unsere vollständige Auswahl</p>
-    <div class="menu-quick-actions"><button onclick="window.print()" class="btn-modern btn-print">Als PDF drucken</button></div>
-    <section class="menu-category"><h2>Salate</h2><div class="menu-items"><article class="menu-card" data-title="Hirtensalat" data-desc="Frisch und würzig" data-price="€4,90"><div class="menu-title-row"><strong>Hirtensalat</strong><span class="price">€4,90</span></div><p class="menu-desc">Frisch und würzig</p></article><article class="menu-card" data-title="Hirtensalat mit Feta" data-desc="Mit Feta-Käse" data-price="€7,90"><div class="menu-title-row"><strong>Hirtensalat mit Feta</strong><span class="price">€7,90</span></div><p class="menu-desc">Mit Feta-Käse</p></article></div></section>
-  </main>
-  <div class="menu-modal" id="menu-modal"><div class="menu-modal-backdrop" id="menu-backdrop"></div><div class="menu-modal-content"><button class="menu-close" id="menu-close">×</button><h3 id="modal-title"></h3><p id="modal-desc"></p><p id="modal-price" class="price"></p></div></div>
-  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-section"><h4>Kontakt</h4><p>Untermauerstraße 4, 47051 Duisburg</p><p>+49 163 458 898 8</p></div><div class="footer-section"><h4>Öffnungszeiten</h4><p>Mo - Sa: 12:00 - 22:00</p><p>Sonntag: Geschlossen</p></div><div class="footer-section footer-social"><h4>Folgen Sie uns</h4><div class="social-buttons-group"><a href="https://instagram.com/lasavi_restaurant" target="_blank" rel="noopener noreferrer" class="social-btn instagram">Instagram</a><a href="https://facebook.com/lasavi" target="_blank" rel="noopener noreferrer" class="social-btn facebook">Facebook</a><a href="https://maps.google.com/?q=Untermauerstraße+4+47051+Duisburg" target="_blank" rel="noopener noreferrer" class="social-btn maps">Standort</a><a href="https://wa.me/491634588988" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">WhatsApp</a><a href="tel:+491634588988" class="social-btn phone">Anrufen</a></div></div></div><p class="copy">© 2026 La Savi</p></div></footer>
-  <script src="../assets/script.js" defer></script>
+
+  <main><div class="container">
+    <h1 class="title">UNSERE SPEISEKARTE</h1>
+    <p class="sub">Genießen Sie unsere vollständige Auswahl</p>
+    <div class="print"><button id="share-btn" aria-label="Speisekarte teilen" title="Teilen">↗</button></div>
+    <div id="menu-root"></div>
+  </div></main>
+
+  <div id="dish-modal" class="modal">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-image-container" id="modal-image-wrap"></div>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <p class="modal-description" id="modal-description"></p>
+      <p class="modal-details" id="modal-details"></p>
+      <div class="modal-actions"><span class="modal-price" id="modal-price"></span><button class="close-btn" onclick="closeModal()">Schließen</button></div>
+    </div>
+  </div>
+
+  <footer><div class="container"><div class="f"><div><h4>Kontakt</h4><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div><div><h4>Öffnungszeiten</h4><p>Mo–Sa: 12:00–22:00 Uhr<br>Sonntag: Geschlossen</p></div><div><h4>Social</h4><p><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></p></div></div><p class="copy">© 2026 La Savi | Premium Steakhouse Duisburg</p></div></footer>
+
+  <script>
+    var menuData = [
+      {cat:"SALATE",items:[["01. Hirtensalat","€4,90","Frischer Gemüsesalat mit Kräutern",""],["02. Hirtensalat mit Feta-Käse","€7,90","Gemüsesalat mit Feta-Käse",""],["03. Kräuter-Blattsalat","€7,90","Frische Blattsalate mit Kräutern",""],["04. Kräuter-Blattsalat mit Feta-Käse","€9,90","Blattsalat mit Feta",""],["05. Kräuter-Blattsalat mit Büffelmozzarella","€11,90","Blattsalat mit Büffelmozzarella",""]]},
+      {cat:"TÄGLICHE TEIGGERICHTE (HAUSGEMACHT)",items:[["06. Türkische Tortellini","€9,90","Gefüllt mit Hackfleisch, Butter und Joghurtsauce",""],["07. Pide mit Dönerfleisch (oder Hackfleisch)","€9,90","Hausgemachte Pide",""],["08. Pide mit Lammwürfeln und Gouda","€9,90","Pide mit Lammwürfeln und Gouda",""],["09. Lahmacun pur","€3,90","Türkische Pizza pur",""],["10. Lahmacun mit Salat","€5,90","Türkische Pizza mit Salat",""],["11. Lahmacun mit Dönerfleisch","€9,90","Türkische Pizza mit Dönerfleisch",""],["12. Pide mit Gemüse","€9,90","Gemüse-Pide",""]]},
+      {cat:"TAGESGERICHTE (TONTOPF AUS DEM OFEN)",items:[["MENÜ 1: Lammfleisch Tontopf mit Reis","€14,90","Lammfleisch Tontopf mit Reis",""],["MENÜ 2: Hähnchen Tontopf mit Reis","€12,90","Hähnchen Tontopf mit Reis",""],["MENÜ 3: Lammfrikadellen Tontopf mit Reis","€13,90","Lammfrikadellen Tontopf mit Reis",""],["MENÜ 4: Garnelen Tontopf mit Reis","€19,90","Garnelen Tontopf mit Reis",""],["MENÜ 5: Gemüse Tontopf mit Reis","€10,90","Gemüse Tontopf mit Reis",""]]},
+      {cat:"WECHSELNDE TAGESSUPPEN",items:[["Linsensuppe","€4,90","Linsensuppe",""],["Hähnchensuppe","€5,90","Hähnchensuppe",""],["Lammsuppe","€6,90","Lammsuppe",""]]},
+      {cat:"WET AGED SPECIAL DÖNER & POMMES",items:[["13. Döner im Brot","€8,90","Wet Aged Döner im Brot",""],["14. Dönerteller mit Pommes und Salat","€14,90","Dönerteller mit Pommes und Salat",""],["15. Iskender Döner (mit Sauce und Joghurt)","€15,90","Mit Sauce und Joghurt",""],["16. Döner Dürüm","€9,90","Wet Aged Döner Dürüm",""],["Pommes klein","€2,90","Pommes klein",""],["Pommes groß","€3,90","Pommes groß",""],["Pommes Kebab (Pommes mit Wet Aged Döner)","€7,90","Pommes mit Wet Aged Döner",""]]},
+      {cat:"GRILLGERICHTE",items:[["20. Adana Hackspieß Teller scharf","€17,90","Scharfer Adana Hackspieß Teller",""],["21. Urfa Hackspieß Teller","€17,90","Urfa Hackspieß Teller",""],["22. Gemischter Grill Teller","€23,90","Gemischter Grill Teller",""],["23. Lammkotelett","€21,90","Lammkotelett",""],["24. Lammspieß Teller","€19,90","Lammspieß Teller",""],["25. Frikadellen vom Grill (Lamm)","€17,90","Frikadellen vom Grill (Lamm)",""],["26. Sultan Kebap Grillteller für 2 Personen","€49,90","Grillteller für 2 Personen",""],["27. Sultan Kebap Grillteller für 4 Personen","€94,90","Grillteller für 4 Personen",""],["28. Hähnchenkotelett","€17,90","Hähnchenkotelett",""],["29. Hähnchenspieß","€17,90","Hähnchenspieß",""],["30. Adana Dürüm","€9,90","Adana Dürüm",""],["31. Hähnchenspieß Dürüm","€9,90","Hähnchenspieß Dürüm",""],["32. Lammspieß Dürüm","€9,90","Lammspieß Dürüm",""]]},
+      {cat:"STEAKSPEZIALITÄTEN - Dry Aged (3-4 Wochen)",items:[["33. Rump Steak (ca. 350 gr)","€34,90","Dry Aged 3-4 Wochen gereift","dry-rump"],["34. Filet Steak (ca. 300 gr)","€39,90","Das zarteste Stück, perfekt gereift","dry-filet"],["35. Cowboy Steak (ca. 1000 gr)","€49,90","Kräftig und marmoriert","dry-cowboy"],["36. T-Bone Steak (ca. 1000 gr)","€49,90","Das Beste beider Seiten","dry-tbone"]]},
+      {cat:"STEAKSPEZIALITÄTEN - Büffel",items:[["37. Büffel Filet Steak (ca. 250gr)","€44,90","Büffel - magerer, intensiver","buf-filet"],["38. Büffel Ribeye Steak (ca. 300gr)","€44,90","Büffel Ribeye - volles Aroma","buf-ribeye"]]},
+      {cat:"STEAKSPEZIALITÄTEN - Wagyu",items:[["39. Wagyu Filet (ca. 200gr)","€129,00","Wagyu Filet - schmelzend zart","wag-filet"],["40. Wagyu Roastbeef (ca. 300gr)","€149,00","Wagyu Roastbeef - zartes Aroma","wag-roast"],["41. Wagyu Ribeye (ca. 300gr)","€149,00","Wagyu Ribeye - Premium Marmorierung","wag-ribeye"]]},
+      {cat:"BEILAGEN & SAUCEN (für Steaks)",items:[["Rahmspinat","€4,90","Rahmspinat",""],["Bratkartoffeln mit Rosmarin","€4,90","Bratkartoffeln mit Rosmarin",""],["Süßkartoffel Pommes","€4,90","Süßkartoffel Pommes",""],["Sauce Hollandaise","€4,90","Sauce Hollandaise",""],["Sauce Béarnaise","€4,90","Sauce Béarnaise",""],["Pfeffersauce","€4,90","Pfeffersauce",""]]},
+      {cat:"KALTE GETRÄNKE",items:[["Coca Cola, Fanta, Sprite, Mezzo Mix (0,33l)","€2,90","Softdrinks",""],["Uludağ (0,33l)","€2,90","Türkische Limonade",""],["Mineralwasser mit/ohne Kohlensäure (0,25l)","€2,50","Mineralwasser",""],["Mineralwasser mit/ohne Kohlensäure (0,75l)","€4,90","Mineralwasser groß",""],["Orangen-Kirsch-Banane-Multi Saft (0,2l)","€2,50","Saft",""],["Ayran hausgemacht (0,33l)","€1,90","Hausgemachter Ayran",""],["Eistee (Pfirsich, Zitrone) (0,33l)","€2,90","Eistee",""],["Ginger Ale (0,2l)","€2,90","Ginger Ale",""],["Bitter Lemon (0,2l)","€2,90","Bitter Lemon",""],["Red Bull (0,25l)","€2,50","Red Bull",""],["Malzbier (0,33l)","€2,90","Malzbier",""],["Krombacher alkoholfrei (0,33l)","€2,90","Krombacher alkoholfrei",""]]},
+      {cat:"WEIN & SEKT (Natureo alkoholfrei)",items:[["Rotwein Natureo (0,2l)","€7,90","Rotwein Natureo",""],["Weißwein Natureo (0,2l)","€7,90","Weißwein Natureo",""],["Sekt Natureo Seco (0,2l)","€7,90","Sekt Natureo Seco",""]]},
+      {cat:"HEIßE GETRÄNKE",items:[["Café Crema","€2,50","Café Crema",""],["Espresso","€2,50","Espresso",""],["Cappuccino","€2,90","Cappuccino",""],["Latte","€2,90","Latte",""],["Milchkaffee","€2,90","Milchkaffee",""],["Türkischer Kaffee","€2,50","Türkischer Kaffee",""],["Kakao","€2,90","Kakao",""]]},
+      {cat:"NACHTISCH",items:[["42. Katmer (knuspriger Blätterteig mit Creme und Pistazien)","€7,90","Knuspriger Blätterteig mit Creme und Pistazien",""],["43. Künefe (Fadenteig mit Käse)","€7,90","Fadenteig mit Käse",""],["44. Milchreis Vanille","€4,90","Milchreis Vanille",""],["45. Mascarpone","€1,00","Mascarpone",""],["46. Maraş Eis","€2,90","Maraş Eis",""]]}
+    ];
+
+    function cowSvg(label, x, y, w, h, note) {
+      return '<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg"><rect width="500" height="400" fill="#1a1a1a"/><g stroke="#ccc" stroke-width="2" fill="none"><ellipse cx="240" cy="190" rx="170" ry="90"/><circle cx="80" cy="180" r="38"/><path d="M48 165l-18 -8M50 196l-18 8"/><path d="M150 270v55M220 280v45M285 280v45M355 270v55"/><path d="M410 170l36 -20"/></g><rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="#d4af37" opacity=".28" stroke="#d4af37" stroke-width="2.5"/><text x="'+(x+4)+'" y="'+(y-8)+'" fill="#d4af37" font-size="16" font-weight="700">'+label+'</text><text x="26" y="360" fill="#d4af37" font-size="16">'+note+'</text></svg>';
+    }
+    var steakSvg = {
+      "dry-rump": cowSvg("RUMP",260,150,80,56,"RUMP - Der zarte Klassiker"),
+      "dry-filet": cowSvg("FILET",205,170,70,40,"FILET - Das zarteste Stück"),
+      "dry-cowboy": cowSvg("RIB",160,130,80,56,"COWBOY - Würzig & marmoriert"),
+      "dry-tbone": cowSvg("T-BONE",210,140,70,70,"T-BONE - Das Beste beider Seiten"),
+      "buf-filet": cowSvg("FILET",205,170,70,40,"BUFFALO - Magerer, intensiver"),
+      "buf-ribeye": cowSvg("RIBEYE",165,130,84,56,"BUFFALO RIBEYE - Voller Aroma"),
+      "wag-filet": cowSvg("FILET",205,170,70,40,"WAGYU FILET - Schmelzend zart"),
+      "wag-roast": cowSvg("ROASTBEEF",250,140,84,56,"WAGYU ROASTBEEF - Zartes Aroma"),
+      "wag-ribeye": cowSvg("RIBEYE",165,130,84,56,"WAGYU RIBEYE - Premium Marmorierung")
+    };
+
+    function placeholderImg() { return '<img src="../logo-la-savi.webp" alt="La Savi Platzhalter">'; }
+    function makeCard(item) {
+      var n=item[0],p=item[1],d=item[2],k=item[3]||"";
+      return '<article class="menu-card" onclick="openModal(this)"><div class="menu-card-image">'+placeholderImg()+'</div><div class="menu-card-info"><div><div class="item-name">'+n+'</div><div class="item-description">'+d+'</div></div><div class="item-price">'+p+'</div></div><div class="modal-data" style="display:none" data-key="'+k+'" data-name="'+n+'" data-desc="'+d+'" data-price="'+p+'"></div></article>';
+    }
+    document.getElementById("menu-root").innerHTML = menuData.map(function(c){return '<section class="cat"><h2>'+c.cat+'</h2><div class="cards">'+c.items.map(makeCard).join("")+'</div></section>';}).join("");
+
+    function openModal(card){
+      var data=card.querySelector(".modal-data");
+      var key=data.dataset.key, title=data.dataset.name, desc=data.dataset.desc, price=data.dataset.price;
+      var wrap=document.getElementById("modal-image-wrap");
+      if(key && steakSvg[key]) wrap.innerHTML = steakSvg[key]; else wrap.innerHTML = '<img src="../logo-la-savi.webp" alt="'+title+'">';
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-description").textContent = desc;
+      document.getElementById("modal-details").textContent = key ? "Steak-Cut Illustration" : "La Savi Platzhalterbild";
+      document.getElementById("modal-price").textContent = price;
+      document.getElementById("dish-modal").style.display="block";
+      document.body.style.overflow="hidden";
+    }
+    function closeModal(){ document.getElementById("dish-modal").style.display="none"; document.body.style.overflow="auto"; }
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeModal(); });
+    window.openModal=openModal; window.closeModal=closeModal;
+    var shareBtn = document.getElementById("share-btn");
+    if (shareBtn) {
+      shareBtn.addEventListener("click", async function () {
+        var url = window.location.href;
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: "La Savi Speisekarte", url: url });
+          } else if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(url);
+            shareBtn.textContent = "✓";
+            window.setTimeout(function () { shareBtn.textContent = "↗"; }, 1200);
+          }
+        } catch (_) {}
+      });
+    }
+  </script>
 </body>
 </html>

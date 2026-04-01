@@ -2,79 +2,99 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#000000">
-  <title>La Savi – Premium Steakhouse Duisburg | Dry-Aged Steaks & Grill</title>
-  <meta name="description" content="La Savi Premium Steakhouse Duisburg. USDA Prime Dry-Aged Steaks, authentische Grillspezialitäten, hausgemachter Ayran. Reservierung: +49 163 458 898 8">
-  <link rel="canonical" href="https://lasavi.de/de/">
-  <link rel="alternate" hreflang="de" href="https://lasavi.de/de/"><link rel="alternate" hreflang="en" href="https://lasavi.de/en/"><link rel="alternate" hreflang="tr" href="https://lasavi.de/tr/"><link rel="alternate" hreflang="nl" href="https://lasavi.de/nl/">
-  <meta property="og:title" content="La Savi – Premium Steakhouse Duisburg">
-  <meta property="og:description" content="Genießen Sie Premium Dry-Aged Steaks in eleganter Atmosphäre.">
-  <meta property="og:image" content="https://lasavi.de/logo-la-savi.webp">
-  <meta property="og:url" content="https://lasavi.de/de/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="de_DE">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Savi | Startseite</title>
+  <meta name="description" content="La Savi Steakhouse Duisburg. Premium Steaks, Grillspezialitäten und hausgemachte Köstlichkeiten.">
   <link rel="icon" href="../logo-la-savi.webp" type="image/webp">
-  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    :root{--bg:#000;--panel:#111;--gold:#d4af37;--txt:#d0d0d0;--muted:#8a8a8a;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--header:72px}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--sans);background:var(--bg);color:var(--txt)} a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;height:var(--header);background:rgba(0,0,0,.95);border-bottom:1px solid rgba(212,175,55,.35)}
+    .h{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;color:#fff}
+    nav{display:flex;gap:10px;align-items:center} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
+    .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
+    .reserve{background:linear-gradient(145deg,#d4af37,#c9a961);color:#111;font-weight:700;padding:11px 18px;border-radius:2px;text-transform:uppercase;font-size:13px;letter-spacing:.05em}
+    .hero{min-height:90vh;display:flex;align-items:center;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.82)),url("../images/home-hero.png") center/cover no-repeat}
+    .hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.6rem);color:#fff}.hero p{max-width:760px;margin:16px auto 0;color:var(--muted);font-size:18px}
+    .cta{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{padding:13px 22px;border-radius:2px;font-weight:700}.btn.gold{background:var(--gold);color:#111}.btn.out{border:1px solid var(--gold);color:#f3d989}
+    section{padding:72px 0}.title{font-family:var(--serif);color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.09em;font-size:clamp(1.7rem,3.5vw,2.5rem);margin-bottom:34px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--panel);border:1px solid #2b2b2b;border-top:3px solid var(--gold);padding:24px}.card h3{color:#fff;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
+    .menu-wrap{background:#fff;color:#1a1a1a}.menu-wrap .title{color:#1a1a1a}.cat{margin-top:18px}.cat h3{font-family:var(--serif);color:#1d4a38;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}.item{border-bottom:1px solid #e8e8e8;padding:10px 0}.row{display:flex;justify-content:space-between;gap:10px}.price{color:#8a6a17;font-weight:700}
+    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.quote{background:var(--panel);padding:20px;border-top:3px solid var(--gold)} .quote p{color:var(--muted)}
+    .contact{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.box{background:var(--panel);border:1px solid #2b2b2b;padding:20px}.box h4{color:#fff;margin-bottom:8px}
+    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:34px 0 22px}.f{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} footer h5{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:var(--muted);font-size:14px;line-height:1.7}
+    .copy{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
+    @media(max-width:900px){nav{display:none}.cards,.grid,.testi,.contact,.f{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
-  <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="/de/"><img src="../logo-la-savi.webp" alt="La Savi Premium Steakhouse Logo" width="200" height="200"><span>La Savi</span></a>
-    <button class="hamburger-menu" id="menu-toggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-    <nav class="nav-desktop"><a href="/de/">Home</a><a href="/de/menu.html">Speisekarte</a><a href="#kontakt">Kontakt</a></nav>
-    <div class="switch"><a class="active" href="/de/">🇩🇪 DE</a><a href="/en/">🇬🇧 EN</a><a href="/tr/">🇹🇷 TR</a><a href="/nl/">🇳🇱 NL</a></div>
-    <nav class="nav-mobile" id="mobile-nav"><a href="/de/">Home</a><a href="/de/menu.html">Speisekarte</a><a href="#kontakt">Kontakt</a></nav>
+  <header><div class="container h">
+    <a class="brand" href="./index.html"><img src="../logo-la-savi.webp" alt="La Savi"><span>La Savi</span></a>
+    <nav><a href="./index.html">Home</a><a href="./menu.html">Speisekarte</a><a href="#reservierung">Reservierung</a><a href="#ueber">Über uns</a><a href="#kontakt">Kontakt</a></nav>
+    <div style="display:flex;align-items:center;gap:8px"><div class="switch"><a class="active" href="/de/">🇩🇪 DE</a><a href="/en/">🇬🇧 EN</a></div><a class="reserve" href="#reservierung">Reservierung</a></div>
   </div></header>
 
-  <section class="hero"><div class="container"><h1>La Savi Steakhouse Duisburg</h1><p>Premium Dry-Aged Steaks und Grillspezialitäten.</p><div class="hero-cta-buttons"><a href="tel:+491634588988" class="btn-large btn-primary">Reservierung</a><a href="/de/menu.html" class="btn-large btn-secondary">Menü ansehen</a></div></div></section>
-
-  <section><div class="container"><h2 class="section-title">FEATURES</h2><div class="cards-3"><article class="card"><h3>Premium Qualität</h3><p>Handverlesenes Fleisch von höchster Qualität, sorgfältig zubereitet und perfekt serviert.</p></article><article class="card"><h3>Expertenkoch</h3><p>Traditionelle Grillkunst mit modernem Anspruch - jedes Gericht ein Meisterwerk.</p></article><article class="card"><h3>Gemütliche Atmosphäre</h3><p>Elegant, stilvoll und einladend - der perfekte Ort für jeden Anlass.</p></article></div></div></section>
-
-  <section id="spezialitaeten" class="spezialitaeten-section"><div class="container"><h2 class="section-title">UNSERE SPEZIALITÄTEN</h2><p class="section-subtitle">Probieren Sie unsere beliebtesten Gerichte</p><div class="spezialitaeten-grid">
-    <article class="menu-card spezialitaeten-card" onclick="openModal(event)" data-title="Iskender Döner" data-desc="Saftiges Fleisch mit orientalischen Gewürzen, serviert mit Sauce und Joghurt" data-price="€15,90"><div class="menu-card-image"><img src="../logo-la-savi.webp" alt="Wet Aged Döner"></div><h3>Wet Aged Döner</h3><p class="price">€15,90</p></article>
-    <article class="menu-card spezialitaeten-card" onclick="openModal(event)" data-title="T-Bone Steak" data-desc="USDA Prime Dry-Aged, gereift 3-4 Wochen." data-price="€49,90"><div class="menu-card-image"><svg class="beef-diagram" viewBox="0 0 300 250"><rect width="300" height="250" fill="#111"/><ellipse cx="160" cy="130" rx="100" ry="55" fill="none" stroke="#bbb"/><rect x="155" y="100" width="40" height="34" fill="#d4af37" opacity=".45"/><text x="156" y="95" fill="#d4af37">T-BONE</text></svg></div><h3>T-Bone Steak</h3><p class="price">€49,90</p></article>
-    <article class="menu-card spezialitaeten-card" onclick="openModal(event)" data-title="Adana Spieß" data-desc="Traditionell, würzig, mit Reis und Salat." data-price="€17,90"><div class="menu-card-image"><img src="../logo-la-savi.webp" alt="Adana Spieß"></div><h3>Adana Spieß</h3><p class="price">€17,90</p></article>
-    <article class="menu-card spezialitaeten-card" onclick="openModal(event)" data-title="Wagyu Filet" data-desc="Intensiver Geschmack und zarte Struktur." data-price="€129,00"><div class="menu-card-image"><img src="../logo-la-savi.webp" alt="Wagyu Filet"></div><h3>Wagyu Filet</h3><p class="price">€129,00</p></article>
-    <article class="menu-card spezialitaeten-card" onclick="openModal(event)" data-title="Lamm Kotelett" data-desc="Perfekt gegrillt, saftig und würzig." data-price="€21,90"><div class="menu-card-image"><img src="../logo-la-savi.webp" alt="Lamm Kotelett"></div><h3>Lamm Kotelett</h3><p class="price">€21,90</p></article>
-    <article class="menu-card spezialitaeten-card" onclick="openModal(event)" data-title="Hausgemachter Ayran" data-desc="Frische türkische Buttermilch." data-price="€1,90"><div class="menu-card-image"><img src="../logo-la-savi.webp" alt="Ayran"></div><h3>Hausgemachter Ayran</h3><p class="price">€1,90</p></article>
-  </div></div></section>
-
-  <div class="menu-cta-section"><a href="/de/menu.html" class="btn-view-full-menu">📋 Vollständige Speisekarte ansehen</a></div>
-
-  <section id="hauptspeisen" class="hauptspeisen-section"><div class="container"><h2 class="section-title">HAUPTSPEISEN</h2><p class="section-subtitle">Unsere komplette Auswahl</p>
-    <div class="hauptspeisen-category"><h3 class="category-title">STEAKS - DRY AGED</h3><div class="hauptspeisen-grid">
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="T-Bone Steak" data-desc="USDA Prime, Dry Aged 3-4 Wochen." data-price="€49,90"><h4>T-Bone Steak</h4><p>~1000g</p><p class="price">€49,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Rump Steak" data-desc="Dry Aged 3-4 Wochen" data-price="€34,90"><h4>Rump Steak</h4><p>~350g</p><p class="price">€34,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Filet Steak" data-desc="Zarter Cut" data-price="€39,90"><h4>Filet Steak</h4><p>~300g</p><p class="price">€39,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Wagyu Filet" data-desc="Premium Marmorierung" data-price="€129,00"><h4>Wagyu Filet</h4><p>~200g</p><p class="price">€129,00</p></article>
-    </div></div>
-    <div class="hauptspeisen-category"><h3 class="category-title">GRILL DISHES</h3><div class="hauptspeisen-grid">
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Adana Spieß" data-desc="Traditionell würzig." data-price="€17,90"><h4>Adana Spieß</h4><p class="price">€17,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Lamm Kotelett" data-desc="Saftig gegrillt." data-price="€21,90"><h4>Lamm Kotelett</h4><p class="price">€21,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Mixed Grill Plate" data-desc="Gemischte Grill-Spezialitäten." data-price="€23,90"><h4>Mixed Grill Plate</h4><p class="price">€23,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Sultan Kebap (2 Pers)" data-desc="Große Grillplatte." data-price="€49,90"><h4>Sultan Kebap (2 Pers)</h4><p class="price">€49,90</p></article>
-    </div></div>
-    <div class="hauptspeisen-category"><h3 class="category-title">WET AGED DÖNER</h3><div class="hauptspeisen-grid">
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Iskender Döner" data-desc="Mit Sauce und Joghurt." data-price="€15,90"><h4>Iskender Döner</h4><p class="price">€15,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Döner Plate" data-desc="Mit Pommes und Salat." data-price="€14,90"><h4>Döner Plate</h4><p class="price">€14,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Döner Wrap" data-desc="Dürüm." data-price="€9,90"><h4>Döner Wrap</h4><p class="price">€9,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Fries Kebab" data-desc="Pommes mit Döner." data-price="€7,90"><h4>Fries Kebab</h4><p class="price">€7,90</p></article>
-    </div></div>
-    <div class="hauptspeisen-category"><h3 class="category-title">GETRÄNKE</h3><div class="hauptspeisen-grid">
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Hausgemachter Ayran" data-desc="Frisch zubereitet." data-price="€1,90"><h4>Hausgemachter Ayran</h4><p class="price">€1,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Cafe Crema" data-desc="Heißgetränk." data-price="€2,50"><h4>Cafe Crema</h4><p class="price">€2,50</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Coca Cola / Fanta" data-desc="Softdrinks." data-price="€2,90"><h4>Coca Cola / Fanta</h4><p class="price">€2,90</p></article>
-      <article class="menu-card hauptspeisen-card" onclick="openModal(event)" data-title="Red Bull" data-desc="Energy Drink." data-price="€2,50"><h4>Red Bull</h4><p class="price">€2,50</p></article>
-    </div></div>
+  <section class="hero"><div class="container">
+    <h1>La Savi Premium Steakhouse</h1>
+    <p>Genießen Sie erstklassige Steaks, authentische Grillspezialitäten und hausgemachte Köstlichkeiten in eleganter Atmosphäre.</p>
+    <div class="cta"><a class="btn gold" href="#reservierung">Reservierung</a><a class="btn out" href="./menu.html">Menü ansehen</a></div>
+    <p style="font-size:14px;margin-top:20px">Untermauerstraße 4, Duisburg | Mo-Sa 12:00-22:00 Uhr</p>
   </div></section>
 
-  <section id="bewertungen" class="testimonials-section"><div class="container"><h2 class="section-title">WAS UNSERE GÄSTE SAGEN</h2><div class="rating-summary"><div class="rating-stars">⭐⭐⭐⭐⭐</div><div class="rating-text">4,8 von 5 Sternen</div><div class="review-count">basierend auf 2.552 Bewertungen</div><a href="https://maps.google.com/?q=La+Savi+Duisburg" target="_blank" rel="noopener noreferrer" class="btn-read-reviews">Alle Bewertungen auf Google ansehen</a></div><div class="testimonials-grid"><article class="testimonial-card"><div class="review-header"><strong>Pascal D.</strong><span>⭐⭐⭐⭐⭐</span></div><p class="review-text">"Das beste Steakhouse in Duisburg! Fleisch perfekt gegrillt, Service super freundlich, Atmosphäre wunderbar. Komme gerne wieder!"</p><div class="review-meta">vor 3 Monaten</div></article><article class="testimonial-card"><div class="review-header"><strong>Ebru A. (Local Guide)</strong><span>⭐⭐⭐⭐⭐</span></div><p class="review-text">"Wie Mutter kocht! Mit kleinen feinen Details und großer Fürsorge. Die Inhaberin bedient selbst und zeigt echtes Interesse. Das ist Klasse!"</p><div class="review-meta">vor 2 Monaten</div></article><article class="testimonial-card"><div class="review-header"><strong>Eray B.</strong><span>⭐⭐⭐⭐⭐</span></div><p class="review-text">"Detailliertes Steak-Lob, perfekte Beratung zu Fleischsorten. Die Qualität schmeckt man sofort. Definitiv eine Empfehlung für Fleisch-Liebhaber!"</p><div class="review-meta">vor 1 Monat</div></article></div></div></section>
+  <section id="ueber"><div class="container">
+    <h2 class="title">Ihr Erlebnis bei La Savi</h2>
+    <div class="cards">
+      <article class="card"><h3>Premium Qualität</h3><p>Handverlesenes Fleisch von höchster Qualität, sorgfältig zubereitet und perfekt serviert.</p></article>
+      <article class="card"><h3>Expertenkoch</h3><p>Traditionelle Grillkunst mit modernem Anspruch - jedes Gericht ein Meisterwerk.</p></article>
+      <article class="card"><h3>Gemütliche Atmosphäre</h3><p>Elegant, stilvoll und einladend - der perfekte Ort für jeden Anlass.</p></article>
+    </div>
+  </div></section>
 
-  <section id="kontakt"><div class="container"><h2 class="section-title">Kontakt</h2><div class="contact-buttons-grid"><a href="tel:+491634588988" class="contact-btn"><span class="btn-label">Telefon</span><span class="btn-value">+49 163 458 898 8</span></a><a href="mailto:info@lasavi.de" class="contact-btn"><span class="btn-label">E-Mail</span><span class="btn-value">info@lasavi.de</span></a><a href="https://wa.me/491634588988" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp"><span class="btn-label">WhatsApp</span><span class="btn-value">Chat starten</span></a><a href="/de/menu.html" class="contact-btn"><span class="btn-label">Speisekarte</span><span class="btn-value">Alle Gerichte</span></a></div></div></section>
+  <section class="menu-wrap"><div class="container">
+    <h2 class="title">UNSERE TOP-SPEZIALITÄTEN</h2>
+    <div class="cat"><h3>Steaks</h3><div class="grid">
+      <div class="item"><div class="row"><span>T-Bone Steak (ca. 1000 gr)</span><span class="price">€49,90</span></div></div>
+      <div class="item"><div class="row"><span>Wagyu Filet (ca. 200gr)</span><span class="price">€129,00</span></div></div>
+    </div></div>
+    <div class="cat"><h3>Grill</h3><div class="grid">
+      <div class="item"><div class="row"><span>Adana Hackspieß Teller scharf</span><span class="price">€17,90</span></div></div>
+      <div class="item"><div class="row"><span>Sultan Kebap Grillteller für 2 Personen</span><span class="price">€49,90</span></div></div>
+    </div></div>
+    <div class="cat"><h3>Wet Aged Döner</h3><div class="grid">
+      <div class="item"><div class="row"><span>Iskender Döner</span><span class="price">€15,90</span></div></div>
+    </div></div>
+    <div class="cat"><h3>Getränke</h3><div class="grid">
+      <div class="item"><div class="row"><span>Ayran (hausgemacht) (0,33l)</span><span class="price">€1,90</span></div></div>
+      <div class="item"><div class="row"><span>Cafe Crema</span><span class="price">€2,50</span></div></div>
+    </div></div>
+    <p style="text-align:center;margin-top:28px"><a class="btn gold" href="./menu.html">📋 Vollständige Speisekarte anzeigen</a></p>
+  </div></section>
 
-  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-section"><h4>Kontakt</h4><p>Untermauerstraße 4, 47051 Duisburg</p><p>+49 163 458 898 8</p></div><div class="footer-section"><h4>Öffnungszeiten</h4><p>Mo - Sa: 12:00 - 22:00</p><p>Sonntag: Geschlossen</p></div><div class="footer-section footer-social"><h4>Folgen Sie uns</h4><div class="social-buttons-group"><a href="https://instagram.com/lasavi_restaurant" target="_blank" rel="noopener noreferrer" class="social-btn instagram">Instagram</a><a href="https://facebook.com/lasavi" target="_blank" rel="noopener noreferrer" class="social-btn facebook">Facebook</a><a href="https://maps.google.com/?q=Untermauerstraße+4+47051+Duisburg" target="_blank" rel="noopener noreferrer" class="social-btn maps">Standort</a><a href="https://wa.me/491634588988" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp">WhatsApp</a><a href="tel:+491634588988" class="social-btn phone">Anrufen</a></div></div></div><p class="copy">© 2026 La Savi</p></div></footer>
+  <section><div class="container"><h2 class="title">Stimmen unserer Gäste</h2><div class="testi">
+    <article class="quote"><strong>Pascal D.</strong><p>„Erst beruflich, dann privat — Ayran-Fan geworden. Mit Familie willkommen!“</p></article>
+    <article class="quote"><strong>Ebru A.</strong><p>„Wie Mutter kocht! Mit besonderen Details & Fürsorge.“</p></article>
+    <article class="quote"><strong>Eray B.</strong><p>„Detailliertes Steak-Lob, perfekte Beratung zu Fleischsorten.“</p></article>
+  </div></div></section>
 
-  <div id="menu-modal" class="menu-modal"><div id="menu-backdrop" class="menu-modal-backdrop"></div><div class="menu-modal-content"><button id="menu-close" class="menu-close">✕</button><h2 id="modal-title"></h2><p id="modal-desc"></p><p id="modal-price" class="price"></p></div></div>
-  <script src="../assets/script.js" defer></script>
+  <section id="reservierung"><div class="container">
+    <h2 class="title">Reservieren Sie Ihren Tisch</h2>
+    <div class="contact">
+      <div class="box"><h4>Adresse</h4><p>Untermauerstraße 4<br>47051 Duisburg</p></div>
+      <div class="box"><h4>Telefon</h4><p><a href="tel:+491634588988">+49 163 458 898 8</a></p></div>
+      <div class="box"><h4>Öffnungszeiten</h4><p>Mo–Sa: 12:00–22:00 Uhr<br>Sonntag: Geschlossen</p></div>
+    </div>
+    <p style="text-align:center;margin-top:22px"><a class="btn gold" href="tel:+491634588988">Reservieren</a></p>
+  </div></section>
+
+  <footer id="kontakt"><div class="container">
+    <div class="f">
+      <div><h5>Kontakt</h5><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div>
+      <div><h5>Öffnungszeiten</h5><p>Mo–Sa: 12:00–22:00 Uhr<br>Sonntag: Geschlossen</p></div>
+      <div><h5>Social</h5><p><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></p></div>
+    </div>
+    <p class="copy">© 2026 La Savi | Premium Steakhouse Duisburg</p>
+  </div></footer>
 </body>
 </html>
