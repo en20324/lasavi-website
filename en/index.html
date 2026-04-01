@@ -15,7 +15,10 @@
     nav{display:flex;gap:10px;align-items:center} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
     .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
     .reserve{background:linear-gradient(145deg,#d4af37,#c9a961);color:#111;font-weight:700;padding:11px 18px;border-radius:2px;text-transform:uppercase;font-size:13px;letter-spacing:.05em}
-    .hero{min-height:90vh;display:flex;align-items:center;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.82)),url("../images/home-hero.png") center/cover no-repeat}
+    .hero{min-height:90vh;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:url("../images/home-hero.png") center/cover no-repeat;transform:scale(1.06);filter:blur(10px) brightness(.32)}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.64),rgba(0,0,0,.86))}
+    .hero .container{position:relative;z-index:1}
     .hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.6rem);color:#fff}.hero p{max-width:760px;margin:16px auto 0;color:var(--muted);font-size:18px}
     .cta{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{padding:13px 22px;border-radius:2px;font-weight:700}.btn.gold{background:var(--gold);color:#111}.btn.out{border:1px solid var(--gold);color:#f3d989}
     section{padding:72px 0}.title{font-family:var(--serif);color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.09em;font-size:clamp(1.7rem,3.5vw,2.5rem);margin-bottom:34px}
@@ -62,8 +65,8 @@
       <div class="item"><div class="row"><span>Adana minced skewer plate hot</span><span class="price">€17,90</span></div></div>
       <div class="item"><div class="row"><span>Sultan Kebap Grill plate for 2 persons</span><span class="price">€49,90</span></div></div>
     </div></div>
-    <div class="cat"><h3>Wet Aged Döner</h3><div class="grid">
-      <div class="item"><div class="row"><span>Iskender Döner (Kebab plate with sauce and yogurt)</span><span class="price">€15,90</span></div></div>
+    <div class="cat"><h3>Wet Aged Doner</h3><div class="grid">
+      <div class="item"><div class="row"><span>Iskender Doner (Kebab plate with sauce and yogurt)</span><span class="price">€15,90</span></div></div>
     </div></div>
     <div class="cat"><h3>Drinks</h3><div class="grid">
       <div class="item"><div class="row"><span>Ayran (homemade Turkish buttermilk) (0.33l)</span><span class="price">€1,90</span></div></div>
