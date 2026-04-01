@@ -473,6 +473,13 @@
       object-fit: cover;
       display: block;
       background: #000;
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity 900ms ease, transform 1200ms ease;
+    }
+    .sw-video-card video.is-ready {
+      opacity: 1;
+      transform: scale(1);
     }
     @media (max-width: 900px) {
       .sw-video-grid { grid-template-columns: 1fr; }
@@ -1434,7 +1441,14 @@
         }
         specialsVideos.forEach(function (v) {
           v.addEventListener('loadedmetadata', syncSpecialVideos, { once: true });
-          v.addEventListener('canplay', function () { v.play().catch(function () {}); }, { once: true });
+          v.addEventListener('canplay', function () {
+            v.play().catch(function () {});
+            // Sanfter, leicht gestaffelter Einstieg statt hartem Start.
+            var idx = specialsVideos.indexOf(v);
+            window.setTimeout(function () {
+              v.classList.add('is-ready');
+            }, 120 + (idx * 140));
+          }, { once: true });
         });
         document.addEventListener('visibilitychange', function () {
           if (!document.hidden) syncSpecialVideos();
