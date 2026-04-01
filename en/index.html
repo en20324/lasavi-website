@@ -4,100 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Savi | Homepage</title>
-  <meta name="description" content="La Savi Premium Steakhouse Duisburg. Premium steaks, grill specialties and homemade delicacies.">
+  <meta name="description" content="La Savi Duisburg: steaks, grill and easy reservations.">
+  <link rel="canonical" href="https://lasavi.de/en/">
   <link rel="icon" href="../logo-la-savi.webp" type="image/webp">
-  <style>
-    :root{--bg:#000;--panel:#111;--gold:#d4af37;--txt:#d0d0d0;--muted:#8a8a8a;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--header:72px}
-    *{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--sans);background:var(--bg);color:var(--txt)} a{text-decoration:none;color:inherit}
-    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
-    header{position:sticky;top:0;z-index:50;height:var(--header);background:rgba(0,0,0,.95);border-bottom:1px solid rgba(212,175,55,.35)}
-    .h{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase;color:#fff}
-    nav{display:flex;gap:10px;align-items:center} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
-    .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
-    .reserve{background:linear-gradient(145deg,#d4af37,#c9a961);color:#111;font-weight:700;padding:11px 18px;border-radius:2px;text-transform:uppercase;font-size:13px;letter-spacing:.05em}
-    .hero{min-height:90vh;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:url("../images/home-hero.png") center/cover no-repeat;transform:scale(1.06);filter:blur(10px) brightness(.32)}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.64),rgba(0,0,0,.86))}
-    .hero .container{position:relative;z-index:1}
-    .hero h1{font-family:var(--serif);font-size:clamp(2rem,5vw,3.6rem);color:#fff}.hero p{max-width:760px;margin:16px auto 0;color:var(--muted);font-size:18px}
-    .cta{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{padding:13px 22px;border-radius:2px;font-weight:700}.btn.gold{background:var(--gold);color:#111}.btn.out{border:1px solid var(--gold);color:#f3d989}
-    section{padding:72px 0}.title{font-family:var(--serif);color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.09em;font-size:clamp(1.7rem,3.5vw,2.5rem);margin-bottom:34px}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--panel);border:1px solid #2b2b2b;border-top:3px solid var(--gold);padding:24px}.card h3{color:#fff;margin-bottom:8px}.card p{color:var(--muted);font-size:14px}
-    .menu-wrap{background:#fff;color:#1a1a1a}.menu-wrap .title{color:#1a1a1a}.cat{margin-top:18px}.cat h3{font-family:var(--serif);color:#1d4a38;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}.item{border-bottom:1px solid #e8e8e8;padding:10px 0}.row{display:flex;justify-content:space-between;gap:10px}.price{color:#8a6a17;font-weight:700}
-    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.quote{background:var(--panel);padding:20px;border-top:3px solid var(--gold)} .quote p{color:var(--muted)}
-    .contact{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.box{background:var(--panel);border:1px solid #2b2b2b;padding:20px}.box h4{color:#fff;margin-bottom:8px}
-    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:34px 0 22px}.f{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} footer h5{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:var(--muted);font-size:14px;line-height:1.7}
-    .copy{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
-    @media(max-width:900px){nav{display:none}.cards,.grid,.testi,.contact,.f{grid-template-columns:1fr}}
-  </style>
+  <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-  <header><div class="container h">
-    <a class="brand" href="./index.html"><img src="../logo-la-savi.webp" alt="La Savi"><span>La Savi</span></a>
-    <nav><a href="./index.html">Home</a><a href="./menu.html">Menu</a><a href="#reservation">Reservation</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav>
-    <div style="display:flex;align-items:center;gap:8px"><div class="switch"><a href="/de/">🇩🇪 DE</a><a class="active" href="/en/">🇬🇧 EN</a></div><a class="reserve" href="#reservation">RESERVATIONS</a></div>
+  <header class="site-header"><div class="container header-inner">
+    <a class="brand" href="/en/"><img src="../logo-la-savi.webp" alt="La Savi"><span>La Savi</span></a>
+    <nav class="nav"><a href="/en/">Home</a><a href="/en/menu.html">Menu</a><a href="#reservation">Reservation</a><a href="#contact">Contact</a></nav>
+    <div class="header-right">
+      <div class="switch"><a href="/de/">🇩🇪 DE</a><a class="active" href="/en/">🇬🇧 EN</a><a href="/tr/">🇹🇷 TR</a><a href="/nl/">🇳🇱 NL</a></div>
+      <div class="header-contact-buttons">
+        <a href="tel:+491634588988" class="btn-icon-modern btn-phone"><span class="btn-text">+49 163 458 898 8</span></a>
+        <a href="https://wa.me/491634588988" class="btn-icon-modern btn-whatsapp" target="_blank" rel="noopener noreferrer"><span class="btn-text">WhatsApp</span></a>
+        <a href="mailto:info@lasavi.de" class="btn-icon-modern btn-email"><span class="btn-text">Email</span></a>
+      </div>
+    </div>
   </div></header>
-
   <section class="hero"><div class="container">
-    <h1>La Savi Premium Steakhouse</h1>
-    <p>Enjoy premium steaks, authentic grill specialties and homemade delicacies in an elegant atmosphere.</p>
-    <div class="cta"><a class="btn gold" href="#reservation">RESERVATIONS</a><a class="btn out" href="./menu.html">View Menu</a></div>
-    <p style="font-size:14px;margin-top:20px">Untermauerstraße 4, Duisburg | Mon-Sat 12:00-22:00</p>
-  </div></section>
-
-  <section id="about"><div class="container">
-    <h2 class="title">Your La Savi Experience</h2>
-    <div class="cards">
-      <article class="card"><h3>Premium Quality</h3><p>Hand-selected premium meat, carefully prepared and perfectly served.</p></article>
-      <article class="card"><h3>Expert Chef</h3><p>Traditional grill artistry with modern excellence – every dish a masterpiece.</p></article>
-      <article class="card"><h3>Cozy Atmosphere</h3><p>Elegant, stylish and inviting – the perfect place for any occasion.</p></article>
+    <h1>La Savi Steakhouse Duisburg</h1>
+    <p>Premium steaks, grill specialties and homemade dishes.</p>
+    <div class="hero-cta-buttons">
+      <a href="tel:+491634588988" class="btn-large btn-primary">Reservation</a>
+      <a href="/en/menu.html" class="btn-large btn-secondary">View Menu</a>
+      <a href="https://wa.me/491634588988" target="_blank" rel="noopener noreferrer" class="btn-large btn-whatsapp-full">Contact now</a>
     </div>
   </div></section>
-
-  <section class="menu-wrap"><div class="container">
-    <h2 class="title">OUR TOP SPECIALTIES</h2>
-    <div class="cat"><h3>Steaks</h3><div class="grid">
-      <div class="item"><div class="row"><span>T-Bone Steak (approx. 1000 gr)</span><span class="price">€49,90</span></div></div>
-      <div class="item"><div class="row"><span>Wagyu Filet (approx. 200gr)</span><span class="price">€129,00</span></div></div>
-    </div></div>
-    <div class="cat"><h3>Grill</h3><div class="grid">
-      <div class="item"><div class="row"><span>Adana minced skewer plate hot</span><span class="price">€17,90</span></div></div>
-      <div class="item"><div class="row"><span>Sultan Kebap Grill plate for 2 persons</span><span class="price">€49,90</span></div></div>
-    </div></div>
-    <div class="cat"><h3>Wet Aged Doner</h3><div class="grid">
-      <div class="item"><div class="row"><span>Iskender Doner (Kebab plate with sauce and yogurt)</span><span class="price">€15,90</span></div></div>
-    </div></div>
-    <div class="cat"><h3>Drinks</h3><div class="grid">
-      <div class="item"><div class="row"><span>Ayran (homemade Turkish buttermilk) (0.33l)</span><span class="price">€1,90</span></div></div>
-      <div class="item"><div class="row"><span>Cafe Crema</span><span class="price">€2,50</span></div></div>
-    </div></div>
-    <p style="text-align:center;margin-top:28px"><a class="btn gold" href="./menu.html">📋 View Full Menu</a></p>
-  </div></section>
-
-  <section><div class="container"><h2 class="title">What Our Guests Say</h2><div class="testi">
-    <article class="quote"><strong>Pascal D.</strong><p>"From business to private dinner — now a big Ayran fan."</p></article>
-    <article class="quote"><strong>Ebru A.</strong><p>"Feels like home cooking with special details and care."</p></article>
-    <article class="quote"><strong>Eray B.</strong><p>"Top steak quality and perfect guidance on meat selection."</p></article>
-  </div></div></section>
-
-  <section id="reservation"><div class="container">
-    <h2 class="title">Reserve Your Table</h2>
-    <div class="contact">
-      <div class="box"><h4>Address</h4><p>Untermauerstraße 4<br>47051 Duisburg</p></div>
-      <div class="box"><h4>Phone</h4><p><a href="tel:+491634588988">+49 163 458 898 8</a></p></div>
-      <div class="box"><h4>Opening Hours</h4><p>Mon–Sat: 12:00–22:00<br>Sunday: Closed</p></div>
+  <section id="reservation"><div class="container"><h2>Contact & Reservation</h2>
+    <div class="contact-buttons-grid">
+      <a href="tel:+491634588988" class="contact-btn"><span class="btn-label">Call</span><span class="btn-value">+49 163 458 898 8</span></a>
+      <a href="https://wa.me/491634588988" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp"><span class="btn-label">WhatsApp</span><span class="btn-value">Start chat</span></a>
+      <a href="mailto:info@lasavi.de" class="contact-btn"><span class="btn-label">Email</span><span class="btn-value">info@lasavi.de</span></a>
+      <a href="tel:+491634588988" class="contact-btn reservierung"><span class="btn-label">Reservation</span><span class="btn-value">Book table</span></a>
     </div>
-    <p style="text-align:center;margin-top:22px"><a class="btn gold" href="tel:+491634588988">RESERVATIONS</a></p>
   </div></section>
-
-  <footer id="contact"><div class="container">
-    <div class="f">
-      <div><h5>Contact</h5><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div>
-      <div><h5>Opening Hours</h5><p>Mon–Sat: 12:00–22:00<br>Sunday: Closed</p></div>
-      <div><h5>Social</h5><p><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></p></div>
-    </div>
-    <p class="copy">© 2026 La Savi | Premium Steakhouse Duisburg</p>
-  </div></footer>
+  <footer class="footer" id="contact"><div class="container"><div class="footer-grid"><div><h3>Contact</h3><p>Untermauerstraße 4<br>47051 Duisburg</p></div><div><h3>Opening Hours</h3><p>Mon-Sat 12:00-22:00</p></div><div><h3>Social</h3><div class="footer-social"><a href="https://instagram.com/lasavi_restaurant" target="_blank" rel="noopener noreferrer" class="social-btn instagram">Instagram</a><a href="https://facebook.com/lasavi" target="_blank" rel="noopener noreferrer" class="social-btn facebook">Facebook</a><a href="https://maps.google.com/?q=Untermauerstraße+4+47051+Duisburg" target="_blank" rel="noopener noreferrer" class="social-btn maps">Maps</a><a href="https://t.me/lasavi" target="_blank" rel="noopener noreferrer" class="social-btn telegram">Telegram</a></div></div></div><p class="copy">© 2026 La Savi Duisburg</p></div></footer>
+  <script src="../assets/script.js"></script>
 </body>
 </html>
