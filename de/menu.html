@@ -15,7 +15,7 @@
     nav{display:flex;gap:10px} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
     .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
     main{padding:46px 0 78px}.title{text-align:center;font-family:var(--serif);color:#fff;text-transform:uppercase;letter-spacing:.08em;font-size:clamp(2rem,5vw,3.4rem)}.sub{text-align:center;color:var(--muted);margin-top:10px}
-    .print{text-align:center;margin:24px 0 20px}.print button{padding:12px 18px;border:1px solid rgba(212,175,55,.6);border-radius:8px;background:rgba(212,175,55,.08);color:#f3d989;font-weight:700}
+    .print{text-align:center;margin:24px 0 20px}.print button{width:36px;height:36px;border:1px solid rgba(212,175,55,.45);border-radius:999px;background:rgba(212,175,55,.06);color:#f3d989;font-size:16px;display:inline-flex;align-items:center;justify-content:center}
     .cat{margin-top:30px}.cat h2{font-family:var(--serif);color:#f3d989;letter-spacing:.12em;text-transform:uppercase;font-size:18px;margin-bottom:12px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}.item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px}.row{display:flex;justify-content:space-between;gap:12px}.name{color:#fff;font-size:14px}.price{color:var(--gold);font-weight:700;white-space:nowrap}
     footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:32px 0 22px}.f{display:grid;grid-template-columns:repeat(3,1fr);gap:22px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:var(--muted);font-size:14px;line-height:1.7}
@@ -32,7 +32,7 @@
   </div></header>
   <main><div class="container">
     <h1 class="title">UNSERE SPEISEKARTE</h1><p class="sub">Genießen Sie unsere vollständige Auswahl</p>
-    <div class="print"><button onclick="window.print()">🖨️ Menü als PDF drucken</button></div>
+    <div class="print"><button id="share-btn" aria-label="Speisekarte teilen" title="Teilen">↗</button></div>
 
     <section class="cat"><h2>Salate</h2><div class="grid">
       <div class="item"><div class="row"><span class="name">01. Hirtensalat</span><span class="price">€4,90</span></div></div>
@@ -88,5 +88,23 @@
     </div></section>
   </div></main>
   <footer><div class="container"><div class="f"><div><h4>Kontakt</h4><p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p></div><div><h4>Öffnungszeiten</h4><p>Mo–Sa: 12:00–22:00 Uhr<br>Sonntag: Geschlossen</p></div><div><h4>Social</h4><p><a href="https://www.instagram.com/lasavi_restaurant/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.tiktok.com/@lasavirestaurant?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">TikTok</a></p></div></div><p class="copy">© 2026 La Savi | Premium Steakhouse Duisburg</p></div></footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('share-btn');
+      if (!btn) return;
+      btn.addEventListener('click', async function () {
+        var url = window.location.href;
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: 'La Savi Speisekarte', url: url });
+          } else if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(url);
+            btn.textContent = '✓';
+            window.setTimeout(function () { btn.textContent = '↗'; }, 1200);
+          }
+        } catch (_) {}
+      });
+    })();
+  </script>
 </body>
 </html>
