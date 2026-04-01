@@ -343,7 +343,7 @@
       height: 100%;
       min-height: min(52vh, 520px);
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
     }
     .sw-menu-hero::after {
       content: "";
@@ -452,6 +452,9 @@
     }
     .sw-video-showcase {
       margin: 0 0 52px;
+    }
+    .sw-video-showcase--top {
+      margin: 18px 0 34px;
     }
     .sw-video-grid {
       display: grid;
@@ -949,6 +952,27 @@
           <h2 class="sw-menu-hero__title" id="menu-page-title">UNSERE SPEZIALITÄTEN</h2>
         </div>
       </div>
+      <div class="sw-video-showcase sw-video-showcase--top reveal" aria-label="Video Highlights">
+        <div class="container">
+          <div class="sw-video-grid">
+            <div class="sw-video-card">
+              <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
+                <source src="media/videos/spezial-1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="sw-video-card">
+              <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
+                <source src="media/videos/spezial-2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="sw-video-card">
+              <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
+                <source src="media/videos/spezial-3.mov" type="video/quicktime">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="sw-menu-light">
         <div class="container">
@@ -957,26 +981,6 @@
           </div>
           <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Im Druckdialog „Als PDF speichern“ wählen — ohne externe Datei.</p>
           <hr class="sw-menu-rule" aria-hidden="true">
-          <div class="sw-video-showcase reveal" aria-label="Video Highlights">
-            <div class="sw-video-grid">
-              <div class="sw-video-card">
-                <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
-                  <source src="media/videos/spezial-1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="sw-video-card">
-                <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
-                  <source src="media/videos/spezial-2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="sw-video-card">
-                <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
-                  <source src="media/videos/spezial-3.mov" type="video/quicktime">
-                </video>
-              </div>
-            </div>
-          </div>
-
           <div class="sw-menu-panel is-active reveal">
             <h3 class="sw-menu-cat">Salate</h3>
             <div class="sw-menu-grid">
