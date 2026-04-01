@@ -450,6 +450,30 @@
       background: var(--sw-border);
       margin: 0 0 var(--space-60);
     }
+    .sw-video-showcase {
+      margin: 0 0 52px;
+    }
+    .sw-video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .sw-video-card {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .sw-video-card video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    @media (max-width: 900px) {
+      .sw-video-grid { grid-template-columns: 1fr; }
+    }
     .sw-menu-panel {
       display: none;
     }
@@ -933,6 +957,25 @@
           </div>
           <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Im Druckdialog „Als PDF speichern“ wählen — ohne externe Datei.</p>
           <hr class="sw-menu-rule" aria-hidden="true">
+          <div class="sw-video-showcase reveal" aria-label="Video Highlights">
+            <div class="sw-video-grid">
+              <div class="sw-video-card">
+                <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
+                  <source src="media/videos/spezial-1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="sw-video-card">
+                <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
+                  <source src="media/videos/spezial-2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="sw-video-card">
+                <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
+                  <source src="media/videos/spezial-3.mov" type="video/quicktime">
+                </video>
+              </div>
+            </div>
+          </div>
 
           <div class="sw-menu-panel is-active reveal">
             <h3 class="sw-menu-cat">Salate</h3>
@@ -1369,6 +1412,30 @@
       }
       document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', openPrintDialog);
       document.getElementById('btn-print-menu-secondary') && document.getElementById('btn-print-menu-secondary').addEventListener('click', openPrintDialog);
+      var specialsVideos = Array.prototype.slice.call(document.querySelectorAll('.js-special-video'));
+      if (specialsVideos.length === 3) {
+        function syncSpecialVideos() {
+          var ready = specialsVideos.every(function (v) {
+            return v.readyState >= 1 && v.duration && isFinite(v.duration);
+          });
+          if (!ready) return;
+          var minDuration = Math.min.apply(null, specialsVideos.map(function (v) { return v.duration; }));
+          var baseTime = (Date.now() / 1000) % minDuration;
+          specialsVideos.forEach(function (v) {
+            try {
+              v.currentTime = Math.min(baseTime, Math.max(0, v.duration - 0.05));
+              v.play().catch(function () {});
+            } catch (_) {}
+          });
+        }
+        specialsVideos.forEach(function (v) {
+          v.addEventListener('loadedmetadata', syncSpecialVideos, { once: true });
+          v.addEventListener('canplay', function () { v.play().catch(function () {}); }, { once: true });
+        });
+        document.addEventListener('visibilitychange', function () {
+          if (!document.hidden) syncSpecialVideos();
+        });
+      }
 
     })();
   </script>
