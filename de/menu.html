@@ -2,59 +2,74 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
   <title>La Savi | Speisekarte</title>
   <meta name="description" content="La Savi Speisekarte mit Zoom-Modal, Steak-Illustrationen und vollständiger Auswahl.">
   <link rel="icon" href="../logo-la-savi.webp" type="image/webp">
   <style>
     :root{--bg:#000;--gold:#d4af37;--txt:#fff;--muted:#ccc;--panel:#1a1a1a;--border:#333;--serif:Georgia,"Times New Roman",Times,serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;--h:72px}
-    *{box-sizing:border-box;margin:0;padding:0} body{font-family:var(--sans);background:var(--bg);color:var(--txt)} a{text-decoration:none;color:inherit}
-    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    header{position:sticky;top:0;z-index:50;height:var(--h);background:rgba(0,0,0,.94);border-bottom:1px solid rgba(212,175,55,.35)}
-    .head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:42px;height:42px}.brand span{font-family:var(--serif);letter-spacing:.2em;text-transform:uppercase}
-    nav{display:flex;gap:10px} nav a{padding:9px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:4px} nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
-    .switch{display:inline-flex;gap:6px}.switch a{padding:8px 10px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:12px;font-weight:700}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
-    main{padding:44px 0 78px}
-    .title{text-align:center;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:clamp(2rem,5vw,3.4rem)}
-    .sub{text-align:center;color:var(--muted);margin-top:10px}
-    .print{text-align:center;margin:22px 0}
-    .print button{width:36px;height:36px;border:1px solid rgba(212,175,55,.45);border-radius:999px;background:rgba(212,175,55,.06);color:#f3d989;font-size:16px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-    .cat{margin-top:30px}
-    .cat h2{font-family:var(--serif);color:#f3d989;text-transform:uppercase;letter-spacing:.12em;font-size:18px;margin-bottom:10px}
-    .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
-    .menu-card{display:flex;gap:18px;padding:18px;background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);cursor:pointer;transition:all .28s ease;border-radius:4px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{overflow-x:hidden}
+    body{font-family:var(--sans);background:var(--bg);color:var(--txt);font-size:14px;line-height:1.55}
+    img,svg,video{max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1180px,calc(100% - 24px));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.94);border-bottom:1px solid rgba(212,175,55,.35)}
+    .head{min-height:var(--h);display:flex;align-items:center;justify-content:space-between;gap:10px;position:relative}
+    .brand{display:flex;align-items:center;gap:10px}.brand img{width:38px;height:38px}.brand span{font-family:var(--serif);letter-spacing:.14em;text-transform:uppercase;font-size:15px}
+    nav{display:none;position:absolute;left:0;right:0;top:calc(100% + 1px);background:#090909;border:1px solid rgba(212,175,55,.25);border-radius:0 0 8px 8px;padding:8px}
+    nav a{display:block;padding:11px 12px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;border-radius:6px;min-height:44px}
+    nav a:hover{color:var(--gold);background:rgba(212,175,55,.08)}
+    .head.is-open nav{display:block}
+    .menu-toggle{width:44px;height:44px;border:1px solid rgba(212,175,55,.5);background:transparent;border-radius:6px;display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
+    .menu-toggle span{width:20px;height:2px;background:var(--gold);border-radius:2px}
+    .switch{display:inline-flex;gap:4px}.switch a{padding:8px 8px;border:1px solid #555;border-radius:4px;background:#1a1a1a;color:#aaa;font-size:11px;font-weight:700;display:inline-flex;align-items:center;min-height:44px}.switch a.active{background:var(--gold);color:#111;border-color:var(--gold)}
+    main{padding:34px 0 58px}
+    .title{text-align:center;font-family:var(--serif);text-transform:uppercase;letter-spacing:.08em;font-size:32px}
+    .sub{text-align:center;color:var(--muted);margin-top:10px;font-size:13px}
+    .print{text-align:center;margin:20px 0}
+    .print button{width:44px;height:44px;border:1px solid rgba(212,175,55,.45);border-radius:999px;background:rgba(212,175,55,.06);color:#f3d989;font-size:16px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+    .cat{margin-top:24px}
+    .cat h2{font-family:var(--serif);color:#f3d989;text-transform:uppercase;letter-spacing:.1em;font-size:15px;margin-bottom:10px}
+    .cards{display:grid;grid-template-columns:1fr;gap:12px}
+    .menu-card{display:flex;gap:12px;padding:14px;background:var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold);cursor:pointer;transition:all .28s ease;border-radius:4px}
     .menu-card:hover{background:#242424;border-left-color:#fff;transform:translateX(4px)}
-    .menu-card-image{width:120px;height:120px;flex-shrink:0;background:#0a0a0a;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .menu-card-image{width:88px;height:88px;flex-shrink:0;background:#0a0a0a;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center}
     .menu-card-image img{width:100%;height:100%;object-fit:cover}
     .menu-card-info{display:flex;flex-direction:column;justify-content:space-between;flex:1}
-    .item-name{font-size:14px;font-weight:700;color:#fff}
+    .item-name{font-size:13px;font-weight:700;color:#fff}
     .item-description{font-size:12px;color:#999;margin-top:5px;line-height:1.5}
     .item-price{font-size:14px;font-weight:700;color:var(--gold);margin-top:8px}
     .modal{display:none;position:fixed;inset:0;z-index:1000;animation:fadeIn .3s ease}
     .modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.72)}
-    .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(92vw,760px);max-height:90vh;overflow:auto;background:#000;border-top:3px solid var(--gold);border-radius:6px;padding:26px;animation:slideIn .3s ease}
-    .modal-close{position:absolute;top:10px;right:12px;background:transparent;border:0;color:var(--gold);font-size:30px;cursor:pointer}
+    .modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(95vw,760px);max-height:82vh;overflow:auto;background:#000;border-top:3px solid var(--gold);border-radius:6px;padding:16px;animation:slideIn .3s ease}
+    .modal-close{position:absolute;top:8px;right:10px;background:transparent;border:0;color:var(--gold);font-size:24px;cursor:pointer}
     .modal-close:hover{color:#fff}
     .modal-image-container{margin-bottom:16px;text-align:center}
-    .modal-image-container img,.modal-image-container svg{width:100%;max-width:600px;height:auto;max-height:500px;border-radius:4px;background:#111}
-    .modal-title{font-size:22px;color:#fff;margin-bottom:8px}
-    .modal-description{font-size:14px;color:#ccc;line-height:1.6;margin-bottom:10px}
+    .modal-image-container img,.modal-image-container svg{width:100%;max-width:600px;height:auto;max-height:220px;border-radius:4px;background:#111}
+    .modal-title{font-size:18px;color:#fff;margin-bottom:8px}
+    .modal-description{font-size:12px;color:#ccc;line-height:1.6;margin-bottom:10px}
     .modal-details{font-size:13px;color:var(--gold);margin-bottom:16px}
-    .modal-actions{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .modal-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     .modal-price{font-size:18px;font-weight:700;color:var(--gold)}
-    .close-btn{padding:10px 20px;background:var(--gold);color:#000;border:0;cursor:pointer;font-weight:700}
+    .close-btn{padding:10px 20px;background:var(--gold);color:#000;border:0;cursor:pointer;font-weight:700;min-height:44px}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}} @keyframes slideIn{from{transform:translate(-50%,-58%);opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
-    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:32px 0 22px;margin-top:40px}
-    .f{display:grid;grid-template-columns:repeat(3,1fr);gap:22px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:#8a8a8a;font-size:14px;line-height:1.7}
-    .copy{text-align:center;color:#8a8a8a;font-size:13px;margin-top:12px}
-    @media(max-width:900px){nav{display:none}.cards,.f{grid-template-columns:1fr}}
-    @media(max-width:600px){.menu-card{flex-direction:column}.menu-card-image{width:100%;height:200px}}
+    footer{border-top:1px solid rgba(212,175,55,.3);background:#0d0d0d;padding:30px 0 20px;margin-top:40px}
+    .f{display:grid;grid-template-columns:1fr;gap:18px} footer h4{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:8px} footer p,footer a{color:#8a8a8a;font-size:13px;line-height:1.7}
+    .copy{text-align:center;color:#8a8a8a;font-size:12px;margin-top:12px}
+    @media (min-width:481px){body{font-size:15px}.container{width:min(1180px,calc(100% - 36px))}.cards{grid-template-columns:repeat(2,1fr);gap:14px 16px}.cat h2{font-size:18px}.title{font-size:42px}.sub{font-size:15px}.menu-card{padding:18px;gap:18px}.menu-card-image{width:120px;height:120px}.item-name{font-size:14px}.modal-content{padding:20px;max-height:88vh}.modal-image-container img,.modal-image-container svg{max-height:320px}.f{grid-template-columns:1fr}}
+    @media (min-width:769px){.container{width:min(1180px,calc(100% - 64px))}.menu-toggle{display:none}nav{display:flex;position:static;background:none;border:0;padding:0;gap:10px}.head.is-open nav{display:flex}.f{grid-template-columns:repeat(3,1fr)}.modal-content{padding:26px}.modal-title{font-size:22px}.modal-description{font-size:14px}.modal-image-container img,.modal-image-container svg{max-height:500px}}
+    @media (min-width:1025px){body{font-size:16px}}
     @media print{@page{size:A4;margin:10mm} #dish-modal,header,footer,.print{display:none!important}.menu-card-image{display:none!important}.menu-card{border:1px solid #000;page-break-inside:avoid} body{background:#fff!important}}
   </style>
 </head>
 <body>
   <header><div class="container head">
     <a class="brand" href="./index.html"><img src="../logo-la-savi.webp" alt="La Savi"><span>La Savi</span></a>
+    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav><a href="./index.html">Home</a><a href="./menu.html">Speisekarte</a><a href="./index.html#reservierung">Reservierung</a><a href="./index.html#ueber">Über uns</a><a href="./index.html#kontakt">Kontakt</a></nav>
     <div class="switch"><a class="active" href="/de/">🇩🇪 DE</a><a href="/en/">🇬🇧 EN</a></div>
   </div></header>
@@ -150,6 +165,21 @@
         } catch (_) {}
       });
     }
+    (function () {
+      var wrap = document.querySelector(".head");
+      var btn = document.querySelector(".menu-toggle");
+      if (!wrap || !btn) return;
+      btn.addEventListener("click", function () {
+        var open = wrap.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      document.addEventListener("click", function (e) {
+        if (!wrap.contains(e.target)) {
+          wrap.classList.remove("is-open");
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    })();
   </script>
 </body>
 </html>
