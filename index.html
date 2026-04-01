@@ -185,6 +185,26 @@
       .menu-toggle { display: flex; }
     }
     .header-inner .btn-reserve { margin-left: 8px; }
+    .lang-switch {
+      display: inline-flex;
+      gap: 6px;
+      margin-right: 6px;
+    }
+    .lang-btn {
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 1px solid #555;
+      border-radius: 4px;
+      color: #aaa;
+      background: #1a1a1a;
+    }
+    .lang-btn.is-active {
+      color: #111;
+      border-color: var(--gold);
+      background: var(--gold);
+    }
 
     /* —— Hero —— */
     .hero {
@@ -892,25 +912,29 @@
         <span class="brand-text">La Savi</span>
       </a>
       <nav class="nav-desktop" aria-label="Hauptnavigation">
-        <a href="#home">Home</a>
-        <a href="#spezialitaeten">Menü</a>
-        <a href="#reservierung">Reservierung</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#home" id="nav-home-desktop">Home</a>
+        <a href="#spezialitaeten" id="nav-menu-desktop">Menü</a>
+        <a href="#reservierung" id="nav-reservation-desktop">Reservierung</a>
+        <a href="#ueber-uns" id="nav-about-desktop">Über uns</a>
+        <a href="#kontakt" id="nav-contact-desktop">Kontakt</a>
       </nav>
       <div style="display:flex; align-items:center; gap:10px;">
-        <a class="btn-reserve" href="#reservierung">Reservierung</a>
+        <div class="lang-switch" aria-label="Language switch">
+          <button type="button" class="lang-btn is-active" id="lang-de">🇩🇪 DE</button>
+          <button type="button" class="lang-btn" id="lang-en">🇬🇧 EN</button>
+        </div>
+        <a class="btn-reserve" href="#reservierung" id="btn-reserve-top">Reservierung</a>
         <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
       </div>
       <nav class="nav-mobile" id="mobile-nav" aria-label="Mobilmenü">
-        <a href="#home">Home</a>
-        <a href="#spezialitaeten">Menü</a>
-        <a href="#reservierung">Reservierung</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#kontakt">Kontakt</a>
-        <a class="btn-reserve" href="#reservierung">Reservierung</a>
+        <a href="#home" id="nav-home-mobile">Home</a>
+        <a href="#spezialitaeten" id="nav-menu-mobile">Menü</a>
+        <a href="#reservierung" id="nav-reservation-mobile">Reservierung</a>
+        <a href="#ueber-uns" id="nav-about-mobile">Über uns</a>
+        <a href="#kontakt" id="nav-contact-mobile">Kontakt</a>
+        <a class="btn-reserve" href="#reservierung" id="btn-reserve-mobile">Reservierung</a>
       </nav>
     </div>
   </header>
@@ -919,12 +943,12 @@
     <section class="hero" id="home">
       <div class="container">
         <h1>La Savi Steakhouse</h1>
-        <p class="tagline">Genießen Sie Dry-Aged Steaks und authentische Grillspezialitäten — mit Herz, Handwerk und höchstem Anspruch.</p>
+        <p class="tagline" id="hero-tagline">Genießen Sie Dry-Aged Steaks und authentische Grillspezialitäten — mit Herz, Handwerk und höchstem Anspruch.</p>
         <div class="hero-cta">
-          <a class="btn-gold" href="#reservierung">Reservierung</a>
-          <a class="btn-outline" href="#spezialitaeten">Menü ansehen</a>
+          <a class="btn-gold" href="#reservierung" id="hero-btn-reserve">Reservierung</a>
+          <a class="btn-outline" href="#spezialitaeten" id="hero-btn-menu">Menü ansehen</a>
         </div>
-        <p class="hero-sub">Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen</p>
+        <p class="hero-sub" id="hero-subline">Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen</p>
       </div>
     </section>
 
@@ -934,18 +958,18 @@
         <div class="cards-3">
           <article class="info-card reveal">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
-            <h3>Höchste Qualität</h3>
-            <p>Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.</p>
+            <h3 id="feature-1-title">Höchste Qualität</h3>
+            <p id="feature-1-text">Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.</p>
           </article>
           <article class="info-card reveal">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 3v4M16 3v4M12 13v8M5 8h14M7 21h10"/></svg>
-            <h3>Expertise</h3>
-            <p>Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.</p>
+            <h3 id="feature-2-title">Expertise</h3>
+            <p id="feature-2-text">Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.</p>
           </article>
           <article class="info-card reveal">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 14c2-4 5-6 8-6s6 2 8 6M3 19h18"/></svg>
-            <h3>Atmosphere</h3>
-            <p>Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.</p>
+            <h3 id="feature-3-title">Atmosphere</h3>
+            <p id="feature-3-text">Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.</p>
           </article>
         </div>
       </div>
@@ -984,11 +1008,11 @@
       <div class="sw-menu-light">
         <div class="container">
           <div class="sw-menu-download-wrap reveal">
-            <button type="button" class="sw-menu-download" id="btn-print-menu">Speisekarte drucken / als PDF speichern</button>
+            <button type="button" class="sw-menu-download" id="btn-print-menu">Menü als PDF drucken</button>
           </div>
           <p class="reveal menu-print-hint" style="text-align:center; font-size:13px; color: var(--sw-text-soft); margin: -24px 0 32px;">Im Druckdialog „Als PDF speichern“ wählen — ohne externe Datei.</p>
           <hr class="sw-menu-rule" aria-hidden="true">
-          <div class="sw-menu-panel is-active reveal">
+          <div class="sw-menu-panel is-active reveal" id="menu-panel-main">
             <h3 class="sw-menu-cat">Salate</h3>
             <div class="sw-menu-grid">
               <article class="sw-menu-item">
@@ -1253,7 +1277,7 @@
           <div style="margin-top: 40px; text-align: center;" class="reveal">
             <button type="button" class="btn-print" id="btn-print-menu-secondary" aria-label="Speisekarte drucken">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
-              Drucken
+              Menü als PDF speichern (Druckdialog)
             </button>
           </div>
         </div>
@@ -1274,7 +1298,7 @@
 
     <section id="bewertungen">
       <div class="container">
-        <h2 class="section-title reveal">Stimmen unserer Gäste</h2>
+        <h2 class="section-title reveal" id="testimonials-title">Stimmen unserer Gäste</h2>
         <div class="testimonials">
           <article class="testimonial reveal">
             <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
@@ -1297,27 +1321,27 @@
 
     <section id="reservierung">
       <div class="container">
-        <h2 class="contact-head reveal">Reservieren Sie Ihren Tisch</h2>
+        <h2 class="contact-head reveal" id="reservation-title">Reservieren Sie Ihren Tisch</h2>
         <div class="contact-grid">
           <div class="contact-box reveal">
             <div class="emoji" aria-hidden="true">📍</div>
-            <h3>Adresse</h3>
+            <h3 id="reservation-address-title">Adresse</h3>
             <p>Untermauerstraße 4<br>47051 Duisburg</p>
           </div>
           <div class="contact-box reveal">
             <div class="emoji" aria-hidden="true">☎</div>
-            <h3>Telefon</h3>
+            <h3 id="reservation-phone-title">Telefon</h3>
             <p><a href="tel:+491634588988">+49 163 458 898 8</a></p>
             <p style="margin-top:8px; font-size:13px;">Jetzt anrufen — wir freuen uns auf Sie.</p>
           </div>
           <div class="contact-box reveal">
             <div class="emoji" aria-hidden="true">🕐</div>
-            <h3>Öffnungszeiten</h3>
-            <p>Mo–Sa: 12:00–22:00 Uhr<br>So: geschlossen</p>
+            <h3 id="reservation-hours-title">Öffnungszeiten</h3>
+            <p id="reservation-hours-text">Mo–Sa: 12:00–22:00 Uhr<br>So: geschlossen</p>
           </div>
         </div>
         <div class="contact-cta-wrap reveal">
-          <a class="btn-gold" href="tel:+491634588988">Jetzt reservieren — anrufen</a>
+          <a class="btn-gold" href="tel:+491634588988" id="reservation-cta">Jetzt reservieren — anrufen</a>
         </div>
       </div>
     </section>
@@ -1338,12 +1362,12 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h4>Kontakt</h4>
+          <h4 id="footer-contact-title">Kontakt</h4>
           <p>La Savi Steakhouse<br>Untermauerstraße 4<br>47051 Duisburg</p>
           <p style="margin-top:12px;"><a href="tel:+491634588988">+49 163 458 898 8</a></p>
         </div>
         <div class="footer-col">
-          <h4>Öffnungszeiten</h4>
+          <h4 id="footer-hours-title">Öffnungszeiten</h4>
           <p>Montag – Samstag<br>12:00 – 22:00 Uhr</p>
           <p style="margin-top:12px;">Sonntag geschlossen</p>
         </div>
@@ -1361,7 +1385,7 @@
           </div>
         </div>
       </div>
-      <p class="copyright">© 2026 La Savi · Steakhouse Duisburg</p>
+      <p class="copyright" id="footer-copyright">© 2026 La Savi | Premium Steakhouse Duisburg</p>
     </div>
   </footer>
 
@@ -1454,6 +1478,110 @@
           if (!document.hidden) syncSpecialVideos();
         });
       }
+
+      var langDeBtn = document.getElementById('lang-de');
+      var langEnBtn = document.getElementById('lang-en');
+      var menuPanelMain = document.getElementById('menu-panel-main');
+      var menuPanelDeHtml = menuPanelMain ? menuPanelMain.innerHTML : '';
+      var menuPanelEnHtml = '';
+
+      function esc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      function makeCat(title, items) {
+        var html = '<h3 class="sw-menu-cat" style="margin-top:48px;">' + esc(title) + '</h3><div class="sw-menu-grid">';
+        items.forEach(function (it) {
+          html += '<article class="sw-menu-item"><div class="sw-menu-item__row"><span class="sw-menu-item__name">' + esc(it[0]) + '</span><span class="sw-menu-item__price">' + esc(it[1]) + '</span></div></article>';
+        });
+        html += '</div>';
+        return html;
+      }
+
+      if (menuPanelMain) {
+        menuPanelEnHtml += makeCat('Salads', [
+          ["01. Shepherd's Salad", '4.90 €'], ["02. Shepherd's Salad with Feta cheese", '7.90 €'], ['03. Herb leaves salad', '7.90 €'], ['04. Herb leaves salad with Feta cheese', '9.90 €'], ['05. Herb leaves salad with buffalo mozzarella', '11.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Daily Dough Dishes (Homemade)', [
+          ['06. Turkish Tortellini (Filled with minced meat with butter and yogurtsauce)', '9.90 €'], ['07. Dough ship with kebab meat (or minced meat)', '9.90 €'], ['08. Dough ship with Lamb cubes and Gouda cheese', '9.90 €'], ['09. Turkish pizza without everything', '3.90 €'], ['10. Turkish pizza with salad', '5.90 €'], ['11. Turkish pizza with kebab meat', '9.90 €'], ['12. Dough ship with Vegetables', '9.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Daily Dishes (Clay pot dishes from the oven)', [
+          ['MENU 1: Lamb meat clay pot with rice', '14.90 €'], ['MENU 2: Chicken clay pot with rice', '12.90 €'], ['MENU 3: Lamb meatballs clay pot with rice', '13.90 €'], ['MENU 4: Shrimp clay pot with rice', '19.90 €'], ['MENU 5: Vegetable clay pot with rice', '10.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Changing Daily Soups', [['Lentil soup', '4.90 €'], ['Chicken soup', '5.90 €'], ['Lamb soup', '6.90 €']]);
+        menuPanelEnHtml += makeCat('Wet Aged Special Döner & Fries', [
+          ['13. Kebab in bread', '8.90 €'], ['14. Kebab plate with fries and salad', '14.90 €'], ['15. Iskender Döner (Kebab plate with sauce and yogurt)', '15.90 €'], ['16. Kebab wrap', '9.90 €'], ['Small fries', '2.90 €'], ['Big fries', '3.90 €'], ['Fries kabap (Fries with Wet Aged Döner)', '7.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Grill Dishes', [
+          ['20. Adana minced skewer plate hot', '17.90 €'], ['21. Urfa minced skewer plate', '17.90 €'], ['22. Mixed grill plate', '23.90 €'], ['23. Lamb chop', '21.90 €'], ['24. Lamb skewer plate', '19.90 €'], ['25. Meatballs on the grill (with lamb meat)', '17.90 €'], ['26. Sultan Kebap Grill plate for 2 persons', '49.90 €'], ['27. Sultan Kebap Grill plate for 4 persons', '94.90 €'], ['28. Chicken chop', '17.90 €'], ['29. Chicken skewer', '17.90 €'], ['30. Adana minced skewer wrap', '9.90 €'], ['31. Chicken skewer wrap', '9.90 €'], ['32. Lamb skewer wrap', '9.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Steak Specialties', [
+          ['33. Rump Steak (approx. 350 gr)', '34.90 €'], ['34. Filet Steak (approx. 300 gr)', '39.90 €'], ['35. Cowboy Steak (approx. 1000 gr)', '49.90 €'], ['36. T-Bone Steak (approx. 1000 gr)', '49.90 €']
+        ]);
+        menuPanelEnHtml += makeCat('Buffalo Steaks', [['37. Buffalo Filet Steak (approx. 250gr)', '44.90 €'], ['38. Buffalo Ribeye Steak (approx. 300gr)', '44.90 €']]);
+        menuPanelEnHtml += makeCat('Wagyu Steaks', [['39. Wagyu Filet (approx. 200gr)', '129.00 €'], ['40. Wagyu Roastbeef (approx. 300gr)', '149.00 €'], ['41. Wagyu Ribeye (approx. 300gr)', '149.00 €']]);
+        menuPanelEnHtml += makeCat('Side Dishes & Sauces (for Steaks)', [['Cream spinach', '4.90 €'], ['Fried potatoes with rosemary', '4.90 €'], ['Sweet potato fries', '4.90 €'], ['Hollandaise sauce', '4.90 €'], ['Béarnaise sauce', '4.90 €'], ['Pepper sauce', '4.90 €']]);
+        menuPanelEnHtml += makeCat('Cold Drinks', [['Coca Cola, Fanta, Sprite, Mezzo Mix (0.33l)', '2.90 €'], ['Uludağ (Turkish soda) (0.33l)', '2.90 €'], ['Mineral water with or without carbonation (0.25l)', '2.50 €'], ['Mineral water with or without carbonation (0.75l)', '4.90 €'], ['Orange-Cherry-Banana-Multi juice (0.2l)', '2.50 €'], ['Ayran (homemade Turkish buttermilk) (0.33l)', '1.90 €'], ['Ice tea (Peach, Lemon) (0.33l)', '2.90 €'], ['Ginger Ale (0.2l)', '2.90 €'], ['Bitter Lemon (0.2l)', '2.90 €'], ['Red Bull (0.25l)', '2.50 €'], ['Malt beer (0.33l)', '2.90 €'], ['Krombacher (non-alcoholic beer) (0.33l)', '2.90 €']]);
+        menuPanelEnHtml += makeCat('Wine & Sparkling Wine (Natureo Non-Alcoholic)', [['Red wine Natureo (0.2l)', '7.90 €'], ['White wine Natureo (0.2l)', '7.90 €'], ['Sparkling wine Natureo Seco (0.2l)', '7.90 €']]);
+        menuPanelEnHtml += makeCat('Hot Drinks', [['Cafe Crema', '2.50 €'], ['Espresso', '2.50 €'], ['Cappuccino', '2.90 €'], ['Latte', '2.90 €'], ['Milk coffee', '2.90 €'], ['Turkish Coffee', '2.50 €'], ['Hot Cocoa', '2.90 €']]);
+        menuPanelEnHtml += makeCat('Desserts', [['42. Katmer (crisp flaky pastry with Cream and pistachios)', '7.90 €'], ['43. Künefe (String dough with cheese)', '7.90 €'], ['44. Rice pudding vanilla', '4.90 €'], ['45. Mascarpone', '1.00 €'], ['46. Maras Ice Cream', '2.90 €']]);
+      }
+
+      function setTxt(id, text, asHtml) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        if (asHtml) el.innerHTML = text;
+        else el.textContent = text;
+      }
+      function applyLanguage(lang) {
+        var en = lang === 'en';
+        document.documentElement.lang = en ? 'en' : 'de';
+        if (langDeBtn && langEnBtn) {
+          langDeBtn.classList.toggle('is-active', !en);
+          langEnBtn.classList.toggle('is-active', en);
+        }
+        setTxt('nav-menu-desktop', en ? 'Menu' : 'Menü');
+        setTxt('nav-reservation-desktop', en ? 'Reservation' : 'Reservierung');
+        setTxt('nav-about-desktop', en ? 'About Us' : 'Über uns');
+        setTxt('nav-contact-desktop', en ? 'Contact' : 'Kontakt');
+        setTxt('nav-menu-mobile', en ? 'Menu' : 'Menü');
+        setTxt('nav-reservation-mobile', en ? 'Reservation' : 'Reservierung');
+        setTxt('nav-about-mobile', en ? 'About Us' : 'Über uns');
+        setTxt('nav-contact-mobile', en ? 'Contact' : 'Kontakt');
+        setTxt('btn-reserve-top', en ? 'Reserve Now' : 'Reservierung');
+        setTxt('btn-reserve-mobile', en ? 'Reserve Now' : 'Reservierung');
+        setTxt('hero-tagline', en ? 'Enjoy premium steaks, authentic grill specialties and homemade delicacies in an elegant atmosphere' : 'Genießen Sie erstklassige Steaks, authentische Grillspezialitäten und hausgemachte Köstlichkeiten in eleganter Atmosphäre');
+        setTxt('hero-btn-reserve', en ? 'Reserve Now' : 'Reservierung');
+        setTxt('hero-btn-menu', en ? 'Menu' : 'Menü ansehen');
+        setTxt('hero-subline', en ? 'Untermauerstraße 4, Duisburg | Mon-Sat 12:00-22:00' : 'Untermauerstraße 4, 47051 Duisburg · Mo–Sa 12:00–22:00 Uhr · So geschlossen');
+        setTxt('feature-1-title', en ? 'Premium Quality' : 'Höchste Qualität');
+        setTxt('feature-1-text', en ? 'Hand-selected premium meat, carefully prepared and perfectly served.' : 'Dry-Aged Steaks vom Feinsten, sorgfältig ausgewähltes Fleisch und konsequente Qualität auf jedem Teller.');
+        setTxt('feature-2-title', en ? 'Expert Chef' : 'Expertise');
+        setTxt('feature-2-text', en ? 'Traditional grill artistry with modern excellence – every dish a masterpiece.' : 'Traditionelle Grillkunst mit modernem Touch — präzise Garpunkte, kräftige Aromen, ehrlicher Geschmack.');
+        setTxt('feature-3-title', en ? 'Cozy Atmosphere' : 'Atmosphere');
+        setTxt('feature-3-text', en ? 'Elegant, stylish and inviting – the perfect place for any occasion.' : 'Elegantes Ambiente für Geschäftsessen, Familienfeste und besondere Abende — warm, stilvoll, einladend.');
+        setTxt('menu-page-title', en ? 'OUR SPECIALTIES' : 'UNSERE SPEZIALITÄTEN');
+        setTxt('btn-print-menu', en ? 'Print Menu as PDF' : 'Menü als PDF drucken');
+        setTxt('btn-print-menu-secondary', en ? 'Save Menu as PDF (Print Dialog)' : 'Menü als PDF speichern (Druckdialog)');
+        setTxt('testimonials-title', en ? 'What Our Guests Say' : 'Stimmen unserer Gäste');
+        setTxt('reservation-title', en ? 'RESERVE YOUR TABLE' : 'Reservieren Sie Ihren Tisch');
+        setTxt('reservation-address-title', en ? 'ADDRESS' : 'Adresse');
+        setTxt('reservation-phone-title', en ? 'PHONE' : 'Telefon');
+        setTxt('reservation-hours-title', en ? 'OPENING HOURS' : 'Öffnungszeiten');
+        setTxt('reservation-hours-text', en ? 'Mon–Sat: 12:00–22:00<br>Sunday: Closed' : 'Mo–Sa: 12:00–22:00 Uhr<br>So: geschlossen', true);
+        setTxt('reservation-cta', en ? 'Reserve Now — Call' : 'Jetzt reservieren — anrufen');
+        setTxt('footer-contact-title', en ? 'Contact' : 'Kontakt');
+        setTxt('footer-hours-title', en ? 'Opening Hours' : 'Öffnungszeiten');
+        setTxt('footer-copyright', '© 2026 La Savi | Premium Steakhouse Duisburg');
+        if (menuPanelMain) menuPanelMain.innerHTML = en ? menuPanelEnHtml : menuPanelDeHtml;
+      }
+      function setLanguage(lang) {
+        var use = lang === 'en' ? 'en' : 'de';
+        localStorage.setItem('language', use);
+        applyLanguage(use);
+      }
+      langDeBtn && langDeBtn.addEventListener('click', function () { setLanguage('de'); });
+      langEnBtn && langEnBtn.addEventListener('click', function () { setLanguage('en'); });
+      applyLanguage(localStorage.getItem('language') || 'de');
 
     })();
   </script>
