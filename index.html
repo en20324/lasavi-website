@@ -386,6 +386,207 @@
       object-fit: contain;
     }
 
+    /* Smith & Wollensky–inspiriert: Vollbild-Video-Hero */
+    .sw-hero {
+      position: relative;
+      min-height: min(92svh, 56rem);
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      overflow: clip;
+      background: #0a0908;
+    }
+    .sw-hero__video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .sw-hero__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .sw-hero__tint {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.5) 45%, rgba(5,4,3,0.75) 100%);
+      pointer-events: none;
+    }
+    .sw-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: var(--space-12) var(--space-4) var(--space-16);
+    }
+    .sw-hero__kicker {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #e8d9b8;
+      margin: 0 0 var(--space-4);
+      max-width: none;
+    }
+    .sw-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      color: #fff;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.45);
+      margin: 0 0 var(--space-4);
+      max-width: 20ch;
+      margin-inline: auto;
+    }
+    .sw-hero__sub {
+      font-size: var(--text-lg);
+      color: rgba(255, 250, 242, 0.82);
+      margin: 0 auto var(--space-8);
+      max-width: 40ch;
+    }
+    .sw-hero__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+    }
+    .sw-hero__cta .cta {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+    .sw-hero__btn-light {
+      border-color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .sw-hero__btn-light:hover {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+    }
+    .sw-hero__chevron {
+      position: absolute;
+      bottom: var(--space-6);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(232, 192, 96, 0.4);
+      display: grid;
+      place-items: center;
+      color: #e8c060;
+      font-size: 1.2rem;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .sw-hero__chevron:hover {
+      background: rgba(232, 192, 96, 0.12);
+      transform: translateX(-50%) translateY(3px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sw-hero__video { display: none; }
+      .sw-hero { min-height: 70svh; background: radial-gradient(ellipse at center, #1a1512, #050504); }
+    }
+
+    /* Videogalerie */
+    .section-impressionen {
+      background: #060504;
+      color: #f5f0e8;
+      border-block: 1px solid rgba(201, 162, 39, 0.2);
+    }
+    .section-impressionen .section-heading h2,
+    .section-impressionen h2.bag-look-big,
+    .section-impressionen .bag-look-small {
+      color: #f5f0e8;
+    }
+    #impressionen { scroll-margin-top: 5.5rem; }
+    .section-impressionen .section-heading p {
+      color: rgba(230, 220, 205, 0.75);
+    }
+    .section-impressionen .eyebrow {
+      border-color: rgba(201, 162, 39, 0.35);
+      color: #e8c060;
+      background: rgba(201, 162, 39, 0.1);
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+      gap: var(--space-5);
+    }
+    .video-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      background: #0e0c0a;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+    .video-card figcaption {
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(232, 216, 184, 0.85);
+    }
+    .video-hint {
+      margin-top: var(--space-8);
+      font-size: var(--text-sm);
+      color: rgba(230, 220, 205, 0.55);
+      max-width: 65ch;
+    }
+
+    /* PDF Speisekarte */
+    .pdf-panel {
+      margin-top: var(--space-12);
+      border-radius: calc(var(--radius-xl) + 0.25rem);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      background: var(--color-surface);
+      box-shadow: var(--shadow-md);
+    }
+    .pdf-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      border-bottom: 1px solid var(--color-divider);
+      background: var(--color-surface-2);
+    }
+    .pdf-toolbar h3 {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--color-text);
+    }
+    .pdf-frame-wrap {
+      position: relative;
+      min-height: min(75vh, 52rem);
+      background: #2a2622;
+    }
+    .pdf-frame-wrap iframe {
+      width: 100%;
+      height: min(75vh, 52rem);
+      border: none;
+      display: block;
+    }
+    @media (max-width: 760px) {
+      .pdf-frame-wrap { min-height: 50vh; }
+      .pdf-frame-wrap iframe { height: 50vh; }
+    }
+
     @media (max-width: 900px) {
       .bag-teaser-inner {
         grid-template-columns: 1fr;
@@ -1152,7 +1353,11 @@
         <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation">
           <a href="#highlights">Über uns</a>
           <span class="nav-sep" aria-hidden="true">·</span>
+          <a href="#impressionen">Impressionen</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
           <a href="#speisekarte">Speisekarte</a>
+          <span class="nav-sep" aria-hidden="true">·</span>
+          <a href="#speisekarte-pdf">PDF</a>
           <span class="nav-sep" aria-hidden="true">·</span>
           <a href="#bewertungen">Bewertungen</a>
           <span class="nav-sep" aria-hidden="true">·</span>
@@ -1171,7 +1376,27 @@
     </div>
   </header>
 
-  <section class="bag-teaser" aria-label="Willkommen">
+  <main id="main">
+    <section class="sw-hero" id="willkommen" aria-label="Willkommen bei La Savi">
+      <div class="sw-hero__video-wrap" aria-hidden="true">
+        <video class="sw-hero__video" autoplay muted loop playsinline poster="logo-la-savi.webp">
+          <source src="media/videos/lasavi-highlight.mp4" type="video/mp4">
+        </video>
+        <div class="sw-hero__tint"></div>
+      </div>
+      <div class="container sw-hero__content">
+        <p class="sw-hero__kicker">Willkommen bei</p>
+        <h1 class="sw-hero__title">La Savi Steakhouse</h1>
+        <p class="sw-hero__sub">Premium Steaks, Grill &amp; Gastlichkeit in Duisburg — wie bei den großen Steakhouses, mit unserem eigenen Charakter.</p>
+        <div class="sw-hero__cta">
+          <a class="cta" href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">Speisekarte als PDF</a>
+          <a class="secondary-btn sw-hero__btn-light" href="#kontakt">Tisch reservieren</a>
+        </div>
+      </div>
+      <a class="sw-hero__chevron" href="#teaser-brand" aria-label="Weiter zur Marke">↓</a>
+    </section>
+
+    <section class="bag-teaser" id="teaser-brand" aria-label="La Savi Marke">
     <div class="bag-trennline" aria-hidden="true"></div>
     <div class="container bag-teaser-inner">
       <div class="bag-story reveal">
@@ -1188,7 +1413,6 @@
     </div>
   </section>
 
-  <main id="main">
     <section class="section alt" id="highlights">
       <div class="container">
         <div class="section-heading reveal">
@@ -1221,6 +1445,92 @@
             <p>Dunkle Töne, warme Akzente und freundlicher Service schaffen den passenden Rahmen für Dinner, Treffen mit Freunden oder einen entspannten Abend in der Stadt.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section section-impressionen" id="impressionen">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Stimmung &amp; Kulisse</span>
+          <p class="bag-look-small">Einblicke</p>
+          <h2 class="bag-look-big">La Savi in Bewegung</h2>
+          <p>Auszüge aus unserem Werbematerial — Ambiente, Gerichte und Details, die Sie bei uns erleben können.</p>
+        </div>
+        <div class="video-grid">
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Highlightfilm La Savi">
+              <source src="media/videos/lasavi-highlight.mp4" type="video/mp4">
+            </video>
+            <figcaption>Highlight</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 2">
+              <source src="media/videos/lasavi2.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 2</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 3">
+              <source src="media/videos/lasavi3.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 3</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 4">
+              <source src="media/videos/lasavi4.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 4</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 5">
+              <source src="media/videos/lasavi5.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 5</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 6">
+              <source src="media/videos/lasavi6.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 6</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 7">
+              <source src="media/videos/lasavi7.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 7</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 8">
+              <source src="media/videos/lasavi8.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 8</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 9">
+              <source src="media/videos/lasavi9.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 9</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 10">
+              <source src="media/videos/lasavi10.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 10</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 11">
+              <source src="media/videos/lasavi11.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 11</figcaption>
+          </figure>
+          <figure class="video-card reveal">
+            <video controls playsinline preload="metadata" poster="logo-la-savi.webp" aria-label="Impression La Savi 12">
+              <source src="media/videos/lasavi12.mov" type="video/quicktime">
+            </video>
+            <figcaption>Clip 12</figcaption>
+          </figure>
+        </div>
+        <p class="video-hint reveal">Hinweis: MOV-Clips spielen in Safari (macOS/iOS) am zuverlässigsten. Für Chrome/Firefox/Windows lohnen sich zusätzliche MP4-Exports derselben Clips.</p>
       </div>
     </section>
 
@@ -1275,8 +1585,28 @@
             <li>Freundlicher Service mit persönlichem Stil.</li>
             <li>Ideal für Lunch, Dinner und Abendtreffen.</li>
           </ul>
-          <p class="menu-note">Die vollständige Speisekarte kann später als PDF oder eigene Unterseite ergänzt werden — ohne das Layout zu ändern.</p>
+          <p class="menu-note">Die vollständige Karte liegt als PDF vor — öffnen oder herunterladen Sie sie unten oder über den Button im Hero.</p>
         </aside>
+      </div>
+
+      <div class="container" id="speisekarte-pdf" style="margin-top: var(--space-12); scroll-margin-top: 6rem;">
+        <div class="section-heading reveal">
+          <span class="eyebrow">PDF</span>
+          <h2 class="bag-look-big" style="margin-bottom: var(--space-3);">Speisekarte zum Blättern</h2>
+          <p>Offizielle Speisekarte als Dokument — ideal am Tablet oder zum Ausdrucken.</p>
+        </div>
+        <div class="pdf-panel reveal">
+          <div class="pdf-toolbar">
+            <h3>La-Savi-Speisekarte.pdf</h3>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+              <a class="cta" href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener" style="min-height:44px; padding:0.65rem 1.1rem;">In neuem Tab öffnen</a>
+              <a class="secondary-btn" href="media/docs/La-Savi-Speisekarte.pdf" download style="min-height:44px; padding:0.65rem 1.1rem;">Herunterladen</a>
+            </div>
+          </div>
+          <div class="pdf-frame-wrap">
+            <iframe title="Speisekarte La Savi (PDF)" src="media/docs/La-Savi-Speisekarte.pdf#view=FitH"></iframe>
+          </div>
+        </div>
       </div>
 
       <div class="container" style="margin-top: var(--space-12);">
@@ -1362,7 +1692,9 @@
       </div>
       <nav class="footer-links" aria-label="Footer Navigation">
         <a href="#top">Start</a>
+        <a href="#impressionen">Impressionen</a>
         <a href="#speisekarte">Speisekarte</a>
+        <a href="media/docs/La-Savi-Speisekarte.pdf" target="_blank" rel="noopener">PDF</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
@@ -1418,6 +1750,12 @@
         });
       }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      const heroVideo = document.querySelector('.sw-hero__video');
+      if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        heroVideo.removeAttribute('autoplay');
+        heroVideo.pause();
+      }
     }());
   </script>
 
