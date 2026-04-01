@@ -470,40 +470,6 @@
       background: var(--sw-border);
       margin: 0 0 var(--space-60);
     }
-    .sw-video-showcase {
-      margin: 0 0 52px;
-    }
-    .sw-video-showcase--top {
-      margin: 18px 0 34px;
-    }
-    .sw-video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .sw-video-card {
-      background: #111;
-      border: 1px solid #2a2a2a;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .sw-video-card video {
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      object-fit: cover;
-      display: block;
-      background: #000;
-      opacity: 0;
-      transform: scale(1.03);
-      transition: opacity 900ms ease, transform 1200ms ease;
-    }
-    .sw-video-card video.is-ready {
-      opacity: 1;
-      transform: scale(1);
-    }
-    @media (max-width: 900px) {
-      .sw-video-grid { grid-template-columns: 1fr; }
-    }
     .sw-menu-panel {
       display: none;
     }
@@ -983,28 +949,6 @@
           <h2 class="sw-menu-hero__title" id="menu-page-title">UNSERE SPEZIALITÄTEN</h2>
         </div>
       </div>
-      <div class="sw-video-showcase sw-video-showcase--top reveal" aria-label="Video Highlights">
-        <div class="container">
-          <div class="sw-video-grid">
-            <div class="sw-video-card">
-              <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
-                <source src="media/videos/spezial-1.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="sw-video-card">
-              <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
-                <source src="media/videos/spezial-2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="sw-video-card">
-              <video class="js-special-video" muted playsinline preload="metadata" autoplay loop>
-                <source src="media/videos/spezial-3.mov" type="video/quicktime">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="sw-menu-light">
         <div class="container">
           <div class="sw-menu-download-wrap reveal">
@@ -1447,38 +1391,6 @@
       }
       document.getElementById('btn-print-menu') && document.getElementById('btn-print-menu').addEventListener('click', openPrintDialog);
       document.getElementById('btn-print-menu-secondary') && document.getElementById('btn-print-menu-secondary').addEventListener('click', openPrintDialog);
-      var specialsVideos = Array.prototype.slice.call(document.querySelectorAll('.js-special-video'));
-      if (specialsVideos.length === 3) {
-        function syncSpecialVideos() {
-          var ready = specialsVideos.every(function (v) {
-            return v.readyState >= 1 && v.duration && isFinite(v.duration);
-          });
-          if (!ready) return;
-          var minDuration = Math.min.apply(null, specialsVideos.map(function (v) { return v.duration; }));
-          var baseTime = (Date.now() / 1000) % minDuration;
-          specialsVideos.forEach(function (v) {
-            try {
-              v.currentTime = Math.min(baseTime, Math.max(0, v.duration - 0.05));
-              v.play().catch(function () {});
-            } catch (_) {}
-          });
-        }
-        specialsVideos.forEach(function (v) {
-          v.addEventListener('loadedmetadata', syncSpecialVideos, { once: true });
-          v.addEventListener('canplay', function () {
-            v.play().catch(function () {});
-            // Sanfter, leicht gestaffelter Einstieg statt hartem Start.
-            var idx = specialsVideos.indexOf(v);
-            window.setTimeout(function () {
-              v.classList.add('is-ready');
-            }, 120 + (idx * 140));
-          }, { once: true });
-        });
-        document.addEventListener('visibilitychange', function () {
-          if (!document.hidden) syncSpecialVideos();
-        });
-      }
-
       var langDeBtn = document.getElementById('lang-de');
       var langEnBtn = document.getElementById('lang-en');
       var menuPanelMain = document.getElementById('menu-panel-main');
