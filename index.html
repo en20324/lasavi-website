@@ -544,25 +544,103 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* —— Print —— */
+    /* —— Print: nur Menü-Section (A4), Rest ausgeblendet —— */
     @media print {
-      @page { size: A4; margin: 14mm; }
-      .site-header, .hero-cta, .menu-toggle, .nav-mobile, .btn-print, #btn-print-menu-secondary, .contact-cta-wrap, .footer, .skip, .social-row { display: none !important; }
-      body { background: #fff !important; color: #111 !important; font-size: 11pt; }
-      .hero { min-height: auto; padding-top: 0; background: #fff !important; border: none; }
-      .hero h1 { color: #000 !important; font-size: 22pt; }
-      .hero .tagline, .hero-sub { color: #444 !important; }
-      section { padding: 16pt 0 !important; page-break-inside: avoid; }
-      .section-title { color: #000 !important; text-align: left; font-size: 16pt; }
-      .menu-grid { grid-template-columns: 1fr !important; }
+      @page {
+        size: A4;
+        margin: 14mm;
+      }
+
+      /* Navigation, Footer, Skip, UI-Buttons */
+      .skip,
+      .site-header,
+      .footer,
+      .hero-cta,
+      .menu-toggle,
+      .nav-mobile,
+      .btn-print,
+      #btn-print-menu-secondary,
+      .menu-print-hint,
+      .contact-cta-wrap,
+      .social-row {
+        display: none !important;
+      }
+
+      /* Alle Haupt-Sektionen außer Speisekarte */
+      main > section:not(.menu-section) {
+        display: none !important;
+      }
+
+      /* Menü-Section erzwingen (auch wenn #menu Screen-Styles hat) */
+      .menu-section {
+        display: block !important;
+        background: #fff !important;
+        color: #111 !important;
+        padding: 0 !important;
+        border: none !important;
+      }
+
+      body {
+        background: #fff !important;
+        color: #111 !important;
+        font-size: 11pt;
+      }
+
+      main {
+        display: block !important;
+      }
+
+      /* Wichtig: .reveal ist sonst oft opacity:0 bis Scroll → Druck leer */
+      .menu-section .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .menu-section .menu-toolbar {
+        display: block !important;
+        margin-bottom: 12pt !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+      }
+
+      .menu-section .menu-toolbar .section-title {
+        margin-bottom: 8pt !important;
+      }
+
+      .menu-section .section-title {
+        color: #000 !important;
+        text-align: left !important;
+        font-size: 16pt !important;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .menu-category {
+        color: #7a5c00 !important;
+        border-bottom-color: #ccc !important;
+      }
+
       .dish-card {
         background: #f9f9f9 !important;
         border-left: 3pt solid #b8860b !important;
         page-break-inside: avoid;
       }
-      .dish-name { color: #7a5c00 !important; }
-      .dish-price { color: #000 !important; }
-      .info-card, .highlight-item, .testimonial, .contact-box { border: 1px solid #ccc !important; background: #fff !important; }
+
+      .dish-name {
+        color: #7a5c00 !important;
+      }
+
+      .dish-meta,
+      .dish-desc {
+        color: #444 !important;
+      }
+
+      .dish-price {
+        color: #000 !important;
+      }
     }
   </style>
 </head>
@@ -635,7 +713,7 @@
       </div>
     </section>
 
-    <section id="menu">
+    <section id="menu" class="menu-section">
       <div class="container">
         <div class="menu-toolbar reveal">
           <h2 class="section-title">Unsere Spezialitäten</h2>
@@ -645,7 +723,7 @@
           </button>
         </div>
 
-        <p class="reveal" style="text-align:center; color: var(--text-muted); font-size: 14px; margin: -32px 0 40px; max-width: 52ch; margin-inline: auto;">Tipp: <strong>Menü als PDF drucken</strong> öffnet den Druckdialog — dort „Als PDF speichern“ wählen. Auszug unserer Highlights:</p>
+        <p class="reveal menu-print-hint" style="text-align:center; color: var(--text-muted); font-size: 14px; margin: -32px 0 40px; max-width: 52ch; margin-inline: auto;">Tipp: <strong>Menü als PDF drucken</strong> öffnet den Druckdialog — dort „Als PDF speichern“ wählen. Auszug unserer Highlights:</p>
 
         <div class="menu-grid">
           <div>
