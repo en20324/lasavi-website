@@ -45,6 +45,20 @@ function setupShareButton() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("menu-toggle");
+  const mobileNav = document.getElementById("mobile-nav");
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileNav.classList.toggle("active");
+    });
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        mobileNav.classList.remove("active");
+      });
+    });
+  }
   setupMenuModal();
   setupShareButton();
 });
